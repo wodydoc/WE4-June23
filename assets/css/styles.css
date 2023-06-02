@@ -504,14 +504,18 @@ svg#Logo_2 {
   width: 100%;
   height: 65%;
   object-fit: contain;
-  filter: saturate(5.5);
 }
 
 .slides-inner {
   position: relative;
-  height: 100%;
+  height: 150px;
   width: 100%;
   overflow: hidden;
+  background: var(--first-color-lighten);
+}
+
+.dark-theme .slides-inner {
+  background: var(--container-color);
 }
 /*=============== ABOUT ===============*/
 .about__container {
