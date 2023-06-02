@@ -237,3 +237,25 @@ function wrapPartial(min, max) {
 //     $('#E-path, #W-path').css('transform', 'translate(0, 0)'); /* Reset the transform */
 //   });
   
+
+// HOME TITLE WORD SHUFFLER
+const phrases = [
+    "communication",
+    "leadership",
+    "management",
+    "development",
+    "success",
+  ];
+  
+  let currentIndex = 0;
+  const phraseElement = document.querySelector(".random-word");
+  
+  const randomizeText = () => {
+    currentIndex = (currentIndex + 1) % phrases.length;
+    const newPhrase = phrases[currentIndex];
+    phraseElement.textContent = newPhrase;
+  };
+  
+  randomizeText();
+  setInterval(randomizeText, 4000);
+  

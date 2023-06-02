@@ -531,6 +531,35 @@ svg#Logo_2 {
   margin-bottom: var(--mb-1);
 }
 
+/*  */
+
+.random-word {
+  display: inline-block;
+  /* text-transform: uppercase; */
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+  opacity: 0;
+  animation: slidedown 4s infinite;
+}
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+}
+/*  */
+
 .about__description {
   margin-bottom: var(--mb-2);
 }
