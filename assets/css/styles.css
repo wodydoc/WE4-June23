@@ -8,8 +8,10 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --hue: 152;
-  --first-color: hsl(229.83deg 80.82% 42.94%);
-  --first-color-alt: hsl(209, 61%, 16%);
+  --first-color: hsl(225, 97%, 61%);
+  --first-color-alt: hsl(231, 100%, 58%);
+  /* --first-color: hsl(229.83deg 80.82% 42.94%);
+  --first-color-alt: hsl(209, 61%, 16%); */
   --first-color-light: hsl(var(--hue), 24%, 66%);
   --first-color-lighten: hsl(var(--hue), 24%, 92%);
   --title-color: hsl(var(--hue), 4%, 15%);
@@ -504,7 +506,13 @@ svg#Logo_2 {
   width: 100%;
   height: 65%;
   object-fit: contain;
+  filter: none;
 }
+
+.dark-theme .logo {
+  filter: brightness(1.25);
+}
+
 
 .slides-inner {
   position: relative;
