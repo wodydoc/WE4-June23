@@ -384,9 +384,14 @@ svg#Logo_2 {
 }
 
 .home__title {
+  text-transform: uppercase;
   font-size: var(--big-font-size);
-  line-height: 140%;
+  line-height: 130%;
   margin-bottom: var(--mb-1);
+}
+
+.home__title span {
+  font-weight: var(--font-light);
 }
 
 .home__description {
