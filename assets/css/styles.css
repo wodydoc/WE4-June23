@@ -536,7 +536,7 @@ svg#Logo_2 {
 }
 
 .about__img {
-  width: 280px;
+  width: 100px;
   justify-self: center;
 }
 
@@ -1133,7 +1133,7 @@ svg#Logo_2 {
   }
 
   .about__img {
-    width: 380px;
+    width: 180px;
   }
 
   .steps__container {
