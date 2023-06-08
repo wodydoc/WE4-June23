@@ -825,8 +825,8 @@ svg#Logo_2 {
 
 .product__title,
 .product__price {
-  font-size: var(--small-font-size);
-  font-weight: var(--font-bold);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-light);
   color: var(--title-color);
 }
 
