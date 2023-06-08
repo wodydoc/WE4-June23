@@ -172,6 +172,10 @@ the website, in dark theme
   line-height: 140%;
 }
 
+.section__title span {
+  font-weight: var(--font-light);
+}
+
 .section__title-center {
   text-align: center;
 }
@@ -542,8 +546,8 @@ svg#Logo_2 {
 }
 
 .about__img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   justify-self: center;
 }
 
@@ -559,7 +563,7 @@ svg#Logo_2 {
   font-weight: var(--font-bold);
   color: var(--first-color);
   opacity: 0;
-  animation: slidedown 4s infinite;
+  animation: slidedown 2s infinite;
 }
 @keyframes slidedown {
   0% {
@@ -581,7 +585,7 @@ svg#Logo_2 {
 /*  */
 
 .about__description {
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-2); 
 }
 
 .about__details {
@@ -635,9 +639,14 @@ svg#Logo_2 {
   transition: 0.3s;
 }
 
+.dark-theme .processors__card-number {
+  background-color: var(--first-color-dark);
+}
+
+
 .processors__img {
-  height: var(--header-height);
-  width: 100%;
+  height: calc(var(--header-height) * 1.25);
+  width: calc(var(--header-height) * 1.25);
 }
 
 .processors__card-title {
@@ -655,13 +664,19 @@ svg#Logo_2 {
 
 /*=============== BENEFITS ===============*/
 
+/*  */
+.benefits__data {
+  order: -1;
+}
+/*  */
+
 .benefits__container {
   row-gap: 2rem;
 }
 
 .benefits__img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   justify-self: center;
 }
 
@@ -691,7 +706,6 @@ svg#Logo_2 {
   margin-top: 0.15rem;
 }
 
-
 /*=============== stances ===============*/
 .stances__bg {
   background-color: var(--first-color);
@@ -715,8 +729,8 @@ svg#Logo_2 {
 }
 
 .stances__img {
-  height: var(--header-height);
-  width: 100%;
+  height: calc(var(--header-height) * 1.25);
+  width: calc(var(--header-height) * 1.25);
 }
 
 .stances__card-number {
@@ -742,7 +756,6 @@ svg#Logo_2 {
 .stances__card:hover .stances__card-number {
   transform: translateY(-0.25rem);
 }
-
 
 /*=============== meet-joey-schewee ===============*/
 
@@ -799,7 +812,7 @@ svg#Logo_2 {
 .product__card {
   display: grid;
   position: relative;
-  width: 100%;  /* make the card occupy the whole slide */
+  width: 100%; /* make the card occupy the whole slide */
 }
 
 .product__img {
@@ -849,7 +862,6 @@ svg#Logo_2 {
 .product__card:hover .product__img {
   transform: translateY(-0.5rem);
 }
-
 
 /*=============== QUESTIONS ===============*/
 .questions {
@@ -1179,7 +1191,6 @@ svg#Logo_2 {
     padding: 1.5rem;
   }
 
-
   .product__container {
     grid-template-columns: 0.6fr;
     justify-content: center;
@@ -1195,7 +1206,6 @@ svg#Logo_2 {
   .stances__container {
     grid-template-columns: repeat(2, 1fr);
   }
-
 
   .product__description {
     padding: 0 4rem;
@@ -1305,7 +1315,6 @@ svg#Logo_2 {
     width: 300px;
   }
 
-
   .processors__container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1316,7 +1325,6 @@ svg#Logo_2 {
     font-size: var(--normal-font-size);
   }
 
-
   .stances__container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1326,7 +1334,6 @@ svg#Logo_2 {
   .stances__card-title {
     font-size: var(--normal-font-size);
   }
-
 
   .product__description {
     padding: 0 16rem;

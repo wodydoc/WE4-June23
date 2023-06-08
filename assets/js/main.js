@@ -137,7 +137,7 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data`)
 sr.reveal(`.home__img`, {delay: 500})
 sr.reveal(`.home__social`, {delay: 600})
-sr.reveal(`.about__img, .benefits__data, .contact__box`,{origin: 'left'})
+sr.reveal(`.benefits__data, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
 sr.reveal(`.processors__card, .stances__card, .product__card, .questions__group, .footer`,{interval: 100})
 // Add the new animation for the SVG
@@ -257,7 +257,7 @@ const phrases = [
   };
   
   randomizeText();
-  setInterval(randomizeText, 4000);
+  setInterval(randomizeText, 2000);
   
 
   
@@ -268,16 +268,18 @@ var rotate = gsap.timeline({
     scrollTrigger: {
       trigger: "#wrap",
       pin: true,
-      scrub: 0.2,
+      scrub: 1, // increase this value to make the animation smoother
       start: "top top",
       end: "+=10000",
     }
   })
   .to("#youspinmerightroundbabyrightround", {
     rotation: 360 * 5,
-    y: "-20%", // Add this to create a slight parallax effect
-    duration: 1,
-    ease: "none"
+    y: "-20%", // increase this value to make the parallax effect more pronounced
+    ease: "power1.inOut", // change the ease to make the rotation smoother
+    duration: (index, target, targets) => {
+      return gsap.utils.wrap([1, 3, 5], index);
+    }
   });
 
 
