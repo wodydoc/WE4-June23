@@ -139,7 +139,7 @@ sr.reveal(`.home__img`, {delay: 500})
 sr.reveal(`.home__social`, {delay: 600})
 sr.reveal(`.about__img, .benefits__data, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
-sr.reveal(`.steps__card, .product__card, .questions__group, .footer`,{interval: 100})
+sr.reveal(`.processors__card, .stances__card, .product__card, .questions__group, .footer`,{interval: 100})
 // Add the new animation for the SVG
 sr.reveal('.home__img', {
     origin: 'bottom',

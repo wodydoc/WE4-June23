@@ -145,7 +145,8 @@ Color changes in some parts of
 the website, in dark theme 
 ==========*/
 
-.dark-theme .steps__bg,
+.dark-theme .processors__bg,
+.dark-theme .stances__bg,
 .dark-theme .questions {
   background-color: var(--first-color-dark);
 }
@@ -601,49 +602,54 @@ svg#Logo_2 {
   margin-top: 0.15rem;
 }
 
-/*=============== STEPS ===============*/
-.steps__bg {
+/*=============== processors ===============*/
+.processors__bg {
   background-color: var(--first-color);
   padding: 3rem 2rem 2rem;
   border-radius: 1rem;
 }
 
-.steps__container {
+.processors__container {
   gap: 2rem;
   padding-top: 1rem;
 }
 
-.steps__title {
+.processors__title {
   color: #fff;
 }
 
-.steps__card {
+.processors__card {
   background-color: var(--container-color);
   padding: 2.5rem 3rem 2rem 1.5rem;
   border-radius: 1rem;
 }
 
-.steps__card-number {
+.processors__card-number {
   display: inline-block;
-  background-color: var(--first-color-alt);
+  background-color: var(--first-color-lighten);
   color: #fff;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: 50%;
   font-size: var(--h2-font-size);
   margin-bottom: var(--mb-1-5);
   transition: 0.3s;
 }
 
-.steps__card-title {
+.processors__img {
+  height: var(--header-height);
+  width: 100%;
+}
+
+.processors__card-title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
-.steps__card-description {
+.processors__card-description {
   font-size: var(--small-font-size);
 }
 
-.steps__card:hover .steps__card-number {
+.processors__card:hover .processors__card-number {
   transform: translateY(-0.25rem);
 }
 
@@ -685,20 +691,115 @@ svg#Logo_2 {
   margin-top: 0.15rem;
 }
 
+
+/*=============== stances ===============*/
+.stances__bg {
+  background-color: var(--first-color);
+  padding: 3rem 2rem 2rem;
+  border-radius: 1rem;
+}
+
+.stances__container {
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.stances__title {
+  color: #fff;
+}
+
+.stances__card {
+  background-color: var(--container-color);
+  padding: 2.5rem 3rem 2rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.stances__img {
+  height: var(--header-height);
+  width: 100%;
+}
+
+.stances__card-number {
+  display: inline-block;
+  background-color: var(--first-color-lighten);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 100%;
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-1-5);
+  transition: 0.3s;
+}
+
+.stances__card-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.stances__card-description {
+  font-size: var(--small-font-size);
+}
+
+.stances__card:hover .stances__card-number {
+  transform: translateY(-0.25rem);
+}
+
+
+/*=============== meet-joey-schewee ===============*/
+
+.meet-joey-schewee__container {
+  row-gap: 2rem;
+}
+
+.meet-joey-schewee__img {
+  width: 250px;
+  justify-self: center;
+}
+
+.meet-joey-schewee__title {
+  margin-bottom: var(--mb-1);
+}
+
+.meet-joey-schewee__description {
+  margin-bottom: var(--mb-2);
+}
+
+.meet-joey-schewee__details {
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.meet-joey-schewee__details-description {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  font-size: var(--small-font-size);
+}
+
+.meet-joey-schewee__details-icon {
+  font-size: 1rem;
+  color: var(--first-color);
+  margin-top: 0.15rem;
+}
+
 /*=============== PRODUCTS ===============*/
 .product__description {
   text-align: center;
 }
 
-.product__container {
+.swiper-container {
   padding: 3rem 0;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 3rem;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product__card {
   display: grid;
   position: relative;
+  width: 100%;  /* make the card occupy the whole slide */
 }
 
 .product__img {
@@ -748,6 +849,7 @@ svg#Logo_2 {
 .product__card:hover .product__img {
   transform: translateY(-0.5rem);
 }
+
 
 /*=============== QUESTIONS ===============*/
 .questions {
@@ -1063,12 +1165,20 @@ svg#Logo_2 {
     font-size: var(--h1-font-size);
   }
 
-  .steps__bg {
+  .processors__bg {
     padding: 2rem 1rem;
   }
-  .steps__card {
+  .processors__card {
     padding: 1.5rem;
   }
+
+  .stances__bg {
+    padding: 2rem 1rem;
+  }
+  .stances__card {
+    padding: 1.5rem;
+  }
+
 
   .product__container {
     grid-template-columns: 0.6fr;
@@ -1078,9 +1188,14 @@ svg#Logo_2 {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .steps__container {
+  .processors__container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .stances__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 
   .product__description {
     padding: 0 4rem;
@@ -1120,6 +1235,7 @@ svg#Logo_2 {
   .home__container,
   .about__container,
   .benefits__container,
+  .meet-joey-schewee__container,
   .questions__container,
   .contact__container,
   .footer__container {
@@ -1185,15 +1301,32 @@ svg#Logo_2 {
     width: 300px;
   }
 
-  .steps__container {
+  .meet-joey-schewee__img {
+    width: 300px;
+  }
+
+
+  .processors__container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .steps__bg {
+  .processors__bg {
     padding: 3.5rem 2.5rem;
   }
-  .steps__card-title {
+  .processors__card-title {
     font-size: var(--normal-font-size);
   }
+
+
+  .stances__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stances__bg {
+    padding: 3.5rem 2.5rem;
+  }
+  .stances__card-title {
+    font-size: var(--normal-font-size);
+  }
+
 
   .product__description {
     padding: 0 16rem;
@@ -1263,6 +1396,10 @@ svg#Logo_2 {
   }
 
   .benefits__container {
+    column-gap: 7rem;
+  }
+
+  .meet-joey-schewee__container {
     column-gap: 7rem;
   }
 
