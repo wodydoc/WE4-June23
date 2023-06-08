@@ -542,6 +542,7 @@ svg#Logo_2 {
 
 .about__img {
   width: 100px;
+  /* height: 500px; */
   justify-self: center;
 }
 
