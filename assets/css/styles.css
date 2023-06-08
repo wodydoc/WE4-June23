@@ -541,8 +541,8 @@ svg#Logo_2 {
 }
 
 .about__img {
-  width: 100px;
-  /* height: 500px; */
+  width: 250px;
+  height: 250px;
   justify-self: center;
 }
 
@@ -645,6 +645,44 @@ svg#Logo_2 {
 
 .steps__card:hover .steps__card-number {
   transform: translateY(-0.25rem);
+}
+
+/*=============== BENEFITS ===============*/
+
+.benefits__container {
+  row-gap: 2rem;
+}
+
+.benefits__img {
+  width: 250px;
+  height: 250px;
+  justify-self: center;
+}
+
+.benefits__title {
+  margin-bottom: var(--mb-1);
+}
+
+.benefits__description {
+  margin-bottom: var(--mb-2);
+}
+
+.benefits__details {
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.benefits__details-description {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  font-size: var(--small-font-size);
+}
+
+.benefits__details-icon {
+  font-size: 1rem;
+  color: var(--first-color);
+  margin-top: 0.15rem;
 }
 
 /*=============== PRODUCTS ===============*/
@@ -1081,6 +1119,7 @@ svg#Logo_2 {
 
   .home__container,
   .about__container,
+  .benefits__container,
   .questions__container,
   .contact__container,
   .footer__container {
@@ -1139,7 +1178,11 @@ svg#Logo_2 {
   }
 
   .about__img {
-    width: 180px;
+    width: 300px;
+  }
+
+  .benefits__img {
+    width: 300px;
   }
 
   .steps__container {
@@ -1216,6 +1259,10 @@ svg#Logo_2 {
   }
 
   .about__container {
+    column-gap: 7rem;
+  }
+
+  .benefits__container {
     column-gap: 7rem;
   }
 
