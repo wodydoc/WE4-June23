@@ -23,6 +23,8 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "obviously", sans-serif;
+  --wide-font: "obviously-wide", sans-serif;
+  --extended-font: "obviously-extended", sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -36,7 +38,20 @@
   --font-thin: 200;
   --font-light: 300;
   --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
   --font-bold: 700;
+  --font-black: 800;
+  --font-super: 900;
+
+  --font-wide-regular: 400;
+  --font-wide-medium: 500;
+  --font-wide-semibold: 600;
+  --font-wide-bold: 700;
+  --font-wide-black: 800;
+  --font-wide-super: 900;
+
+  --font-extended-black: 800;
 
   /*========== Margenes Bottom ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -172,8 +187,16 @@ the website, in dark theme
   line-height: 140%;
 }
 
-.section__title span {
-  font-weight: var(--font-light);
+.section__title span.motivations {
+  /* font-family: var(--wide-font); */
+  font-weight: var(--font-semibold);
+  color: var(--first-color-alt);
+}
+
+.section__title span.behavior {
+  /* font-family: var(--wide-font); */
+  font-weight: var(--font-semibold);
+  color: var(--first-color-alt);
 }
 
 .section__title-center {
@@ -395,8 +418,14 @@ svg#Logo_2 {
   margin-bottom: var(--mb-1);
 }
 
-.home__title span {
+.home__title span.working {
+  /* font-family: var(--wide-font); */
   font-weight: var(--font-light);
+}
+
+.home__title span.solutions {
+  /* font-family: var(--wide-font); */
+  font-weight: var(--font-thin);
 }
 
 .home__description {
@@ -552,20 +581,19 @@ svg#Logo_2 {
 }
 
 .about__title {
-  max-width: 95%;
   margin-bottom: var(--mb-1);
 }
 
 /*  */
 
 .random-word {
-  line-height: 140%;
+  line-height: 1;
   display: inline-block;
-  /* text-transform: uppercase; */
+  /* font-family: var(--wide-font); */
   font-weight: var(--font-bold);
-  color: var(--first-color);
+  color: var(--first-color-alt);
   opacity: 0;
-  animation: slidedown 2s infinite;
+  animation: slidedown 4s infinite;
 }
 @keyframes slidedown {
   0% {

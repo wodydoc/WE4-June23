@@ -141,7 +141,7 @@ sr.reveal(`.benefits__data, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
 sr.reveal(`.processors__card, .stances__card, .product__card, .questions__group, .footer`,{interval: 100})
 // Add the new animation for the SVG
-sr.reveal('.home__img', {
+sr.reveal('.meet-joey-schewee__img', {
     origin: 'bottom',
     distance: '20px',
     duration: 1000,
@@ -257,7 +257,7 @@ const phrases = [
   };
   
   randomizeText();
-  setInterval(randomizeText, 2000);
+  setInterval(randomizeText, 4000);
   
 
   
