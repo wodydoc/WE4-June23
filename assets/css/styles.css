@@ -552,12 +552,14 @@ svg#Logo_2 {
 }
 
 .about__title {
+  max-width: 90%;
   margin-bottom: var(--mb-1);
 }
 
 /*  */
 
 .random-word {
+  line-height: 140%;
   display: inline-block;
   /* text-transform: uppercase; */
   font-weight: var(--font-bold);
