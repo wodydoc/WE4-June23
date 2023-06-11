@@ -134,8 +134,9 @@ const sr = ScrollReveal({
     // reset: true
 })
 
+// sr.reveal(`.home__img`, {delay: 500})
+
 sr.reveal(`.home__data`)
-sr.reveal(`.home__img`, {delay: 500})
 sr.reveal(`.home__social`, {delay: 600})
 sr.reveal(`.benefits__data, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
