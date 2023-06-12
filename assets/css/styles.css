@@ -421,6 +421,7 @@ svg#Logo_2 {
 
 .home__description {
   /* font-weight: var(--font-light); */
+  padding-right: 0.25rem;
   margin-bottom: var(--mb-2-5);
   font-weight: var(--font-regular);
   font-family: var(--ibm-plex-mono);
@@ -708,6 +709,7 @@ svg#Logo_2 {
 /*  */
 .benefits__data {
   order: -1;
+  text-align: right;
 }
 /*  */
 
@@ -725,7 +727,7 @@ svg#Logo_2 {
   margin-bottom: var(--mb-1);
   font-weight: var(--font-regular);
   width: -webkit-fill-available;
-  padding-right: 5vw;
+  /* padding-right: 5vw; */
 }
 
 span.benefits {
@@ -748,6 +750,8 @@ span.benefits {
   display: inline-flex;
   column-gap: 0.5rem;
   font-size: var(--small-font-size);
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .benefits__details-icon {
