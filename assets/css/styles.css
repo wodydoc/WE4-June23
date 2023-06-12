@@ -372,13 +372,11 @@ polygon#E-path.cls-1 {
   row-gap: 2rem;
 }
 
-svg.home__img {
-  width: 300px;
-  height: 300px;
+.home__img {
+  width: 100%;
+  height: 200px;
   justify-self: center;
-  filter: saturate(5);
-  opacity: 1; /* Ensure the initial opacity is set to 1 */
-  visibility: visible; /* Ensure the initial visibility is set to visible */
+  
 }
 
 svg#Logo_2 {

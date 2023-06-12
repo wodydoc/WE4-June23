@@ -269,7 +269,7 @@ var rotate = gsap.timeline({
     scrollTrigger: {
       trigger: "#wrap",
       pin: true,
-      scrub: 1, // increase this value to make the animation smoother
+      scrub: 2, // increase this value to make the animation smoother
       start: "top top",
       end: "+=10000",
     }
