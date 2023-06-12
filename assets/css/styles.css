@@ -25,6 +25,7 @@
   --body-font: "obviously", sans-serif;
   --wide-font: "obviously-wide", sans-serif;
   --extended-font: "obviously-extended", sans-serif;
+  --ibm-plex-mono: "ibm-plex-mono", sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -375,7 +376,7 @@ svg.home__img {
   width: 300px;
   height: 300px;
   justify-self: center;
-  filter: saturate(5); 
+  filter: saturate(5);
   opacity: 1; /* Ensure the initial opacity is set to 1 */
   visibility: visible; /* Ensure the initial visibility is set to visible */
 }
@@ -419,8 +420,10 @@ svg#Logo_2 {
 }
 
 .home__description {
+  /* font-weight: var(--font-light); */
   margin-bottom: var(--mb-2-5);
-  font-weight: var(--font-light);
+  font-weight: var(--font-regular);
+  font-family: var(--ibm-plex-mono);
 }
 
 .home__social {
@@ -433,6 +436,7 @@ svg#Logo_2 {
 }
 
 .home__social-follow {
+  font-family: var(--ibm-plex-mono);
   font-weight: var(--font-regular);
   font-size: var(--smaller-font-size);
   color: var(--first-color);
@@ -549,7 +553,7 @@ svg#Logo_2 {
 
 .slides-inner {
   position: relative;
-  height: 100px;
+  height: 150px;
   width: 100%;
   overflow: hidden;
   background: var(--first-color-lighten);
@@ -591,11 +595,12 @@ svg#Logo_2 {
 /*  */
 
 .random-word {
-  line-height: 1;
+  /* line-height: 1; */
+  margin: auto;
   display: inline-block;
-  /* font-family: var(--wide-font); */
-  font-weight: var(--font-black);
-  /* color: var(--first-color-alt); */
+  font-family: var(--wide-font);
+  font-weight: var(--font-semibold);
+  color: var(--first-color-alt);
   opacity: 0;
   animation: slidedown 4s infinite;
 }
@@ -621,6 +626,7 @@ svg#Logo_2 {
 .about__description {
   margin-bottom: var(--mb-0-75);
   padding-right: 20%;
+  font-family: var(--ibm-plex-mono);
 }
 
 .about__details {
@@ -690,6 +696,7 @@ svg#Logo_2 {
 
 .processors__card-description {
   font-size: var(--small-font-size);
+  font-family: var(--ibm-plex-mono);
 }
 
 .processors__card:hover .processors__card-number {
@@ -728,6 +735,7 @@ span.benefits {
 
 .benefits__description {
   margin-bottom: var(--mb-2);
+  font-family: var(--ibm-plex-mono);
 }
 
 .benefits__details {
@@ -745,7 +753,7 @@ span.benefits {
 .benefits__details-icon {
   font-size: 1rem;
   color: var(--first-color);
-  margin-top: 0.15rem;
+  margin-top: 0.05rem;
 }
 
 /*=============== stances ===============*/
@@ -793,6 +801,7 @@ span.benefits {
 
 .stances__card-description {
   font-size: var(--small-font-size);
+  font-family: var(--ibm-plex-mono);
 }
 
 .stances__card:hover .stances__card-number {
@@ -817,6 +826,7 @@ span.benefits {
 
 .meet-joey-schewee__description {
   margin-bottom: var(--mb-2);
+  font-family: var(--ibm-plex-mono);
 }
 
 .meet-joey-schewee__details {
@@ -1293,7 +1303,7 @@ span.benefits {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .about__container  {
+  .about__container {
     grid-template-columns: 1fr 3fr;
   }
 
