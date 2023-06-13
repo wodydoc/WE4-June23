@@ -304,6 +304,7 @@ let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
 let rotateScrub = rotateAnimation("#spin-n-scrub", 360 * 5);
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Processors Swiper
   var swiperProcessors = new Swiper(".processors .swiper-container", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -311,8 +312,22 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".processors .swiper-button-next",
       prevEl: ".processors .swiper-button-prev",
     },
+    pagination: {
+      el: ".processors .swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function () {
+        gsap.fromTo(
+          ".processors .swiper-slide",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.6, ease: "power2.inOut", stagger: 0.2 }
+        );
+      },
+    },
   });
 
+  // Stances Swiper
   var swiperStances = new Swiper(".stances .swiper-container", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -320,10 +335,22 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".stances .swiper-button-next",
       prevEl: ".stances .swiper-button-prev",
     },
+    pagination: {
+      el: ".stances .swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function () {
+        gsap.fromTo(
+          ".stances .swiper-slide",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.6, ease: "power2.inOut", stagger: 0.2 }
+        );
+      },
+    },
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Types Swiper
   var swiperTypes = new Swiper(".types", {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -340,6 +367,15 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
       renderBullet: function (index, className) {
         return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
+    },
+    on: {
+      init: function () {
+        gsap.fromTo(
+          ".types .swiper-slide",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.6, ease: "power2.inOut", stagger: 0.2 }
+        );
       },
     },
   });
