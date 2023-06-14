@@ -306,7 +306,17 @@ let rotateScrub = rotateAnimation("#spin-n-scrub", 360 * 5);
 document.addEventListener("DOMContentLoaded", function () {
   // Processors Swiper
   var swiperProcessors = new Swiper(".processors .swiper-container", {
-    slidesPerView: 1,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
     spaceBetween: 30,
     navigation: {
       nextEl: ".processors .swiper-button-next",
@@ -329,7 +339,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Stances Swiper
   var swiperStances = new Swiper(".stances .swiper-container", {
-    slidesPerView: 1,
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
     spaceBetween: 30,
     navigation: {
       nextEl: ".stances .swiper-button-next",
