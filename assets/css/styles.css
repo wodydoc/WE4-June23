@@ -5,16 +5,16 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --hue: 152;
-  --first-color: hsl(225, 97%, 61%);
-  --first-color-alt: hsl(231, 100%, 58%);
+  --first-color: hsl(210, 22%, 49%);
+  --first-color-alt: hsl(209, 23%, 60%);
   /* --first-color: hsl(229.83deg 80.82% 42.94%);
   --first-color-alt: hsl(209, 61%, 16%); */
   --first-color-light: hsl(var(--hue), 24%, 66%);
   --first-color-lighten: hsl(0deg 0% 93.33%);
-  --title-color: hsl(0deg 0% 12.94%);
-  --text-color: #616161;
+  --title-color: hsl(209, 61%, 16%);
+  --text-color: hsl(211, 39%, 23%);
   --text-color-light: #bdbdbd;
-  --body-color: hsl(var(--hue), 0%, 100%);
+  --body-color: hsl(210, 36%, 96%);
   --container-color: #fff;
 
   /*========== Font and typography ==========*/
@@ -133,11 +133,11 @@ img {
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-dark: hsl(var(--hue), 8%, 20%);
-  --title-color: hsl(var(--hue), 4%, 95%);
-  --text-color: hsl(var(--hue), 4%, 75%);
-  --body-color: hsl(var(--hue), 8%, 12%);
-  --container-color: hsl(var(--hue), 8%, 16%);
+  --first-color-dark: hsl(208.8deg 32.05% 30.59%);
+  --title-color: hsl(210, 36%, 96%);
+  --text-color: hsl(150, 10%, 80%);
+  --body-color: hsl(209, 61%, 16%);
+  --container-color: hsla(209, 23%, 60%, 0.867);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -181,7 +181,7 @@ the website, in dark theme
 
 .section__title,
 .section__title-center {
-  font-size: var(--h2-font-size);
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-2);
   line-height: 140%;
 }
@@ -231,8 +231,8 @@ the website, in dark theme
 
 .nav__logo {
   text-transform: uppercase;
-  font-weight: var(--font-regular);
-  letter-spacing: 1px;
+  font-weight: var(--font-light);
+  letter-spacing: 0;
   /* display: inline-flex; */
   align-items: center;
   column-gap: 0.25rem;
@@ -397,20 +397,19 @@ svg#Logo_2 {
 }
 
 .home__title {
-  text-transform: uppercase;
+  color: var(--first-color);
+  /* text-transform: uppercase; */
   font-size: var(--big-font-size);
   line-height: 140%;
   margin-bottom: var(--mb-1);
+  /* font-weight: var(--font-light); */
+}
+
+.home__title span.working { 
   font-weight: var(--font-light);
 }
 
-.home__title span.working {
-  /* font-family: var(--wide-font); */
-  font-weight: var(--font-regular);
-}
-
-.home__title span.solutions {
-  /* font-family: var(--wide-font); */
+.home__title span.solutions { 
   font-weight: var(--font-thin);
 }
 
@@ -571,7 +570,7 @@ svg#Logo_2 {
 }
 
 .about__title {
-  font-weight: var(--font-regular);
+  font-weight: var(--font-thin);
   width: auto;
   margin-top: auto;
   margin-left: auto;
@@ -579,24 +578,24 @@ svg#Logo_2 {
 }
 
 .section__title span.motivations {
-  font-weight: var(--font-black);
+  font-weight: var(--font-light);
   /* color: var(--first-color-alt); */
 }
 
 .section__title span.behavior {
-  font-weight: var(--font-black);
+  font-weight: var(--font-light);
   /* color: var(--first-color); */
 }
 
 /*  */
 
 .random-word {
-  /* line-height: 1; */
+  line-height: 1;
   margin: auto;
   margin-bottom: var(--mb-1);
   display: inline-block;
-  font-family: var(--wide-font);
-  font-weight: var(--font-super);
+  /* font-family: var(--wide-font); */
+  font-weight: var(--font-thin);
   color: var(--first-color-alt);
   opacity: 0;
   animation: slidedown 4s infinite;
@@ -623,6 +622,7 @@ svg#Logo_2 {
 .about__description {
   margin-bottom: var(--mb-2);
   padding-right: 20px;
+  /* font-size: var(--h3-font-size); */
   font-family: var(--ibm-plex-mono);
 }
 
@@ -731,6 +731,7 @@ svg#Logo_2 {
   left: 50%;
   bottom: 25px;
   transform: translateX(-50%);
+  margin-bottom: var(--mb-0-75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -810,14 +811,15 @@ svg#Logo_2 {
 }
 
 .processors__card-title {
-  font-size: var(--h3-font-size);
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
 .processors__card-description {
-  font-size: var(--small-font-size);
   font-family: var(--ibm-plex-mono);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2-5);
+  font-size: var(--h2-font-size);
+  padding-right: 20px;
 }
 
 .processors__card:hover .processors__card-number {
@@ -844,7 +846,7 @@ svg#Logo_2 {
 }
 
 .benefits__title {
-  font-weight: var(--font-regular);
+  font-weight: var(--font-thin);
   width: auto;
   margin-top: auto;
   margin-left: auto;
@@ -852,7 +854,7 @@ svg#Logo_2 {
 }
 
 span.benefits {
-  font-weight: var(--font-black);
+  font-weight: var(--font-light);
   /* color: var(--first-color); */
 }
 
@@ -870,8 +872,9 @@ span.benefits {
 .benefits__details-description {
   display: inline;
   padding-left: 20px;
-  /* font-size: var(--small-font-size); */
   font-family: var(--ibm-plex-mono);
+  margin-bottom: var(--mb-1);
+  font-size: var(--h3-font-size);
 }
 
 .benefits__details-icon {
@@ -923,14 +926,15 @@ span.benefits {
 }
 
 .stances__card-title {
-  font-size: var(--h3-font-size);
+  font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-5);
 }
 
 .stances__card-description {
-  font-size: var(--small-font-size);
   font-family: var(--ibm-plex-mono);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2-5);
+  font-size: var(--h2-font-size);
+  padding-right: 20px;
 }
 
 .stances__card:hover .stances__card-number {
@@ -951,6 +955,7 @@ span.benefits {
 
 .meet-joey-schewee__title {
   margin-bottom: var(--mb-1);
+  font-size: var(--big-font-size);
 }
 
 .meet-joey-schewee__description {
@@ -967,8 +972,9 @@ span.benefits {
   display: inline-flex;
   column-gap: 0.25rem;
   margin: auto;
-  font-size: var(--small-font-size);
   font-family: var(--ibm-plex-mono);
+  font-size: var(--h3-font-size);
+  padding-right: 30px;
 }
 
 .meet-joey-schewee__details-icon {
@@ -1208,13 +1214,13 @@ section#products .swiper-slide {
 .footer__logo {
   text-transform: uppercase;
   font-size: var(--h3-font-size);
-  line-height: 140%; 
+  line-height: 140%;
   font-weight: var(--font-light);
   display: inline-flex;
   align-items: center;
   column-gap: 0.5rem;
   color: var(--title-color);
-  text-transform: uppercase; 
+  text-transform: uppercase;
   transition: all 0.3s ease 0s;
 }
 
@@ -1421,7 +1427,7 @@ section#products .swiper-slide {
   }
 
   .about__container {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1.5fr 0.5fr;
   }
 
   .benefits__container {
@@ -1471,7 +1477,7 @@ section#products .swiper-slide {
   }
   .section__title,
   .section__title-center {
-    font-size: var(--h1-font-size);
+    font-size: var(--big-font-size);
   }
 
   .about__title {
@@ -1513,7 +1519,7 @@ section#products .swiper-slide {
     padding: 3.5rem 2.5rem;
   }
   .processors__card-title {
-    font-size: var(--normal-font-size);
+    font-size: var(--big-font-size);
   }
 
   .stances__container {
@@ -1523,7 +1529,7 @@ section#products .swiper-slide {
     padding: 3.5rem 2.5rem;
   }
   .stances__card-title {
-    font-size: var(--normal-font-size);
+    font-size: var(--big-font-size);
   }
 
   .product__description {
