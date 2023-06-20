@@ -655,14 +655,12 @@ svg#Logo_2 {
   position: relative;
 }
 
-/* .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background-color: var(--first-color);
+.swiper-slide {
   display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+}
 
 .swiper-slide {
   opacity: 0;
@@ -1636,7 +1634,7 @@ section#products .swiper-slide {
 }
 .card__title {
   color: var(--title-color);
-  font-size: var(--big-font-size);
+  font-size: var(--h1-font-size);
   line-height: 100%;
   margin-bottom: 1rem;
 }
