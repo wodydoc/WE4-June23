@@ -557,13 +557,12 @@ svg#Logo_2 {
   position: relative;
   height: 150px;
   width: 100%;
-  overflow: hidden;
-  background: var(--first-color-lighten);
-  /* background: var(--first-color); */
+  overflow: hidden; 
+  background: var(--container-color);
 }
 
 .dark-theme .slides-inner {
-  background: var(--container-color);
+  background: var(--first-color-dark);
 }
 
 /*=============== ABOUT ===============*/
@@ -1191,7 +1190,8 @@ section#products .swiper-slide {
 }
 
 .footer__logo-icon {
-  max-width: 28vw;
+  max-width: 25vw;
+  filter: contrast(0.5);
 }
 
 .footer__logo:hover {
@@ -1295,6 +1295,7 @@ section#products .swiper-slide {
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
+  display: none;
   width: 0.6rem;
   background: hsl(var(--hue), 4%, 53%);
 }
