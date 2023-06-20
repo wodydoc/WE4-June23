@@ -1620,6 +1620,7 @@ section#products .swiper-slide {
   row-gap: 2rem;
 }
 .card__article {
+  width: auto;
   position: relative;
   background-color: var(--container-color);
   padding: 2.5rem;
