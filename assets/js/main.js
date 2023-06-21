@@ -147,10 +147,10 @@ const sr = ScrollReveal({
 
 // sr.reveal(`.home__img`, {delay: 500})
 
-sr.reveal(`.home__data`);
+sr.reveal(`.home__title, .home__data`);
 sr.reveal(`.home__social`, { delay: 600 });
-sr.reveal(`.benefits__data, .contact__box`, { origin: "left" });
-sr.reveal(`.about__data, .contact__form`, { origin: "right" });
+sr.reveal(`.about__title, .benefits__data, .contact__box`, { origin: "left" });
+sr.reveal(`.contact__form`, { origin: "right" });
 sr.reveal(`.processors, .stances, .types, .questions__group, .footer`, {
   interval: 100,
 });
