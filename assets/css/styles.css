@@ -587,9 +587,11 @@ svg#Logo_2 {
 }
 
 .about__title {
-  font-weight: var(--font-regular);
+  font-weight: var(--font-medium);
+  letter-spacing: -1px;
   margin-bottom: 0;
   padding-right: 5px;
+  line-height: normal;
 }
 
 .section__title span.motivations {
@@ -605,10 +607,13 @@ svg#Logo_2 {
 /*  */
 
 .random-word {
-  line-height: 1;
+  font-family: var(--wide-font);
+  letter-spacing: -2px;
+  /* font-size: var(--h3-font-size); */
+  /* line-height: 1; */
   margin: auto;
   display: inline-block;
-  color: var(--first-color);
+  color: var(--first-color-alt);
   opacity: 0;
   animation: slidedown 4s infinite;
 }
@@ -784,7 +789,12 @@ svg#Logo_2 {
 }
 
 .processors__title {
-  color: #fff;
+  color: var(--container-color);
+  font-weight: var(--font-bold);
+  font-family: var(--wide-font);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.25;
 }
 
 .processors__card:hover .processors__card-number {
@@ -822,14 +832,16 @@ div#top_x_div text {
 }
 
 .benefits__title {
-  font-weight: var(--font-regular);
+  font-weight: var(--font-medium);
   margin-bottom: 0;
   padding-right: 27px;
 }
 
 span.benefits {
-  /* font-weight: var(--font-light); */
-  color: var(--first-color);
+  font-family: var(--wide-font);
+  letter-spacing: -2px; 
+  margin: auto;
+  color: var(--first-color-alt);
 }
 
 .benefits__details {
@@ -865,7 +877,12 @@ span.benefits {
 }
 
 .stances__title {
-  color: #fff;
+  color: var(--container-color);
+  font-weight: var(--font-bold);
+  font-family: var(--wide-font);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 1.25;
 }
 
 .stances__card {
@@ -1134,7 +1151,8 @@ section#products .swiper-slide {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  /* width: 100%; */
+  width: -webkit-fill-available;
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
@@ -1257,7 +1275,7 @@ section#products .swiper-slide {
 }
 
 .footer__social-link {
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--text-color);
   transition: 0.3s;
 }
@@ -1626,6 +1644,7 @@ section#products .swiper-slide {
   font-size: var(--h1-font-size);
   line-height: 100%;
   margin-bottom: 1rem;
+  letter-spacing: -1px;
 }
 
 .card__title span.processors-subtitle {
