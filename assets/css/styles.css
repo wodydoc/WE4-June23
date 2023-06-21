@@ -266,11 +266,11 @@ svg#Logo_1 {
 }
 
 polygon#W-path.cls-1 {
-  fill: var(--first-color);
+  fill: var(--title-color);
 }
 
 polygon#E-path.cls-1 {
-  fill: var(--first-color-alt);
+  fill: var(--title-color);
 }
 
 .nav__logo:hover #E-path {
@@ -279,7 +279,7 @@ polygon#E-path.cls-1 {
 }
 
 .nav__logo:hover #W-path {
-  fill: var(--title-color);
+  fill: var(--first-color);
   transform: translate(10px, -10px);
 }
 
@@ -1588,14 +1588,15 @@ section#products .swiper-slide {
   row-gap: 2rem;
 }
 .card__article {
-  width: auto;
+  width: 100%;
+  height: 100%;
   position: relative;
-  background-color: var(--body-color);
+  background: var(--body-gradient);
   padding: 1.15rem;
   border-radius: 1rem;
   text-align: center;
   overflow: hidden;
-  box-shadow: 0 20px 24px hsla(235, 32%, 15%, 0.2);
+  /* box-shadow: 0 20px 24px hsla(235, 32%, 15%, 0.2); */
 }
 .card__img {
   width: 200px;
