@@ -149,13 +149,13 @@ const sr = ScrollReveal({
 
 sr.reveal(`.home__title, .home__data`);
 sr.reveal(`.home__social`, { delay: 600 });
-sr.reveal(`.about__title, .benefits__data, .contact__box`, { origin: "left" });
+sr.reveal(`.about__title, .benefits__title, .benefits__data, .contact__box`, { origin: "left" });
 sr.reveal(`.contact__form`, { origin: "right" });
 sr.reveal(`.processors, .stances, .types, .questions__group, .footer`, {
   interval: 100,
 });
 // Add the new animation for the SVG
-sr.reveal(".meet-joey-schewee__img", {
+sr.reveal(".meet-joey-schewee__img, .meet-joey-schewee__title, .meet-joey-schewee__details-description", {
   origin: "bottom",
   distance: "20px",
   duration: 1000,

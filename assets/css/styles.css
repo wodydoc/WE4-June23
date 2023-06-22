@@ -192,7 +192,7 @@ the website, in dark theme
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 2.5rem 0 1rem;
+  padding: 5rem 0 1rem;
 }
 
 .section__title,
@@ -418,9 +418,7 @@ svg#Logo_2 {
 
 .home__title {
   font-size: var(--big-font-size);
-  letter-spacing: -2.5px;
   line-height: 120%;
-  font-family: var(--wide-font);
 }
 
 .home__title.working {
@@ -449,8 +447,8 @@ svg#Logo_2 {
 }
 
 .home__social-follow {
-  font-weight: var(--font-regular);
-  font-size: var(--smaller-font-size);
+  font-weight: var(--font-light);
+  font-size: var(--small-font-size);
   color: var(--first-color);
   position: relative;
   transform: rotate(90deg);
@@ -593,26 +591,20 @@ svg#Logo_2 {
   margin-bottom: 0;
   text-align: center;
   line-height: normal;
-  padding: 0 20px; 
+  padding: 0 35px; 
 }
 
-span.motivations {
-  font-family: var(--wide-font);
-  letter-spacing: -1.5px;
+span.motivations { 
   color: var(--first-color);
 }
 
-span.behavior {
-  font-family: var(--wide-font);
-  letter-spacing: -1.5px;
+span.behavior { 
   color: var(--first-color);
 }
 
 /*  */
 
-.random-word {
-  font-family: var(--wide-font);
-  letter-spacing: -1.5px;
+.random-word { 
   line-height: 1;
   margin: auto;
   display: inline-block;
@@ -1476,7 +1468,7 @@ section#products .swiper-slide {
   }
 
   .section {
-    padding: 4rem 0 1rem;
+    padding: 8rem 0 1rem;
   }
   .section__title,
   .section__title-center {
