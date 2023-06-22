@@ -418,13 +418,13 @@ svg#Logo_2 {
 
 .home__title {
   font-size: var(--big-font-size);
-  line-height: 110%;
-  margin-bottom: var(--mb-1);
-  font-weight: var(--font-light);
+  line-height: 120%;
+  /* margin-bottom: var(--mb-1); */
+  font-weight: var(--font-semibold);
 }
 
 .home__title.working {
-  font-weight: var(--font-light);
+  font-weight: var(--font-semibold);
 }
 
 .home__title.solutions {
@@ -432,10 +432,11 @@ svg#Logo_2 {
 }
 
 .home__description {
-  padding-right: 3rem;
-  margin-bottom: var(--mb-1);
-  font-weight: var(--font-regular);
-  /* font-family: var(--ibm-plex-mono); */
+  padding-right: 4rem;
+  margin-bottom: var(--mb-1-5);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-regular); 
+  text-align: justify;
 }
 
 .home__social {
@@ -447,9 +448,8 @@ svg#Logo_2 {
   row-gap: 3.5rem;
 }
 
-.home__social-follow {
-  /* font-family: var(--ibm-plex-mono); */
-  font-weight: var(--font-regular);
+.home__social-follow { 
+  font-weight: var(--font-thin); 
   font-size: var(--smaller-font-size);
   color: var(--first-color);
   position: relative;
@@ -489,7 +489,7 @@ svg#Logo_2 {
   color: #fff;
   padding: 1rem 1.75rem;
   border-radius: 0.5rem;
-  font-weight: var(--font-light);
+  font-weight: var(--font-regular);
   transition: 0.3s;
 }
 
@@ -587,21 +587,23 @@ svg#Logo_2 {
 }
 
 .about__title {
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semibold);
   letter-spacing: -1px;
-  margin-bottom: 0;
-  padding-right: 5px;
-  line-height: normal;
+  margin-bottom: 0; 
+  line-height: 120%;
+  width: 75vw;
 }
 
-.section__title span.motivations {
-  /* font-weight: var(--font-light); */
-  color: var(--first-color-alt);
+span.motivations {
+  font-family: var(--wide-font);
+  letter-spacing: -2px;
+  color: var(--first-color);
 }
 
-.section__title span.behavior {
-  /* font-weight: var(--font-light); */
-  color: var(--first-color-alt);
+span.behavior {
+  font-family: var(--wide-font);
+  letter-spacing: -2px;
+  color: var(--first-color);
 }
 
 /*  */
@@ -609,8 +611,7 @@ svg#Logo_2 {
 .random-word {
   font-family: var(--wide-font);
   letter-spacing: -2px;
-  /* font-size: var(--h3-font-size); */
-  /* line-height: 1; */
+  line-height: 1;
   margin: auto;
   display: inline-block;
   color: var(--first-color-alt);
@@ -811,7 +812,7 @@ div#top_x_div {
 div#top_x_div svg rect {
   fill: var(--body-color);
 }
-div#top_x_div svg text { 
+div#top_x_div svg text {
   fill: var(--title-color);
 }
 div#top_x_div svg g path {
@@ -839,7 +840,7 @@ div#top_x_div text {
 
 span.benefits {
   font-family: var(--wide-font);
-  letter-spacing: -2px; 
+  letter-spacing: -2px;
   margin: auto;
   color: var(--first-color-alt);
 }
@@ -950,8 +951,8 @@ span.benefits {
 }
 
 .meet-joey-schewee__title {
-  margin-bottom: var(--mb-1);
-  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-1); 
+  font-weight: var(--font-bold);
 }
 
 .meet-joey-schewee__description {
@@ -1428,11 +1429,15 @@ section#products .swiper-slide {
   }
 
   .home__container,
-  .about__container,
   .benefits__container,
   .meet-joey-schewee__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 3rem;
+  }
+
+  .about__container {
+
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .home {
@@ -1478,6 +1483,7 @@ section#products .swiper-slide {
 
   .about__title {
     font-size: var(--h1-font-size);
+    width: 60vw;
   }
 
   .benefits__title {
