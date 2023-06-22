@@ -161,6 +161,13 @@ sr.reveal(".meet-joey-schewee__img", {
   duration: 1000,
   delay: 400,
 });
+
+sr.reveal(".slides-inner", {
+  origin: "bottom",
+  distance: "100px",
+  duration: 1000,
+  delay: 400,
+});
 // compay marquee
 console.clear();
 
