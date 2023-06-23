@@ -9,10 +9,10 @@
   --first-color-alt: hsl(209, 23%, 60%);
   --shape-gradient: linear-gradient(
     90deg,
-    hsl(0, 0%, 32%),
-    hsl(211, 16%, 34%),
-    hsl(204, 8%, 76%),
-    hsl(210, 29%, 24%)
+    hsl(212.14deg 21.88% 74.9%),
+    hsl(210deg 20.51% 84.71%),
+    hsl(213.16deg 21.59% 65.49%),
+    hsl(210deg 23.08% 94.9%)
   );
   --body-gradient: linear-gradient(
     180deg,
@@ -158,7 +158,11 @@ body.dark-theme {
   --text-color: hsl(0deg 0% 93.33%);
   --body-color: hsl(209, 61%, 16%);
   --container-color: hsl(209deg 31.31% 23.05%);
-  --shape-gradient: linear-gradient(90deg, hsl(0, 0%, 32%), hsl(211, 16%, 34%));
+  --shape-gradient: linear-gradient(
+    90deg,
+    hsl(211.3deg 24.73% 36.47%),
+    hsl(210.77deg 29.77% 25.69%)
+  );
   --body-gradient: linear-gradient(
     180deg,
     hsl(208.24deg 62.96% 15.88%),
@@ -1159,7 +1163,7 @@ section#products .swiper-slide {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
