@@ -107,6 +107,16 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
+/* Disable resizing of the window when input is focused */
+input:focus {
+  resize: none;
+}
+
+/* Zoom in the window slightly after input is entered */
+input:valid {
+  zoom: 1.05;
+}
+
 body {
   margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
@@ -252,10 +262,12 @@ the website, in dark theme
   text-transform: uppercase;
   font-weight: var(--font-light);
   letter-spacing: 0;
-  /* display: inline-flex; */
+  display: inline-flex;
   align-items: center;
-  column-gap: 0.25rem;
+  /* column-gap: 0.25rem; */
+  height: var(--header-height);
   transition: 0.3s;
+  align-content: center;
 }
 
 /*  */
@@ -591,20 +603,20 @@ svg#Logo_2 {
   margin-bottom: 0;
   text-align: center;
   line-height: normal;
-  padding: 0 35px; 
+  padding: 0 35px;
 }
 
-span.motivations { 
+span.motivations {
   color: var(--first-color);
 }
 
-span.behavior { 
+span.behavior {
   color: var(--first-color);
 }
 
 /*  */
 
-.random-word { 
+.random-word {
   line-height: 1;
   margin: auto;
   display: inline-block;
@@ -954,9 +966,9 @@ span.benefits {
 }
 
 .meet-joey-schewee__details {
-  display: grid; 
+  display: grid;
   row-gap: 1rem;
-  font-weight: var(--font-light); 
+  font-weight: var(--font-light);
   justify-content: space-evenly;
 }
 
@@ -1147,8 +1159,7 @@ section#products .swiper-slide {
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100%; */
-  width: -webkit-fill-available;
+  width: 100%; 
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
@@ -1476,8 +1487,7 @@ section#products .swiper-slide {
   }
 
   .about__title {
-    
-  font-size: var(--h1-font-size);
+    font-size: var(--h1-font-size);
   }
 
   .benefits__title {
