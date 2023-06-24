@@ -301,12 +301,9 @@ animateText();
 // Set an interval to repeat the animation every 4 seconds
 setInterval(animateText, 4000);
 
+//
 
-
-
-// 
-
-// 
+//
 
 // SPIN AND PARALLAX SCROLL
 function rotateAnimation(id, rotation) {
@@ -431,6 +428,39 @@ document.addEventListener("DOMContentLoaded", function () {
           ".types .swiper-slide",
           { opacity: 0 },
           { opacity: 1, duration: 0.6, ease: "power2.inOut", stagger: 0.2 }
+        );
+      },
+    },
+  });
+
+  // Testimonials Swiper
+
+  var swiperTestimonials = new Swiper(".testimonials .swiper-container", {
+    slidesPerView: 1,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+      el: ".testimonials .swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function () {
+        gsap.fromTo(
+          ".testimonials .swiper-slide",
+          { opacity: 0 },
+          { opacity: 1, duration: 1.5, ease: "power2.inOut", stagger: 0.2 }
+        );
+      },
+      slideChange: function () {
+        const currentSlide = this.slides[this.activeIndex];
+        const quote = currentSlide.querySelector(".quote");
+        gsap.fromTo(
+          quote,
+          { scale: 0.9 },
+          { scale: 1, duration: 1, ease: "elastic.out(1, 0.4)" }
         );
       },
     },
