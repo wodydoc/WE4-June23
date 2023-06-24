@@ -601,13 +601,13 @@ svg#Logo_2 {
 }
 
 .about__title {
-  font-weight: var(--font-semibold);
-  letter-spacing: -1px;
+  font-weight: var(--font-medium);
+  letter-spacing: 0px;
   font-family: var(--body-font);
-  margin-bottom: 0;
+  margin: 0;
   text-align: center;
-  line-height: normal;
-  padding: 0 35px;
+  line-height: 120%;
+  padding: 0 15px;
 }
 
 span.motivations {
@@ -624,10 +624,21 @@ span.behavior {
   line-height: 1;
   margin: auto;
   display: inline-block;
+  color: var(--first-color-alt);
+  letter-spacing: -2px;
+  font-family: var(--wide-font); 
+}
+
+/* 
+.random-word {
+  line-height: 1;
+  margin: auto;
+  display: inline-block;
   color: var(--first-color);
   opacity: 0;
   animation: slidedown 4s infinite;
-}
+} */
+
 @keyframes slidedown {
   0% {
     opacity: 0;
