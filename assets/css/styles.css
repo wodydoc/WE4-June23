@@ -278,15 +278,17 @@ the website, in dark theme
   position: relative;
   display: contents;
 }
-
 svg#Logo_1 {
   height: -webkit-fill-available;
+  overflow: visible; /* Add this to make sure animated parts are visible */
 }
 
 .cls-1 {
   fill: var(--first-color);
   transition: transform 0.3s ease;
 }
+
+
 
 polygon#W-path.cls-1 {
   fill: var(--title-color);
@@ -295,31 +297,7 @@ polygon#W-path.cls-1 {
 polygon#E-path.cls-1 {
   fill: var(--title-color);
 }
-
-.nav__logo:hover #E-path {
-  fill: var(--first-color);
-  transform: translate(-30px, 0px);
-}
-
-.nav__logo:hover #W-path {
-  fill: var(--first-color);
-  transform: translate(30px, 0px);
-}
-
-/*  */
-
-.nav__logo:hover {
-  color: var(--first-color);
-}
-
-/*  */
-
-.nav__logo .svg-image #WE-group #W-path,
-.nav__logo .svg-image #WE-group #E-path {
-  transition: transform 0.3s ease;
-}
-
-/*  */
+ 
 
 .nav__toggle {
   display: inline-flex;
@@ -606,7 +584,7 @@ svg#Logo_2 {
   font-family: var(--body-font);
   margin: 0;
   text-align: center;
-  line-height: 120%; 
+  line-height: 120%;
 }
 
 span.motivations {
