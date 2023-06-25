@@ -271,13 +271,11 @@ the website, in dark theme
   height: var(--header-height);
   transition: 0.3s;
   align-content: center;
+  position: relative;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-/*  */
-.nav__logo {
-  position: relative;
-  display: contents;
-}
 svg#Logo_1 {
   height: -webkit-fill-available;
   overflow: visible; /* Add this to make sure animated parts are visible */
