@@ -1,6 +1,6 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem; /*56px*/
+  --header-height: 3.75rem;  
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -250,9 +250,7 @@ the website, in dark theme
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-left: var(--mb-0-75);
-  margin-right: var(--mb-0-75);
+  align-items: center; 
 }
 
 .nav__logo,
@@ -265,7 +263,7 @@ the website, in dark theme
   text-transform: uppercase;
   font-weight: var(--font-light);
   letter-spacing: 0;
-  display: contents;
+  display: inline-flex;
   height: var(--header-height);
   transition: 0.3s;
   position: relative;
@@ -275,11 +273,7 @@ svg#Logo_1 {
   height: -webkit-fill-available;
   overflow: visible; /* Add this to make sure animated parts are visible */
 }
-
-.cls-1 {
-  fill: var(--first-color);
-  transition: transform 0.3s ease;
-}
+ 
 
 polygon#W-path.cls-1 {
   fill: var(--title-color);
@@ -687,12 +681,12 @@ span.behavior {
 }
 
 .quote {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   text-align: center;
-  padding: 0 2rem;
-  margin-bottom: var(--mb-1-5);
+  padding: 0 1rem;
+  margin-bottom: 0;
   font-style: oblique;
-  /* font-weight: var(--font-light); */
+  font-weight: var(--font-light);
 }
 
 /*  */
