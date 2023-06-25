@@ -149,7 +149,7 @@ const sr = ScrollReveal({
 
 sr.reveal(`.home__title, .home__data`);
 sr.reveal(`.home__social`, { delay: 600 });
-sr.reveal(`.about__title, .benefits__title, .benefits__data, .contact__box`, {
+sr.reveal(`.benefits__title, .benefits__data, .contact__box`, {
   origin: "left",
 });
 sr.reveal(`.contact__form`, { origin: "right" });
@@ -167,7 +167,7 @@ sr.reveal(
   }
 );
 
-sr.reveal(".slides-inner", {
+sr.reveal(".slides-inner, .testimonials, .about__title", {
   origin: "bottom",
   distance: "100px",
   duration: 1000,

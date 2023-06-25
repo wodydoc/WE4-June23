@@ -205,7 +205,7 @@ the website, in dark theme
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
-  padding: 5rem 0 1rem;
+  padding: 6rem 0 1rem;
 }
 
 .section__title,
@@ -265,15 +265,10 @@ the website, in dark theme
   text-transform: uppercase;
   font-weight: var(--font-light);
   letter-spacing: 0;
-  display: inline-flex;
-  align-items: center;
-  /* column-gap: 0.25rem; */
+  display: contents;
   height: var(--header-height);
   transition: 0.3s;
-  align-content: center;
   position: relative;
-  justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
 svg#Logo_1 {
@@ -286,8 +281,6 @@ svg#Logo_1 {
   transition: transform 0.3s ease;
 }
 
-
-
 polygon#W-path.cls-1 {
   fill: var(--title-color);
 }
@@ -295,7 +288,6 @@ polygon#W-path.cls-1 {
 polygon#E-path.cls-1 {
   fill: var(--title-color);
 }
- 
 
 .nav__toggle {
   display: inline-flex;
@@ -421,7 +413,7 @@ svg#Logo_2 {
 }
 
 .home__description {
-  padding-right: 11vw;
+  padding-right: 13vw;
   margin: var(--mb-1-5) 0;
   font-size: var(--small-font-size);
   font-weight: var(--font-regular);
@@ -576,7 +568,7 @@ svg#Logo_2 {
 }
 
 .about__title {
-  font-weight: var(--font-regular);
+  font-weight: var(--font-medium);
   font-size: var(--h1-font-size);
   letter-spacing: 0px;
   font-family: var(--body-font);
@@ -691,16 +683,16 @@ span.behavior {
 .company {
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: #777777;
+  color: var(--first-color-alt);
 }
 
 .quote {
-  font-size: var(--h3-font-size);
+  font-size: var(--h2-font-size);
   text-align: center;
   padding: 0 2rem;
-  margin-bottom: var(--mb-0-5);
-  font-style: normal;
-  font-weight: var(--font-regular);
+  margin-bottom: var(--mb-1-5);
+  font-style: oblique;
+  /* font-weight: var(--font-light); */
 }
 
 /*  */
@@ -1526,11 +1518,11 @@ section#products .swiper-slide {
   }
 
   .about__title {
-    font-size: var(--h1-font-size);
+    font-size: var(--big-font-size);
   }
 
   .benefits__title {
-    font-size: var(--h1-font-size);
+    font-size: var(--big-font-size);
   }
 
   .home {
