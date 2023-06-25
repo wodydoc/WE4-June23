@@ -298,12 +298,12 @@ polygon#E-path.cls-1 {
 
 .nav__logo:hover #E-path {
   fill: var(--first-color);
-  transform: translate(-10px, 10px);
+  transform: translate(-30px, 0px);
 }
 
 .nav__logo:hover #W-path {
   fill: var(--first-color);
-  transform: translate(10px, -10px);
+  transform: translate(30px, 0px);
 }
 
 /*  */
@@ -796,7 +796,7 @@ span.behavior {
 
 .swiper-pagination-bullets .swiper-pagination-bullet {
   width: 25px;
-  height: 1px;
+  height: 25px;
   display: inline-flex;
   border-radius: 100%;
   background: var(--title-color);
