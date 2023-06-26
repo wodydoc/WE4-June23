@@ -391,14 +391,15 @@ svg#Logo_2 {
 .home__title {
   font-size: var(--big-font-size);
   line-height: 120%;
+  letter-spacing: -1px;
 }
 
-.home__title.working {
-  font-weight: var(--font-bold);
-}
+/* .home__title.working {
+  font-weight: var(--font-semibold);
+} */
 
 .home__title.solutions {
-  font-weight: var(--font-thin);
+  font-weight: var(--font-light);
 }
 
 .home__description {
@@ -418,9 +419,8 @@ svg#Logo_2 {
   row-gap: 3.5rem;
 }
 
-.home__social-follow {
-  font-weight: var(--font-light);
-  font-size: var(--small-font-size);
+.home__social-follow { 
+  font-size: var(--smaller-font-size);
   color: var(--first-color);
   position: relative;
   transform: rotate(90deg);
@@ -662,8 +662,9 @@ span.behavior {
 
 .name {
   font-size: var(--h2-font-size);
-  margin-bottom: 0.3rem; 
+  margin-bottom: 0.3rem;
   font-weight: var(--font-semibold);
+  letter-spacing: -1px;
 }
 
 .company {
@@ -1013,9 +1014,8 @@ span.benefits {
 }
 
 /*=============== PRODUCTS ===============*/
-section#products .swiper-slide {
-  background-color: var(--body-color);
-  margin: var(--mb-0-75) 0;
+section#products .swiper-slide { 
+  margin: var(--mb-1-5) 0;
 }
 .product__description {
   text-align: center;
@@ -1029,23 +1029,21 @@ section#products .swiper-slide {
 
 .product__img {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   justify-self: center;
   margin-bottom: var(--mb-0-75);
   transition: 0.3s;
 }
 
 .product__title,
-.product__price {
-  font-size: var(--small-font-size);
-  font-weight: var(--font-medium);
+.product__price { 
   color: var(--title-color);
   text-align: center;
 }
 
-.product__title {
-  margin-bottom: 0.25rem;
+.product__price {
+  margin-bottom: var(--mb-0-75);
 }
 
 .product__circle {
