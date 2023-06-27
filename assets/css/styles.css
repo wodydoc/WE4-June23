@@ -419,7 +419,7 @@ svg#Logo_2 {
   row-gap: 3.5rem;
 }
 
-.home__social-follow { 
+.home__social-follow {
   font-size: var(--smaller-font-size);
   color: var(--first-color);
   position: relative;
@@ -490,7 +490,37 @@ svg#Logo_2 {
   transform: translateX(0.25rem);
 }
 
-/* COMPANY LOGO MARQUEE */
+/* Text Marquee */
+.marquee-section {
+  position: relative; /* This will allow you to position the marquee content based on this container */
+  overflow: hidden; /* This will hide the portions of marquee content that exceed the container */
+  width: 100%; /* Take the full width available */
+  height: 100px; /* Adjust height based on your needs */
+  line-height: 100px; /* Center text vertically */
+  background-color: var(--title-color);
+  color: var(--body-color); /* Replace with a color variable if you prefer */
+  font-family: var(--extended-font); /* Using the extended font */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  font-size: 50px; /* Control the size of text here */
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-right: 50px;
+}
+
+.text {
+  display: inline-block;
+}
+
+/* Company Logo Marquee */
 
 .company-logo-marquee {
   transition: all 0.5s ease-in-out;
@@ -524,10 +554,6 @@ svg#Logo_2 {
   object-fit: contain;
   filter: grayscale(1) contrast(1.25);
 }
-
-/* .dark-theme .logo {
-  filter: grayscale(1) contrast(0.75);
-} */
 
 .slide:hover .logo {
   filter: contrast(1.1);
@@ -1012,8 +1038,12 @@ span.benefits {
   margin-top: 0.15rem;
 }
 
+/*  */
+
+/*  */
+
 /*=============== PRODUCTS ===============*/
-section#products .swiper-slide { 
+section#products .swiper-slide {
   margin: var(--mb-1-5) 0;
 }
 .product__description {
@@ -1036,7 +1066,7 @@ section#products .swiper-slide {
 }
 
 .product__title,
-.product__price { 
+.product__price {
   color: var(--title-color);
   text-align: center;
 }
@@ -1576,7 +1606,6 @@ section#products .swiper-slide {
     width: 110px;
     height: 110px;
   }
-  
 
   .questions__container {
     padding: 1rem 0 4rem;
