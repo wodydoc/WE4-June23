@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Setting up the GSAP animation
   const textLoop = gsap.to(marqueeContent, {
     x: `-${contentWidth}px`, // Move content just outside the left edge of the screen
-    duration: 30 / speed, // Longer duration for slower speed
+    duration: 20 / speed, // Longer duration for slower speed
     repeat: -1, // Infinite repeat
     ease: "none", // Linear motion
     paused: true,

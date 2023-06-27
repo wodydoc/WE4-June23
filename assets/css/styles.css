@@ -492,16 +492,17 @@ svg#Logo_2 {
 
 /* Text Marquee */
 .marquee-section {
-  position: relative; /* This will allow you to position the marquee content based on this container */
-  overflow: hidden; /* This will hide the portions of marquee content that exceed the container */
-  width: 100%; /* Take the full width available */
-  height: 100px; /* Adjust height based on your needs */
-  line-height: 100px; /* Center text vertically */
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 5rem;
+  line-height: 4.5rem;
   background-color: var(--title-color);
-  color: var(--body-color); /* Replace with a color variable if you prefer */
-  font-family: var(--extended-font); /* Using the extended font */
-  text-transform: uppercase;
+  color: var(--body-color);
+  font-family: var(--body-font);
+  font-weight: var(--font-regular); 
   white-space: nowrap;
+  letter-spacing: -3px;
 }
 
 .marquee-container {
@@ -585,7 +586,7 @@ svg#Logo_2 {
 .about__title {
   font-weight: var(--font-medium);
   font-size: var(--h1-font-size);
-  letter-spacing: 0px;
+  letter-spacing: -2px;
   font-family: var(--body-font);
   margin: 0;
   text-align: center;
@@ -607,7 +608,8 @@ span.behavior {
 /*  */
 
 .random-word {
-  line-height: 1;
+  /* line-height: 1; */
+  line-height: 120%;
   margin: auto;
   display: inline-block;
   color: var(--first-color-alt);
@@ -687,8 +689,8 @@ span.behavior {
 }
 
 .name {
-  font-size: var(--h2-font-size);
-  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
   font-weight: var(--font-semibold);
   letter-spacing: -1px;
 }
@@ -709,10 +711,10 @@ span.behavior {
 }
 
 .quote {
-  font-size: var(--h3-font-size);
+  font-size: 1.1rem;
   text-align: center;
   padding: 0 1rem;
-  margin-bottom: 0;
+  margin: 1rem 0;
   font-style: oblique;
   font-weight: var(--font-light);
 }
