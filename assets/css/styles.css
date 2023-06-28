@@ -704,12 +704,15 @@ span.behavior {
 }
 
 .testimonial-logo {
-  width: 200px; /* Adjust width as needed */
-  height: auto;
+  /* width: 200px; 
+  height: auto; */
   margin: 0 auto; /* Center the logo */
   display: block;
   object-fit: contain;
   /* filter: grayscale(1) contrast(1.25); */
+  width: 100%;
+  max-height: 100px;
+  height: 100%;
 }
 
 .quote {
