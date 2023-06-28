@@ -19,7 +19,7 @@
     hsl(210, 36%, 96%),
     hsl(210, 22%, 49%)
   );
-  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-light: hsl(224.35deg 63.89% 85.88%);
   --first-color-lighten: hsl(209.45deg 21.91% 49.22%);
   --title-color: hsl(209, 61%, 16%);
   --text-color: hsl(211, 39%, 23%);
@@ -530,7 +530,8 @@ svg#Logo_2 {
   position: relative;
   flex-direction: column;
   width: 100vw;
-  height: 200px;
+  /* height: 200px; */
+  height: calc(var(--header-height) * 3);
 }
 
 .slides-container {
@@ -546,15 +547,18 @@ svg#Logo_2 {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: calc(100% / 3);
-  width: 50vw;
+  /* width: calc(100% / 3);
+  width: 50vw; */
+  width: 50%;
 }
 
 .logo {
   width: 100%;
-  height: 85%;
+  /* height: 100%; */
+  margin: 0 20px;
+  height: calc(var(--header-height) * 2);
   object-fit: contain;
-  filter: grayscale(1) contrast(1.25);
+  filter: grayscale(1) contrast(0.95);
 }
 
 .slide:hover .logo {
@@ -563,14 +567,14 @@ svg#Logo_2 {
 
 .slides-inner {
   position: relative;
-  height: 160px;
+  height: 175px;
   width: 100%;
   overflow: hidden;
-  background: var(--first-color);
+  background: var(--first-color-light);
 }
 
 .dark-theme .slides-inner {
-  background: var(--first-color-alt);
+  background: var(--container-color);
 }
 
 /*=============== ABOUT ===============*/
@@ -711,7 +715,7 @@ span.behavior {
   object-fit: contain;
   /* filter: grayscale(1) contrast(1.25); */
   width: 100%;
-  max-height: 100px;
+  max-height: 75px;
   height: 100%;
 }
 
