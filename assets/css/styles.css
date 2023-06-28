@@ -496,13 +496,14 @@ svg#Logo_2 {
   overflow: hidden;
   width: 100%;
   height: 5rem;
-  line-height: 4.5rem;
+  line-height: 4.25rem;
   background-color: var(--title-color);
   color: var(--body-color);
   font-family: var(--body-font);
-  font-weight: var(--font-regular); 
+  font-weight: var(--font-regular);
   white-space: nowrap;
   letter-spacing: -3px;
+  text-transform: uppercase;
 }
 
 .marquee-container {
@@ -584,9 +585,10 @@ svg#Logo_2 {
 }
 
 .about__title {
+  color: var(--first-color);
   font-weight: var(--font-medium);
   font-size: var(--h1-font-size);
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   font-family: var(--body-font);
   margin: 0;
   text-align: center;
@@ -594,13 +596,13 @@ svg#Logo_2 {
 }
 
 span.motivations {
-  color: var(--first-color);
+  color: var(--text-color);
   letter-spacing: -2px;
   font-family: var(--wide-font);
 }
 
 span.behavior {
-  color: var(--first-color);
+  color: var(--text-color);
   letter-spacing: -2px;
   font-family: var(--wide-font);
 }
@@ -612,7 +614,7 @@ span.behavior {
   line-height: 120%;
   margin: auto;
   display: inline-block;
-  color: var(--first-color-alt);
+  color: var(--title-color);
   letter-spacing: -2px;
   font-family: var(--wide-font);
 }
@@ -716,7 +718,7 @@ span.behavior {
   padding: 0 1rem;
   margin: 1rem 0;
   font-style: oblique;
-  font-weight: var(--font-light);
+  /* font-weight: var(--font-light); */
 }
 
 /*  */
@@ -1545,9 +1547,9 @@ section#products .swiper-slide {
     font-size: var(--big-font-size);
   }
 
-  .benefits__title {
+  /* .benefits__title {
     font-size: var(--big-font-size);
-  }
+  } */
 
   .home {
     padding: 13rem 0 5rem;
