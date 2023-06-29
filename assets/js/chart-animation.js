@@ -45,7 +45,7 @@ statContainer.innerHTML = `
 `;
 
 // Append the statContainer to the section container instead of chartContainer
-document.querySelector(".benefits__container").appendChild(statContainer);
+document.querySelector("#prominentStatContainer").appendChild(statContainer);
 
 // GSAP Animation for Stat Container
 gsap.from(statContainer, {

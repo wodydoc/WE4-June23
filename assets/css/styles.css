@@ -873,49 +873,28 @@ span.behavior {
   transform: translateY(-0.25rem);
 }
 
-/*=============== BENEFITS ===============*/
+/* BENEFITS  */
 
 .custom-chart {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  position: relative;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.stat-container {
-  background: var(--container-color);
-  padding: 2rem;
-  text-align: center;
-  border-radius: 10px;
-  width: 100%; /* Ensure it takes full width */
-}
-
-.stat-container h3 {
-  margin: 0;
-  font-weight: var(--font-medium);
-}
-
-.stat-container span {
-  font-size: var(--big-font-size);
-  /* display: block; */
-  margin: 0;
-  line-height: 1;
-  color: var(--first-color);
-}
-
 .y-axis-label {
+  line-height: 120%;
   font-size: 0.8em;
   text-anchor: start;
-  text-align: left;
+  text-align: center;
   fill: var(--title-color);
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
   background-color: var(--container-color);
   border-radius: 10px;
-  text-align: center;
-  padding: 5px;
+  padding: 4.5px;
   max-width: 150px;
   white-space: pre-wrap;
 }
@@ -930,51 +909,29 @@ span.benefits {
   color: var(--first-color);
 }
 
-.chart-circle {
-  fill: none;
-  stroke-linecap: round;
-}
-
-.chart-circle-bg {
-  stroke: var(--container-color);
-}
-
-.chart-circle-fg {
-  stroke: var(--first-color);
-}
-
-/* This media query ensures that the SVG takes the full width on smaller devices */
-@media screen and (max-width: 768px) {
-  #chartSVG {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.prominent-stat {
-  background-color: var(--container-color);
-  text-align: center;
+.stat-container {
+  background: var(--container-color);
   padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
   margin-top: 2rem;
-  border-radius: 8px;
+  font-size: 2em;
 }
 
-.prominent-stat p {
-  margin: 0;
-  font-size: 1.2em;
-  color: var(--first-color);
-}
-
-.prominent-stat span {
-  display: block;
+.stat-percentage {
+  line-height: 1;
+  color: var(--first-color); 
   font-size: 3em;
-  color: var(--first-color);
 }
 
-/* FULL WIDTH  */
+.stat-description {
+  text-transform: uppercase;
+  font-weight: var(--font-semibold);
+  font-size: 0.69em;
+}
 
 .full-width {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -983,6 +940,7 @@ span.benefits {
 #prominentStatContainer .stat-container {
   max-width: 1200px;
   width: 90%;
+  margin: 0 auto;
 }
 
 /*=============== stances ===============*/
