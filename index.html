@@ -2657,7 +2657,6 @@
                   />
                   <polygon
                     points="8.99 30.67 26.98 24.54 33.01 1.29 0 1.29 8.99 30.67 8.99 30.67"
-                    style=""
                     stroke="#333333"
                     fill="#D20000"
                     stroke-width="0px"
@@ -2665,7 +2664,6 @@
                   <path
                     d="M18.26,7.26h1.43v4.29h-2v-.64c0-1.74-1.87-1.69-1.65-.39.1.56,1.36,2.54,2.44,4.68,2.9,5.74-1.27,9.41-3.6,6.77l-.39.54H13.18V17.83h2.07V19c-.1,1.7,3.55,2,.54-3.47a24.27,24.27,0,0,1-2-4c-1.06-3.06,1.1-4.41,2.52-4.37a2.09,2.09,0,0,1,1.52.58Zm7.39,13.47v1.68s0,1.13-.84,1.13c-1.28,0-1.37-1.69-1.45-6-.1-5.64,2.13-5.66,2.29-3.64v.77h2V10.42H26.23l-.38.48c-.11-.57-4.79-2.48-5,6.43-.18,7.71,1.71,8.85,3.77,8.85,1.37,0,3.12-1.35,3.12-4V20.73ZM5.46,8.5H7.22V7.16h.55V17.29l-.64.39v2H11v-2l-.64-.39V7.16h.57V8.5h1.77V4.39H5.46Z"
                     transform="translate(-1.13 -1.96)"
-                    style=""
                     stroke="#333333"
                     fill="#FFFFFF"
                     stroke-width="0px"
@@ -4123,37 +4121,29 @@
       </section>
 
       <!--==================== benefits ====================-->
-      <section class="benefits section container">
-        <div class="benefits__container grid">
+      <section class="benefits section">
+        <div class="container">
           <h2 class="section__title benefits__title">
-            Organizational <span class="benefits">benefits</span>
-            of Working Enneagram
+            Organizational <span class="benefits">benefits</span> of Working
+            Enneagram
           </h2>
 
-          <div class="benefits__data">
-            <div class="benefits__details">
-              <p class="benefits__description">
-                The application of Enneagram makes sense in all environments
-              </p>
+          <div class="benefits__container grid">
+            <div class="benefits__data">
+              <div class="benefits__details">
+                <p class="benefits__description">
+                  The application of Enneagram makes sense in all environments
+                </p>
+              </div>
+            </div>
+
+            <!-- Custom Chart Container -->
+            <div class="custom-chart" id="customChart">
+              <!-- The SVG will be appended here via JavaScript -->
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- google chart  -->
-      <section>
-        <!-- <div id="top_x_div"></div> -->
-        <!-- Custom Chart -->
-        <div class="custom-chart" id="customChart">
-          <svg
-            id="chartSVG"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <!-- Bars will be appended here via JavaScript -->
-          </svg>
-        </div>
+        <!-- Stat Container -->
       </section>
 
       <!-- Stances Section -->

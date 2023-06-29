@@ -1,73 +1,60 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const data = [
-    ["Personal Growth", 81],
-    ["Emotional Intelligence & Leadership", 68],
-    ["Coaching & Communication", 65],
-    ["Teams & Conflict", 60],
-    ["Career Development", 54],
-  ];
+gsap.registerPlugin(ScrollTrigger);
 
-  const svg = document.getElementById("chartSVG");
-  const container = document.getElementById("customChart");
+const data = [
+  { title: "Career Development", percentage: 40 },
+  { title: "Leadership & Team Development", percentage: 70 },
+  { title: "Communication Skills", percentage: 60 },
+  { title: "Change Management", percentage: 50 },
+  { title: "Conflict Resolution", percentage: 30 },
+];
 
-  // Create tooltip
-  const tooltip = document.createElement("div");
-  tooltip.classList.add("tooltip");
-  container.appendChild(tooltip);
+const chartContainer = document.querySelector("#customChart");
 
-  // Create bars
-  const barHeight = 15;
-  const gap = 20;
-  const chartHeight = 100;
-  const maxBarWidth = 80; // Maximum width in viewBox units
-  const axisGap = 15;
+data.forEach((item, index) => {
+  const chart = document.createElement("div");
+  chart.classList.add("chart");
+  chart.innerHTML = `
+    <svg class="circle-chart" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+      <circle class="circle-bg" cx="18" cy="18" r="15.9" fill="none" stroke="var(--container-color)" stroke-width="4"></circle>
+      <circle class="circle-fg" cx="18" cy="18" r="15.9" fill="none" stroke="var(--first-color)" stroke-width="4" stroke-dasharray="${item.percentage},100" stroke-dashoffset="25"></circle>
+      <text x="18" y="20.35" class="percentage" font-size="10" text-anchor="middle" fill="var(--first-color)">${item.percentage}%</text>
+    </svg>
+    <div class="y-axis-label">${item.title}</div>
+  `;
+  chartContainer.appendChild(chart);
 
-  for (let i = 0; i < data.length; i++) {
-    const width = (data[i][1] / 100) * maxBarWidth;
-    const y = (chartHeight / data.length) * i + gap;
-
-    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    rect.setAttribute("x", axisGap);
-    rect.setAttribute("y", y);
-    rect.setAttribute("width", width);
-    rect.setAttribute("height", barHeight);
-    rect.setAttribute("class", "chart-bar");
-    rect.setAttribute("id", `chart-bar-${i}`);
-    rect.addEventListener("mouseenter", (event) => {
-      gsap.to(tooltip, { opacity: 1 });
-      tooltip.innerHTML = `${data[i][0]}: ${data[i][1]}%`;
-      tooltip.style.left = `${event.clientX + 10}px`;
-      tooltip.style.top = `${event.clientY + 10}px`;
-    });
-    rect.addEventListener("mouseleave", () => gsap.to(tooltip, { opacity: 0 }));
-    svg.appendChild(rect);
-
-    // Y axis labels
-    const yAxisLabel = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "text"
-    );
-    yAxisLabel.setAttribute("x", axisGap);
-    yAxisLabel.setAttribute("y", y + barHeight / 2 + 2);
-    yAxisLabel.setAttribute("class", "axis-label y-axis-label");
-    yAxisLabel.setAttribute("textLength", "80");
-    yAxisLabel.setAttribute("lengthAdjust", "spacingAndGlyphs");
-    yAxisLabel.textContent = data[i][0];
-    svg.appendChild(yAxisLabel);
-  }
-
-  // Animate bars with GSAP
-  gsap.utils.toArray(".chart-bar").forEach((bar, index) => {
-    const animation = gsap.from(bar, {
-      scrollTrigger: {
-        trigger: "#customChart",
-        start: "top bottom",
-      },
-      scaleX: 0,
-      transformOrigin: "left",
-      ease: "bounce",
-      duration: 1.5,
-      delay: index * 0.2,
-    });
+  // GSAP Animation
+  gsap.from(chart, {
+    scrollTrigger: {
+      trigger: chart,
+      toggleActions: "restart none none reset",
+    },
+    duration: 1,
+    opacity: 0,
+    y: 100,
+    stagger: 0.1,
   });
+});
+
+// Stat Container
+const statContainer = document.createElement("div");
+statContainer.classList.add("stat-container");
+statContainer.innerHTML = `
+  <span class="stat-percentage">70<span class="percentage-sign">%</span></span>
+  <p class="stat-description">of companies prefer in-person Enneagram training</p>
+`;
+
+// Append the statContainer to the section container instead of chartContainer
+document.querySelector(".benefits__container").appendChild(statContainer);
+
+// GSAP Animation for Stat Container
+gsap.from(statContainer, {
+  scrollTrigger: {
+    trigger: statContainer,
+    toggleActions: "restart none none reset",
+  },
+  duration: 1.5,
+  opacity: 0,
+  y: 100,
+  delay: 1,
 });
