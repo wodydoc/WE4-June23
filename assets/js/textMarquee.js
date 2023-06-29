@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let speed = 0.5; // Slower speed for easier reading
-  const marqueeContainer = document.querySelector(".marquee-section");
+  let speed = 0.7; // Slightly faster for better legibility
+  const marqueeSection = document.querySelector(".marquee-section");
   const marqueeContent = document.querySelector(".marquee-content");
 
   // The width of the content
@@ -17,21 +17,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   textLoop.play();
 
-  // Pause animation on hover
-  marqueeContainer.addEventListener("mouseenter", () => {
+  // Pause animation on hover and switch the background color and text color
+  marqueeSection.addEventListener("mouseenter", () => {
     textLoop.pause();
+    gsap.to(marqueeSection, {
+      backgroundColor: "var(--body-color)",
+      color: "var(--title-color)",
+      duration: 0.5,
+    });
   });
 
-  // Resume animation when the mouse leaves
-  marqueeContainer.addEventListener("mouseleave", () => {
+  // Resume animation when the mouse leaves and revert the background and text color
+  marqueeSection.addEventListener("mouseleave", () => {
     textLoop.play();
+    gsap.to(marqueeSection, {
+      backgroundColor: "var(--title-color)",
+      color: "var(--body-color)",
+      duration: 0.5,
+    });
   });
 
   // Control speed based on scroll
   window.addEventListener("scroll", () => {
     const progress =
       window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    speed = 0.5 + progress * 5; // Starting from 0.5 to maintain a slower speed
+    speed = 0.7 + progress * 4.3; // Starting from 0.7 for better legibility
     textLoop.timeScale(speed);
   });
 });
