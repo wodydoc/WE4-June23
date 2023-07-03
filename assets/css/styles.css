@@ -264,6 +264,10 @@ the website, in dark theme
   position: relative;
 }
 
+#Logo_1 {
+  perspective: 600px;
+}
+
 svg#Logo_1 {
   height: var(--header-height);
   width: auto; /* Adjust width automatically based on height */

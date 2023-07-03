@@ -140,92 +140,52 @@
           document.addEventListener("DOMContentLoaded", function () {
             const logo = document.querySelector("#Logo_1");
             const ePaths = gsap.utils.toArray(".additional-e");
-
-            // Initial state
-            gsap.set("#WE-group", {
-              scale: 1,
-              transformOrigin: "center center",
-              zIndex: 2, // Keeps the original E on top
-            });
-
+        
+            // Predefined color palette
+            const colors = ['#bcd4e6', '#90a8c3', '#102a42', '#617d98', '#b5c2b7', '#a9c0a6', '#769fcd'];
+        
+            // Initial State
             gsap.set(".additional-e", {
-              x: "0",
-              transformOrigin: "center center",
-              opacity: 0, // Hide the additional E's initially
-              zIndex: 1, // Set a lower zIndex for additional E's
+              scale: 0,
+              transformOrigin: "center bottom",
+              opacity: 0,
             });
-
+        
             // Animation on hover
             logo.addEventListener("mouseenter", function () {
-              // Animate the original E to the front of the color trail
-              gsap.to("#E-path", {
-                duration: 0.5,
-                x: "0", // Move the original E to the front of the color trail
-                opacity: 1,
-                ease: "power2.out",
-                fill: "var(--title-color)",
-                zIndex: 3, // Bring the original E to the top
-              });
-
-              // Animate each of the additional E paths
               gsap.to(ePaths, {
-                duration: 0.5,
-                x: (i) => `${(i + 1) * 40}px`, // Shift the additional E's to the right
+                duration: 0.7,
+                scale: 1,
+                rotationX: -90,
                 opacity: 1,
-                ease: "power2.out",
+                transformOrigin: "center bottom",
                 stagger: 0.1,
+                ease: "back.out(1.7)",
                 onStart: function () {
-                  const usedColors = new Set(); // Track used colors to avoid repetition
-
-                  this.targets().forEach((e, index, arr) => {
-                    let hue = Math.floor(Math.random() * 360);
-                    while (usedColors.has(hue)) {
-                      hue = Math.floor(Math.random() * 360); // Generate a new hue if it has been used before
-                    }
-                    usedColors.add(hue);
-                    e.style.fill = `hsl(${hue}, 50%, 60%)`; // Soft hues in navy blue, silver, and white
-                    e.style.zIndex = 2 - index; // Set the zIndex for each additional E
+                  this.targets().forEach((e, index) => {
+                    e.style.fill = colors[index % colors.length];
                   });
                 },
               });
             });
-
+        
             // Reverse animation when hover ends
             logo.addEventListener("mouseleave", function () {
-              // Animate the original E back to its initial position
-              gsap.to("#E-path", {
-                duration: 0.5,
-                x: "0",
-                opacity: 1,
-                ease: "power2.in",
-                fill: "var(--title-color)",
-                zIndex: 2, // Bring the original E back to its initial zIndex
-              });
-
-              // Animate each of the additional E paths back to their initial position
               gsap.to(ePaths, {
                 duration: 0.5,
-                x: "0",
+                scale: 0,
+                rotationX: 0,
                 opacity: 0,
-                ease: "power2.in",
                 stagger: -0.1,
-                onStart: function () {
-                  const usedColors = new Set(); // Track used colors to avoid repetition
-
-                  this.targets().forEach((e, index, arr) => {
-                    let hue = Math.floor(Math.random() * 360);
-                    while (usedColors.has(hue)) {
-                      hue = Math.floor(Math.random() * 360); // Generate a new hue if it has been used before
-                    }
-                    usedColors.add(hue);
-                    e.style.fill = `hsl(${hue}, 50%, 60%)`; // Soft hues in navy blue, silver, and white
-                    e.style.zIndex = 1 - index; // Reset the zIndex for each additional E
-                  });
-                },
+                ease: "power3.in",
               });
             });
           });
         </script>
+        
+        
+
+       
 
         <!-- <i class="ri-leaf-line nav__logo-icon"></i> Plantex -->
 
@@ -2691,15 +2651,6 @@
             <!-- Slide 1 -->
             <div class="swiper-slide">
               <div class="testimonial">
-                <img
-                  class="profile-img"
-                  src="assets/img/Chad.jpeg"
-                  alt="Profile Image"
-                />
-                <h3 class="name">Chad Hamilton</h3>
-                <!-- <h4 class="company">Sargento</h4> -->
-                <!-- class="testimonial-logo" -->
-
                 <svg
                   class="testimonial-logo"
                   alt="Sargento Logo"
@@ -2773,13 +2724,6 @@
             <!-- Slide 2 -->
             <div class="swiper-slide">
               <div class="testimonial">
-                <img
-                  class="profile-img"
-                  src="assets/img/Ashley.jpeg"
-                  alt="Profile Image"
-                />
-                <h3 class="name">Ashley Callahan</h3>
-                <!-- <h4 class="company">CFA</h4> -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -2889,13 +2833,6 @@
             <!-- Slide 3 -->
             <div class="swiper-slide">
               <div class="testimonial">
-                <img
-                  class="profile-img"
-                  src="assets/img/Risa.jpeg"
-                  alt="Profile Image"
-                />
-                <h3 class="name">Risa Forrester</h3>
-                <!-- <h4 class="company">OCU</h4> -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="testimonial-logo"
@@ -3170,13 +3107,6 @@
             <!-- Slide 4 -->
             <div class="swiper-slide">
               <div class="testimonial">
-                <img
-                  class="profile-img"
-                  src="assets/img/Dennis.jpeg"
-                  alt="Profile Image"
-                />
-                <h3 class="name">Dennis Wimmert</h3>
-                <!-- <h4 class="company">Crest</h4> -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="testimonial-logo"
@@ -3308,8 +3238,7 @@
         </div>
       </section> -->
 
-      <!--  -->
-      <section class="section">
+      <!-- <section class="section">
         <div class="marquee-section">
           <div class="marquee-container">
             <div class="marquee-content">
@@ -3324,9 +3253,7 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <!--  -->
+      </section> -->
 
       <!-- Processors Section -->
       <section class="processors section container">
