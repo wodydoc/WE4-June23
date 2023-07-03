@@ -44,12 +44,12 @@ sr.reveal(".slides-inner, .testimonials, .about__title", {
 // ------------------------------
 // GSAP Animations (General Example)
 // ------------------------------
-gsap.from(".element-selector", {
-  opacity: 0,
-  duration: 1,
-  y: -50,
-  stagger: 0.6,
-});
+// gsap.from(".element-selector", {
+//   opacity: 0,
+//   duration: 1,
+//   y: -50,
+//   stagger: 0.6,
+// });
 
 // ------------------------------
 // Home Title Word Shuffler
@@ -86,6 +86,18 @@ const animateText = () => {
 // Initial call and repeat the animation every 4 seconds
 animateText();
 setInterval(animateText, 4000);
+
+
+// Your existing word shuffler code ...
+
+// Additionally, animate the home__title to fill the entire width
+gsap.from(".home__title", {
+  duration: 1,
+  scale: 0.5, // Scale up from 50%
+  ease: "back.out(1.7)", // You can play around with different eases
+});
+
+
 
 // ------------------------------
 // Spin and Parallax Scroll Animations
