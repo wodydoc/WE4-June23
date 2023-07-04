@@ -254,14 +254,8 @@ the website, in dark theme
 }
 
 .nav__logo {
-  text-transform: uppercase;
-  font-weight: var(--font-light);
-  letter-spacing: 0;
-  display: flex;
-  align-items: center;
   height: var(--header-height);
   transition: 0.3s;
-  position: relative;
 }
 
 #Logo_1 {
