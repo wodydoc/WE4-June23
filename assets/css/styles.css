@@ -268,17 +268,13 @@ svg#Logo_1 {
   overflow: visible; /* Add this to make sure animated parts are visible */
 }
 
-polygon#W-path.cls-1 {
-  fill: var(--title-color);
-}
-
-polygon#E-path.cls-1 {
-  fill: var(--title-color);
-}
-
+polygon#W-path.cls-1,
+polygon#E-path.cls-1,
 text#SOLUTIONS-thin.cls-2 {
-  fill: var(--title-color);
+  fill: var(--first-color);
 }
+
+ 
 
 .nav__toggle {
   display: inline-flex;
@@ -374,15 +370,20 @@ text#SOLUTIONS-thin.cls-2 {
 .home__title-container {
   grid-area: title;
   text-align: center;
-  max-width: calc(100vw - 40px); /* Added max-width */
+  max-width: calc(100vw - 50px); /* Added max-width */
 }
 
 .home__title {
-  font-size: var(--header-height);
-  line-height: var(--header-height);
-  font-weight: var(--font-bold);
-  margin: 0;
-  padding: 0;
+  font-size: calc(var(--header-height) * 1.025);
+  line-height: calc(var(--header-height) * 1.025);
+  font-weight: var(--font-thin);
+  text-align: justify;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-bottom: var(--mb-2-5);
+  padding-right: var(--header-height);
+  /* padding: 0; */
 }
 
 
@@ -409,12 +410,7 @@ text#SOLUTIONS-thin.cls-2 {
   position: relative;
 }
 
-/* Fixed width for the random word */
-.random-word {
-  display: inline-block;
-  width: 120px; /* You can adjust this value */
-  text-align: center;
-}
+
 
 /* Home Social */
 .home__social {
@@ -607,9 +603,6 @@ text#SOLUTIONS-thin.cls-2 {
   background: var(--first-color);
 }
 
-.dark-theme .slides-inner {
-  background: var(--container-color);
-}
 
 /*=============== ABOUT ===============*/
 .about__container {
@@ -652,6 +645,8 @@ span.behavior {
   color: var(--title-color);
   letter-spacing: 1px; 
   margin: auto;
+  width: 300px;  
+  text-align: center;
 }
 
 /* 
@@ -756,7 +751,7 @@ span.behavior {
   padding: 0 1rem;
   margin: 1rem 0;
   font-style: oblique;
-  /* font-weight: var(--font-light); */
+  font-weight: var(--font-light);
 }
 
 /*  */
@@ -1758,9 +1753,10 @@ section#products .swiper-slide {
   font-size: var(--h1-font-size);
 }
 .card__description {
-  font-size: var(--normal-font-size);
-  margin: 0 var(--mb-0-5);
-  margin-bottom: var(--mb-0-75);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-light);
+  margin: var(--mb-0-75) var(--mb-0-5); 
+  text-transform: uppercase;
 }
 .card__data {
   position: relative;
