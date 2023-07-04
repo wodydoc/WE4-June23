@@ -1,6 +1,6 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.75rem;
+  --header-height: 3.85rem;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -247,7 +247,7 @@ the website, in dark theme
 
 /*=============== NAV ===============*/
 .nav {
-  height: var(--header-height);
+  height: calc(var(--header-height) + 0.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -258,23 +258,35 @@ the website, in dark theme
   transition: 0.3s;
 }
 
-#Logo_1 {
-  perspective: 600px;
-}
-
 svg#Logo_1 {
   height: var(--header-height);
   width: auto; /* Adjust width automatically based on height */
-  overflow: visible; /* Add this to make sure animated parts are visible */
 }
 
-polygon#W-path.cls-1,
-polygon#E-path.cls-1,
-text#SOLUTIONS-thin.cls-2 {
-  fill: var(--first-color);
+polygon#W-path.cls-2,
+polygon#E-path.cls-2 {
+  fill: var(--title-color);
+  perspective: 600px;
 }
 
- 
+text#SOLUTIONS-THIN.cls-1 {
+  fill: var(--title-color);
+  /* fill: none; */
+  /* fill: #0a2240; */
+  isolation: isolate;
+  font-family: var(--body-font);
+  font-size: 189.693px;
+  font-weight: var(--font-regular);
+  isolation: isolate;
+}
+
+tspan.cls-3 {
+  letter-spacing: 0.2em;
+}
+
+tspan.cls-4 {
+  letter-spacing: 0.144em;
+}
 
 .nav__toggle {
   display: inline-flex;
@@ -369,7 +381,7 @@ text#SOLUTIONS-thin.cls-2 {
 /* Home Title */
 .home__title-container {
   grid-area: title;
-  text-align: justify;
+  text-align: left;
   max-width: calc(100vw - 100px);
 }
 
@@ -384,8 +396,7 @@ text#SOLUTIONS-thin.cls-2 {
   margin: var(--mb-2-5) 0;
 }
 
-
-.home__description { 
+.home__description {
   margin: var(--mb-0-75) 0;
   font-size: var(--small-font-size);
   font-weight: var(--font-regular);
@@ -408,8 +419,6 @@ text#SOLUTIONS-thin.cls-2 {
   position: relative;
 }
 
-
-
 /* Home Social */
 .home__social {
   grid-area: social;
@@ -428,7 +437,7 @@ text#SOLUTIONS-thin.cls-2 {
   margin-bottom: 10px;
   font-size: var(--small-font-size);
   color: var(--first-color);
-  position: relative; 
+  position: relative;
   transform: rotate(90deg);
 }
 
@@ -457,7 +466,6 @@ text#SOLUTIONS-thin.cls-2 {
 .home__social-link:hover {
   transform: translateX(0.25rem);
 }
-
 
 /* Media queries for mobile responsiveness */
 @media screen and (max-width: 767px) {
@@ -601,7 +609,6 @@ text#SOLUTIONS-thin.cls-2 {
   background: var(--first-color);
 }
 
-
 /*=============== ABOUT ===============*/
 .about__container {
   row-gap: 0;
@@ -619,7 +626,7 @@ text#SOLUTIONS-thin.cls-2 {
   font-size: 1.5em;
   letter-spacing: 0px;
   text-transform: uppercase;
-  width: 50vw; 
+  width: 50vw;
   text-align: justify;
   font-size: var(--small-font-size);
 }
@@ -644,7 +651,7 @@ span.behavior {
   /* letter-spacing: 1px; */
   margin: auto;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 /* 
@@ -1753,7 +1760,7 @@ section#products .swiper-slide {
 .card__description {
   font-size: var(--h3-font-size);
   font-weight: var(--font-light);
-  margin: var(--mb-0-75) var(--mb-0-5); 
+  margin: var(--mb-0-75) var(--mb-0-5);
   text-transform: uppercase;
 }
 .card__data {
