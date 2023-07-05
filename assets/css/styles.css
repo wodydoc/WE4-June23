@@ -1682,7 +1682,7 @@ section#products .swiper-slide {
 
 @media screen and (min-width: 1200px) {
   .home__social {
-    right: -3rem;
+    right: -1.5rem;
     row-gap: 4.5rem;
   }
   .home__social-follow {
