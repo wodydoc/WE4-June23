@@ -27,6 +27,7 @@
   --body-color: hsl(210, 36%, 96%);
   --container-color: #fff;
 
+  /* --doing-third: hsl(210deg 15.76% 69.52%); */
   --doing-third: hsl(210, 36%, 96%);
   --thinking-third: hsl(210, 22%, 49%);
   --feeling-third: hsla(209, 23%, 60%, 0.976);
@@ -619,29 +620,30 @@ tspan.cls-4 {
 }
 
 .about__img#counter-clockwise.about__img {
-  width: 50vw;
-  height: 50vw;
+  width: 225px;
+  height: 225px;
   justify-self: center;
+  overflow: hidden;
 }
 
 svg#counter-clockwise.about__img .cls-1 {
-  fill: var(--title-color);
+  fill: var(--text-color-light);
   font-family: var(--body-font);
-  font-size: 72px;
-  opacity: 0.95;
+  font-weight: var(--font-medium);
+  font-size: var(--header-height);
 }
-svg#counter-clockwise.about__img  path#Doing.cls-2 {
+svg#counter-clockwise.about__img path#Doing.cls-2 {
   fill: var(--doing-third);
 }
-svg#counter-clockwise.about__img  path#Thinking.cls-3 {
+svg#counter-clockwise.about__img path#Thinking.cls-3 {
   fill: var(--thinking-third);
 }
-svg#counter-clockwise.about__img  path#Feeling.cls-4 {
+svg#counter-clockwise.about__img path#Feeling.cls-4 {
   fill: var(--feeling-third);
 }
 .about__title {
   color: var(--text-color);
-  font-weight: var(--font-light);
+  font-weight: var(--font-regular);
   font-size: 1.5em;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1566,7 +1568,12 @@ section#products .swiper-slide {
   }
 
   .about__container {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    /* grid-template-columns: repeat(1, 1fr); */
   }
 
   .home {
