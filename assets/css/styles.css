@@ -613,34 +613,52 @@ tspan.cls-4 {
   overflow: hidden;
   background: var(--first-color);
 }
-
 /*=============== ABOUT ===============*/
 .about__container {
   row-gap: 0;
 }
 
-.about__img#counter-clockwise.about__img {
+#counter-clockwise {
   width: 225px;
   height: 225px;
   justify-self: center;
   overflow: hidden;
 }
 
-svg#counter-clockwise.about__img .cls-1 {
+.paths #Doing {
+  fill: var(--doing-third);
+  transition: fill 0.5s ease-in-out;
+}
+
+.paths #Thinking {
+  fill: var(--thinking-third);
+  transition: fill 0.5s ease-in-out;
+}
+
+.paths #Feeling {
+  fill: var(--feeling-third);
+  transition: fill 0.5s ease-in-out;
+}
+
+.text-elements {
   fill: var(--text-color-light);
   font-family: var(--body-font);
   font-weight: var(--font-medium);
   font-size: var(--header-height);
 }
-svg#counter-clockwise.about__img path#Doing.cls-2 {
-  fill: var(--doing-third);
+
+#counter-clockwise:hover .paths #Doing {
+  fill: #102a42;
 }
-svg#counter-clockwise.about__img path#Thinking.cls-3 {
-  fill: var(--thinking-third);
+
+#counter-clockwise:hover .paths #Thinking {
+  fill: #617d98;
 }
-svg#counter-clockwise.about__img path#Feeling.cls-4 {
-  fill: var(--feeling-third);
+
+#counter-clockwise:hover .paths #Feeling {
+  fill: #102a42;
 }
+
 .about__title {
   color: var(--text-color);
   font-weight: var(--font-regular);
@@ -924,75 +942,91 @@ span.behavior {
 .processors__card:hover .processors__card-number {
   transform: translateY(-0.25rem);
 }
-
 /* BENEFITS  */
-
-.custom-chart {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.y-axis-label {
-  line-height: 120%;
-  font-size: 0.8em;
-  text-anchor: start;
-  text-align: center;
-  fill: var(--title-color);
-  font-weight: var(--font-semibold);
-  text-transform: uppercase;
-  background-color: var(--container-color);
-  border-radius: 10px;
-  padding: 4.5px;
-  max-width: 150px;
-  white-space: pre-wrap;
-}
-
 .benefits__title {
-  font-weight: var(--font-medium);
-  margin-bottom: 0;
-}
-
-span.benefits {
-  font-family: var(--wide-font);
-  color: var(--first-color);
-}
-
-.stat-container {
-  background: var(--container-color);
-  padding: 2rem;
   text-align: center;
-  border-radius: 10px;
-  width: 100%;
-  margin-top: 2rem;
-  font-size: 2em;
+  margin-bottom: 2rem;
 }
 
-.stat-percentage {
-  line-height: 1;
-  color: var(--first-color);
-  font-size: 3em;
-}
-
-.stat-description {
-  text-transform: uppercase;
-  font-weight: var(--font-semibold);
-  font-size: 0.69em;
-}
-
-.full-width {
+.benefits__container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-#prominentStatContainer .stat-container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
+.custom-charts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .custom-charts-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+.chart-title {
+  font-weight: var(--font-regular);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: -webkit-fill-available;
+  text-align: center;
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.chart {
+  position: relative;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: var(--container-color);
+  /* background-color: #f9f9f9;  */
+  /* Light gray background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  text-align: center; /* Center the text */
+  transition: 0.3s; /* Transition effect for hover */
+}
+
+/* Add a hover effect */
+.chart:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.canvas {
+  width: 150px; /* Updated size of the circle */
+  height: 150px; /* Updated size of the circle */
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem; /* Increased font size for percentage */
+  color: #4caf50;
+}
+
+.label {
+  font-weight: var(--font-regular);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: -webkit-fill-available;
+  text-align: center;
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 /*=============== stances ===============*/

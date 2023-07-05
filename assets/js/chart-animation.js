@@ -1,60 +1,100 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const data = [
-  { title: "Career Development", percentage: 40 },
-  { title: "Leadership & Team Development", percentage: 70 },
-  { title: "Communication Skills", percentage: 60 },
-  { title: "Change Management", percentage: 50 },
-  { title: "Conflict Resolution", percentage: 30 },
+const categories = [
+  {
+    title: "Organizational Success",
+    items: [
+      { name: "Employee Satisfaction", percentage: 64 },
+      { name: "Diversity, Equity and Inclusion", percentage: 58 },
+      { name: "Employee Retention", percentage: 54 },
+    ],
+  },
+  {
+    title: "Leadership",
+    items: [
+      { name: "Communication", percentage: 78 },
+      { name: "Empathy", percentage: 76 },
+      { name: "Integrity", percentage: 65 },
+    ],
+  },
+  {
+    title: "Teams",
+    items: [
+      { name: "Respect and Trust", percentage: 72 },
+      { name: "Collaboration", percentage: 69 },
+      { name: "Managing Conflict", percentage: 67 },
+    ],
+  },
 ];
 
-const chartContainer = document.querySelector("#customChart");
+const customChartsContainer = document.querySelector("#customChartsContainer");
 
-data.forEach((item, index) => {
-  const chart = document.createElement("div");
-  chart.classList.add("chart");
-  chart.innerHTML = `
-    <svg class="circle-chart" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-      <circle class="circle-bg" cx="18" cy="18" r="15.9" fill="none" stroke="var(--container-color)" stroke-width="4"></circle>
-      <circle class="circle-fg" cx="18" cy="18" r="15.9" fill="none" stroke="var(--first-color)" stroke-width="4" stroke-dasharray="${item.percentage},100" stroke-dashoffset="25"></circle>
-      <text x="18" y="20.35" class="percentage" font-size="10" text-anchor="middle" fill="var(--first-color)">${item.percentage}%</text>
-    </svg>
-    <div class="y-axis-label">${item.title}</div>
-  `;
-  chartContainer.appendChild(chart);
+categories.forEach((category) => {
+  const categoryContainer = document.createElement("div");
+  categoryContainer.classList.add("chart-container");
+  categoryContainer.innerHTML = `<div class="chart-title">${category.title}</div>`;
 
-  // GSAP Animation
-  gsap.from(chart, {
-    scrollTrigger: {
-      trigger: chart,
-      toggleActions: "restart none none reset",
-    },
-    duration: 1,
-    opacity: 0,
-    y: 100,
-    stagger: 0.1,
+  category.items.forEach((item) => {
+    const chart = document.createElement("div");
+    chart.classList.add("chart");
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 150; // updated width
+    canvas.height = 150; // updated height
+
+    const percentage = document.createElement("div");
+    percentage.classList.add("percentage");
+
+    const label = document.createElement("div");
+    label.classList.add("label");
+    label.innerText = item.name;
+
+    chart.appendChild(canvas);
+    chart.appendChild(percentage);
+    chart.appendChild(label);
+
+    categoryContainer.appendChild(chart);
+
+    const context = canvas.getContext("2d");
+    const endAngle = (item.percentage / 100) * 2 * Math.PI - 0.5 * Math.PI;
+    const animationDuration = 1; // duration in seconds
+
+    let currentPercentage = 0;
+
+    gsap.to(percentage, {
+      duration: animationDuration,
+      textContent: item.percentage,
+      roundProps: "textContent",
+      ease: "none",
+      scrollTrigger: {
+        trigger: chart,
+        start: "top bottom-=100",
+        toggleActions: "play none none reverse",
+      },
+      onUpdate: () => {
+        currentPercentage = parseFloat(percentage.textContent);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // Background Circle
+        context.beginPath();
+        context.arc(40, 40, 35, 0, 2 * Math.PI);
+        context.strokeStyle = "#dcdcdc";
+        context.lineWidth = 6;
+        context.stroke();
+        // Progress Circle
+        context.beginPath();
+        context.arc(
+          40,
+          40,
+          35,
+          -(0.5 * Math.PI),
+          (currentPercentage / 100) * 2 * Math.PI - 0.5 * Math.PI
+        );
+        context.strokeStyle = "#4caf50";
+        context.lineWidth = 6;
+        context.stroke();
+      },
+    });
   });
-});
 
-// Stat Container
-const statContainer = document.createElement("div");
-statContainer.classList.add("stat-container");
-statContainer.innerHTML = `
-  <span class="stat-percentage">70<span class="percentage-sign">%</span></span>
-  <p class="stat-description">of companies prefer in-person Enneagram training</p>
-`;
-
-// Append the statContainer to the section container instead of chartContainer
-document.querySelector("#prominentStatContainer").appendChild(statContainer);
-
-// GSAP Animation for Stat Container
-gsap.from(statContainer, {
-  scrollTrigger: {
-    trigger: statContainer,
-    toggleActions: "restart none none reset",
-  },
-  duration: 1.5,
-  opacity: 0,
-  y: 100,
-  delay: 1,
+  customChartsContainer.appendChild(categoryContainer);
 });
