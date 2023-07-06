@@ -2,7 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
   {
-    title: "Organizational Success",
+    title: "Success",
     items: [
       { name: "Employee Satisfaction", percentage: 64 },
       { name: "Diversity, Equity and Inclusion", percentage: 58 },
@@ -113,7 +113,7 @@ const createCharts = () => {
                 canvas.width,
                 canvas.height
               );
-              gradient.addColorStop(0, "white");
+              gradient.addColorStop(0, "darkgrey");
               gradient.addColorStop(1, "deepskyblue");
 
               // Background Circle
