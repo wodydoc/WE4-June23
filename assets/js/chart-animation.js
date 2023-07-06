@@ -29,72 +29,124 @@ const categories = [
 
 const customChartsContainer = document.querySelector("#customChartsContainer");
 
-categories.forEach((category) => {
-  const categoryContainer = document.createElement("div");
-  categoryContainer.classList.add("chart-container");
-  categoryContainer.innerHTML = `<div class="chart-title">${category.title}</div>`;
+// Function to create charts
+const createCharts = () => {
+  customChartsContainer.innerHTML = "";
 
-  category.items.forEach((item) => {
-    const chart = document.createElement("div");
-    chart.classList.add("chart");
+  // Loop through each category and create charts
+  categories.forEach((category) => {
+    const categoryContainer = document.createElement("div");
+    categoryContainer.classList.add("chart-container");
+    categoryContainer.innerHTML = `<div class="chart-title">${category.title}</div>`;
 
-    const canvas = document.createElement("canvas");
-    canvas.width = 150; // updated width
-    canvas.height = 150; // updated height
+    category.items.forEach((item) => {
+      const chart = document.createElement("div");
+      chart.classList.add("chart");
 
-    const percentage = document.createElement("div");
-    percentage.classList.add("percentage");
+      const canvas = document.createElement("canvas");
+      canvas.width = 120;
+      canvas.height = 120;
 
-    const label = document.createElement("div");
-    label.classList.add("label");
-    label.innerText = item.name;
+      const percentageContainer = document.createElement("div");
+      percentageContainer.classList.add("percentage-container");
 
-    chart.appendChild(canvas);
-    chart.appendChild(percentage);
-    chart.appendChild(label);
+      const percentage = document.createElement("span");
+      percentage.classList.add("percentage");
 
-    categoryContainer.appendChild(chart);
+      const percentSign = document.createElement("span");
+      percentSign.classList.add("percent-sign");
+      percentSign.textContent = "%";
 
-    const context = canvas.getContext("2d");
-    const endAngle = (item.percentage / 100) * 2 * Math.PI - 0.5 * Math.PI;
-    const animationDuration = 1; // duration in seconds
+      percentageContainer.appendChild(percentage);
+      percentageContainer.appendChild(percentSign);
 
-    let currentPercentage = 0;
+      chart.appendChild(canvas);
+      chart.appendChild(percentageContainer);
 
-    gsap.to(percentage, {
-      duration: animationDuration,
-      textContent: item.percentage,
-      roundProps: "textContent",
-      ease: "none",
-      scrollTrigger: {
-        trigger: chart,
-        start: "top bottom-=100",
-        toggleActions: "play none none reverse",
-      },
-      onUpdate: () => {
-        currentPercentage = parseFloat(percentage.textContent);
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        // Background Circle
-        context.beginPath();
-        context.arc(40, 40, 35, 0, 2 * Math.PI);
-        context.strokeStyle = "#dcdcdc";
-        context.lineWidth = 6;
-        context.stroke();
-        // Progress Circle
-        context.beginPath();
-        context.arc(
-          40,
-          40,
-          35,
-          -(0.5 * Math.PI),
-          (currentPercentage / 100) * 2 * Math.PI - 0.5 * Math.PI
-        );
-        context.strokeStyle = "#4caf50";
-        context.lineWidth = 6;
-        context.stroke();
-      },
+      const improvementLabel = document.createElement("div");
+      improvementLabel.classList.add("improvement-label");
+      improvementLabel.textContent = "Improvement in";
+      chart.appendChild(improvementLabel);
+
+      const areaLabel = document.createElement("div");
+      areaLabel.classList.add("label");
+      areaLabel.textContent = item.name;
+      chart.appendChild(areaLabel);
+
+      categoryContainer.appendChild(chart);
+
+      // Animation
+      const context = canvas.getContext("2d");
+      let currentPercentage = 0;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: chart,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+          onEnter: () => tl.play(0),
+          onLeaveBack: () => tl.play(0),
+        },
+      });
+
+      tl.to(percentage, {
+        duration: 1.5,
+        textContent: item.percentage,
+        roundProps: "textContent",
+        ease: "elastic.out(1, 0.3)",
+      });
+
+      tl.add(
+        gsap.to(
+          {},
+          {
+            duration: 1.5,
+            ease: "elastic.out(1, 0.3)",
+            onUpdate: () => {
+              currentPercentage = parseFloat(percentage.textContent);
+              context.clearRect(0, 0, canvas.width, canvas.height);
+
+              // Gradient for background circle
+              const gradient = context.createLinearGradient(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+              );
+              gradient.addColorStop(0, "white");
+              gradient.addColorStop(1, "deepskyblue");
+
+              // Background Circle
+              context.beginPath();
+              context.arc(60, 60, 50, 0, 2 * Math.PI);
+              context.strokeStyle = gradient;
+              context.lineWidth = 8;
+              context.stroke();
+
+              // Progress Circle
+              context.beginPath();
+              context.arc(
+                60,
+                60,
+                50,
+                -(0.5 * Math.PI),
+                (currentPercentage / 100) * 2 * Math.PI - 0.5 * Math.PI
+              );
+              context.strokeStyle = "#4caf50"; // green color for progress
+              context.lineWidth = 8;
+              context.stroke();
+            },
+          }
+        ),
+        0
+      );
     });
-  });
 
-  customChartsContainer.appendChild(categoryContainer);
-});
+    customChartsContainer.appendChild(categoryContainer);
+  });
+};
+
+createCharts();
+
+// Redraw charts on theme change
+document.getElementById("theme-button").addEventListener("click", createCharts);

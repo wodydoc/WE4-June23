@@ -25,4 +25,12 @@ themeButton.addEventListener("click", () => {
 
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+
+  // Delay the redraw slightly to allow CSS to update
+  setTimeout(() => {
+    if (typeof window.redrawCharts === "function") {
+      window.redrawCharts();
+    }
+  }, 100); // 100 milliseconds delay
 });
+
