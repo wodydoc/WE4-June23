@@ -942,47 +942,70 @@ span.behavior {
 .processors__card:hover .processors__card-number {
   transform: translateY(-0.25rem);
 }
-/* BENEFITS  */
 
+/* BENEFITS  */
+/* :root {
+  --title-color: #333;
+  --container-color: #f9f9f9;
+  --first-color: #4caf50;
+  --font-bold: 700;
+  --font-semibold: 600;
+  --mb-0-5: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+} */
+
+/* --title-color: #333;
+  --container-color: #f9f9f9;
+  --mb-0-5: 0.5rem;
+  --font-bold: 700;
+  --font-semibold: 600;
+  --first-color: #4caf50; */
 .benefits {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   flex-wrap: wrap;
-  max-width: 1200px; /* Example of max-width */
-  margin: 0 auto; /* Center the container if it doesn't span full width */
-  padding: 2rem; /* Padding around the container */
-  gap: 1rem; /* Space between items */
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  gap: 2rem;
 }
 
 .benefits__title {
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: var(--big-font-size);
+  width: 100%;
 }
 
 .custom-charts-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .chart-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 1rem;
-  min-width: 200px; /* Set min-width */
-  width: 100%; /* Fill the container */
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .chart-title {
-  font-size: 1.2rem;
+  font-size: var(--h1-font-size);
   margin: 2rem;
   color: var(--title-color);
-  /* width: 100%; */
   text-align: center;
 }
 
@@ -990,26 +1013,31 @@ span.behavior {
   position: relative;
   background-color: var(--container-color);
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: all 0.3s ease-in-out; /* Modified to apply to all properties and added easing function */
+  transition: all 0.3s ease-in-out;
+  padding: 2.25rem;
+  margin-bottom: var(--mb-0-75);
   width: 100%;
-  padding: 1rem;
-  margin-bottom: var(--mb-0-5);
-  height: auto;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
 
 .chart:hover {
-  transform: scale(1.03); /* Scale effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .percentage-container {
   position: absolute;
-  top: 70px;
+  top: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.25rem;
+  font-size: 2.15rem;
   color: #4caf50;
   font-weight: var(--font-bold);
   text-align: center;
@@ -1021,20 +1049,55 @@ span.behavior {
 }
 
 .improvement-label {
-  /* margin-top: 10px; */
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-  color: var(--first-color);
+  color: var(--title-color);
   font-weight: var(--font-semibold);
-  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.label {
+.curved-text {
+  position: relative;
+  bottom: 0;
+  padding: 0.15rem 1rem;
+  font-size: 1.15rem;
   font-weight: var(--font-bold);
   text-align: center;
-  margin-bottom: 1.15rem;
-  font-size: 0.95rem;
   color: var(--title-color);
+  background-color: var(--body-color);
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .benefits {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .benefits {
+    padding: 3rem 1rem;
+  }
+
+  .chart-container {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .benefits {
+    padding: 3rem 0.5rem;
+  }
+
+  .chart-container {
+    flex-basis: 100%;
+  }
 }
 
 /*=============== stances ===============*/
