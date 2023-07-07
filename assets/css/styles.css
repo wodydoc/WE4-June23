@@ -32,6 +32,16 @@
   --thinking-third: hsl(210, 22%, 49%);
   --feeling-third: hsla(209, 23%, 60%, 0.976);
 
+  /* DOERS */
+  --cool-grey: hsl(211, 12%, 43%);
+  /* THINKERS */
+  --blue-grey: hsl(210, 22%, 49%);
+  /* FEELERS  */
+  --warm-grey: hsl(41, 8%, 48%);
+
+  --deck-background: white;
+  --deck-color: black;
+
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "obviously", sans-serif;
@@ -177,6 +187,13 @@ body.dark-theme {
   --doing-third: hsl(209deg 31.31% 23.05%);
   --thinking-third: hsl(209, 23%, 43%);
   --feeling-third: hsla(210, 16%, 49%, 0.976);
+
+  --cool-grey: hsl(211, 13%, 65%);
+  --blue-grey: hsl(211, 27%, 70%);
+  --warm-grey: hsl(39, 11%, 69%);
+
+  --deck-background: black;
+  --deck-color: white;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -615,49 +632,113 @@ tspan.cls-4 {
 }
 /*=============== ABOUT ===============*/
 .about__container {
-  row-gap: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#counter-clockwise {
-  width: 225px;
-  height: 225px;
-  justify-self: center;
-  overflow: hidden;
+.playful-deck-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow cards to wrap to new lines on smaller screens */
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+  perspective: 1000px;
 }
 
-.paths #Doing {
-  fill: var(--doing-third);
-  transition: fill 0.5s ease-in-out;
+.playful-deck {
+  width: 30%;
+  margin: 1%; /* Add space around each card */
+  perspective: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some shadow for a nice visual effect */
+  border-radius: 15px; /* Add rounded corners for a playful look */
+  overflow: hidden; /* Hide overflowing content */
 }
 
-.paths #Thinking {
-  fill: var(--thinking-third);
-  transition: fill 0.5s ease-in-out;
+.deck-inner {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* 1:1 aspect ratio to make the card square */
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
-.paths #Feeling {
-  fill: var(--feeling-third);
-  transition: fill 0.5s ease-in-out;
+.playful-deck:hover .deck-inner {
+  transform: rotateY(180deg);
 }
 
-.text-elements {
-  fill: var(--text-color-light);
-  font-family: var(--body-font);
-  font-weight: var(--font-medium);
-  font-size: var(--header-height);
+.deck-front,
+.deck-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hide the back of the pane during flip */
+  backface-visibility: hidden; /* Hide the back of the pane during flip */
+  display: flex; /* center the icon/title */
+  justify-content: center;
+  align-items: center;
 }
 
-#counter-clockwise:hover .paths #Doing {
-  fill: #102a42;
+.deck-front {
+  background-color: var(--container-color); /* adjust as needed */
+  border-radius: 15px; /* adjust as needed for rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* gives 3D effect */
 }
 
-#counter-clockwise:hover .paths #Thinking {
-  fill: #617d98;
+.deck-back {
+  transform: rotateY(180deg);
+  background-color: var(--first-color); 
+  border-radius: 15px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  text-align: center; 
+  font-size: 1.5em; 
+  color: #333;
 }
 
-#counter-clockwise:hover .paths #Feeling {
-  fill: #102a42;
+.deck-back h2 {
+  transform: rotateY(180deg);
 }
+
+
+.icon {
+  max-width: 50%; /* adjust as needed */
+  height: auto; /* Keep the original aspect ratio */
+  fill: currentColor; /* Use the current color for the icons */
+}
+
+@media (min-width: 768px) {
+  .playful-deck-container {
+    justify-content: space-between;
+  }
+
+  .playful-deck {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .playful-deck-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .playful-deck {
+    width: 80%; /* adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.fa-primary {
+  opacity: 1; /* Fully visible */
+}
+
+.fa-secondary {
+  opacity: 0.4; /* Partially visible */
+}
+
+/*  */
 
 .about__title {
   color: var(--text-color);
@@ -1691,15 +1772,6 @@ section#products .swiper-slide {
     column-gap: 3rem;
   }
 
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    /* grid-template-columns: repeat(1, 1fr); */
-  }
-
   .home {
     padding: 10rem 0 5rem;
   }
@@ -1757,8 +1829,8 @@ section#products .swiper-slide {
   }
 
   .about__img {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
   }
 
   .benefits__img {
@@ -1847,10 +1919,6 @@ section#products .swiper-slide {
   }
   .home__social-link {
     font-size: 1.15rem;
-  }
-
-  .about__container {
-    column-gap: 7rem;
   }
 
   .benefits__container {

@@ -132,5 +132,5 @@ function rotateAnimation(id, rotation) {
 
 // Execute the animation with different elements and directions
 let rotateClockwise = rotateAnimation("#clockwise", 360 * 5);
-let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
+// let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
 let rotateScrub = rotateAnimation("#spin-n-scrub", 360 * 5);
