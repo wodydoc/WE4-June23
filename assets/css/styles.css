@@ -971,7 +971,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem;
@@ -980,16 +980,17 @@ body {
 
 .benefits__title {
   text-align: center;
-  font-size: var(--big-font-size);
-  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .custom-charts-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .chart-container {
@@ -998,15 +999,15 @@ body {
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  min-width: 200px;
-  max-width: 300px;
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .chart-title {
-  font-size: var(--h1-font-size);
-  margin: 2rem;
+  font-size: 1.8rem;
   color: var(--title-color);
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .chart {
@@ -1014,17 +1015,16 @@ body {
   background-color: var(--container-color);
   border-radius: 15px;
   text-align: center;
-  transition: all 0.3s ease-in-out;
-  padding: 2.25rem;
-  margin-bottom: var(--mb-0-75);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 3rem;
   width: 100%;
-  max-width: 250px;
+  max-width: 350px;
+  height: auto; /* Changed to auto */
+  margin: 1rem;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .chart:hover {
@@ -1032,46 +1032,55 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.percentage-container {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.15rem;
-  color: #4caf50;
-  font-weight: var(--font-bold);
-  text-align: center;
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative; /* Added */
 }
 
-.percent-sign {
-  font-size: 1.1rem;
-  vertical-align: super;
+.percentage-container {
+  font-size: 3.75rem;
+  color: #4caf50;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .improvement-label {
-  color: var(--title-color);
-  font-weight: var(--font-semibold);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  display: inline-flex;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
   text-align: center;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .curved-text {
-  position: relative;
+  position: absolute;
   bottom: 0;
-  padding: 0.15rem 1rem;
-  font-size: 1.15rem;
-  font-weight: var(--font-bold);
+  margin: auto;
+  width: 100%;
+  height: auto;
+  line-height: 1;
+  padding: 0.8rem 0.5rem 1.2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: -1.5px;
   text-align: center;
   color: var(--title-color);
   background-color: var(--body-color);
-  border-radius: 15px;
+  border: 2px solid green;
+  border-radius: 2rem;
   pointer-events: none;
+  margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1085,8 +1094,13 @@ body {
     padding: 3rem 1rem;
   }
 
+  .custom-charts-container {
+    justify-content: space-between;
+  }
+
   .chart-container {
-    flex-basis: calc(50% - 2rem);
+    flex-basis: 48%;
+    max-width: 48%;
   }
 }
 
@@ -1095,8 +1109,13 @@ body {
     padding: 3rem 0.5rem;
   }
 
+  .custom-charts-container {
+    justify-content: center;
+  }
+
   .chart-container {
     flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
