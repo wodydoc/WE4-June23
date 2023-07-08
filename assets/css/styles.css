@@ -655,80 +655,70 @@ tspan.cls-4 {
 
 .playful-deck-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Allow cards to wrap to new lines on smaller screens */
-  width: 100%;
-  margin: 0 auto; /* Center the container */
-  perspective: 1000px;
-  background-color: var(--cool-grey);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .playful-deck {
-  width: 30%;
-  margin: 1%; /* Add space around each card */
   perspective: 1000px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add some shadow for a nice visual effect */
-  border-radius: 15px; /* Add rounded corners for a playful look */
-  overflow: hidden; /* Hide overflowing content */
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 
-.deck-inner {
+.playful-deck:hover {
+  transform: scale(1.05);
+}
+
+.playful-deck .deck-inner {
   position: relative;
   width: 100%;
-  padding-bottom: 100%; /* 1:1 aspect ratio to make the card square */
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
 }
 
 .playful-deck:hover .deck-inner {
   transform: rotateY(180deg);
 }
 
-.deck-front,
-.deck-back {
+.deck-inner .deck-front,
+.deck-inner .deck-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Hide the back of the pane during flip */
-  backface-visibility: hidden; /* Hide the back of the pane during flip */
-  display: flex; /* center the icon/title */
-  justify-content: center;
-  align-items: center;
-}
-
-.deck-front {
-  background-color: var(--container-color); /* adjust as needed */
-  border-radius: 15px; /* adjust as needed for rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* gives 3D effect */
-}
-
-.deck-back {
-  transform: rotateY(180deg);
-  background-color: var(--first-color);
-  border-radius: 15px;
+  backface-visibility: hidden;
+  border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  text-align: center;
-  font-size: 1.5em;
-  color: #333;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
 }
 
-.deck-back h2 {
+.deck-inner .deck-front {
+  background-color: var(--container-color);
+}
+
+.deck-inner .deck-back {
+  background-color: var(--first-color);
+  color: white;
   transform: rotateY(180deg);
 }
 
 .icon {
-  max-width: 50%; /* adjust as needed */
-  height: auto; /* Keep the original aspect ratio */
-  fill: currentColor; /* Use the current color for the icons */
+  width: 80%;
+  height: 80%;
 }
 
 @media (min-width: 768px) {
   .playful-deck-container {
-    justify-content: space-between;
-  }
-
-  .playful-deck {
-    width: 30%;
+    justify-content: space-evenly;
   }
 }
 
@@ -739,7 +729,6 @@ tspan.cls-4 {
   }
 
   .playful-deck {
-    width: 80%; /* adjust as needed */
     margin-left: auto;
     margin-right: auto;
   }
@@ -747,36 +736,31 @@ tspan.cls-4 {
 
 .fa-primary {
   opacity: 1; /* Fully visible */
+  fill: var(--title-color);
 }
 
 .fa-secondary {
   opacity: 0.4; /* Partially visible */
+  fill: var(--title-color);
 }
-
-/*  */
 
 .about__title {
   color: var(--text-color);
-  font-weight: var(--font-regular);
-  font-size: 1.5em;
+  font-weight: var(--font-medium);
+  font-size: 2em;
   letter-spacing: 1px;
   text-transform: uppercase;
-  width: -webkit-fill-available;
   text-align: center;
   margin: var(--mb-1-5) 0;
   font-size: var(--smaller-font-size);
 }
 
-span.motivations {
-  color: var(--text-color);
-  letter-spacing: -2px;
-  font-family: var(--wide-font);
-}
-
+span.motivations,
 span.behavior {
   color: var(--text-color);
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   font-family: var(--wide-font);
+  font-weight: var(--font-light);
 }
 
 /*  */
