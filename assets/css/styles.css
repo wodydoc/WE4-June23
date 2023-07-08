@@ -427,7 +427,7 @@ tspan.cls-4 {
   font-size: var(--big-font-size);
   line-height: var(--big-font-size);
   color: var(--title-color);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-regular);
   letter-spacing: -2px;
   text-transform: uppercase;
   position: relative;
@@ -1973,20 +1973,23 @@ section#products .swiper-slide {
   /* box-shadow: 0 20px 24px hsla(235, 32%, 15%, 0.2); */
 }
 .card__img {
-  width: 200px;
-  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: var(--mb-0-75);
   animation: float-img 2.5s ease-in-out infinite;
 }
 .card__title {
   color: var(--title-color);
   font-size: var(--big-font-size);
-  line-height: 100%;
-  margin-bottom: var(--mb-2);
-  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: var(--mb-1-5);
+  letter-spacing: -2px;
 }
 
 .card__title span.processors-subtitle {
   font-size: var(--h1-font-size);
+  font-weight: var(--font-light);
+  letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 .card__description {
