@@ -9,10 +9,9 @@
   --first-color-alt: hsl(209, 23%, 60%);
   --shape-gradient: linear-gradient(
     90deg,
-    hsl(212.14deg 21.88% 74.9%),
-    hsl(210deg 20.51% 84.71%),
-    hsl(213.16deg 21.59% 65.49%),
-    hsl(210deg 23.08% 94.9%)
+    hsl(210, 36%, 96%),
+    hsl(224, 15%, 53%),
+    hsl(210, 22%, 49%)
   );
   --body-gradient: linear-gradient(
     180deg,
@@ -182,8 +181,9 @@ body.dark-theme {
   --container-color: hsl(209deg 31.31% 23.05%);
   --shape-gradient: linear-gradient(
     90deg,
-    hsl(211.3deg 24.73% 36.47%),
-    hsl(210.77deg 29.77% 25.69%)
+    hsl(208.24deg 62.96% 15.88%),
+    hsl(208.8deg 32.05% 30.59%),
+    hsl(210, 29%, 24%)
   );
   --body-gradient: linear-gradient(
     180deg,
@@ -624,12 +624,13 @@ tspan.cls-4 {
 }
 
 .logo {
-  /* width: 100%; */
-  margin: 0 16px;
-  /* height: 100%; */
-  height: calc(var(--header-height) * 1.25);
+  filter: grayscale(1) contrast(1.25) opacity(0.75);
+  width: 100%;
+  max-height: 100px;
+  margin: 0 auto;
+  height: 100%;
   object-fit: contain;
-  filter: grayscale(1) contrast(0.95) opacity(0.85);
+  /* filter: grayscale(1) contrast(0.95) opacity(0.5); */
   transition: 0.2s ease-in-out;
 }
 
@@ -639,10 +640,10 @@ tspan.cls-4 {
 
 .slides-inner {
   position: relative;
-  height: 175px;
+  height: calc(var(--header-height) * 3);
   width: 100%;
   overflow: hidden;
-  background: var(--first-color);
+  background: var(--shape-gradient);
 }
 /*=============== ABOUT ===============*/
 .about__container {
@@ -1069,7 +1070,6 @@ body {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem;
   gap: 2rem;
 }
 
