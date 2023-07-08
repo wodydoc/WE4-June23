@@ -688,18 +688,17 @@ tspan.cls-4 {
 
 .deck-back {
   transform: rotateY(180deg);
-  background-color: var(--first-color); 
-  border-radius: 15px; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  text-align: center; 
-  font-size: 1.5em; 
+  background-color: var(--first-color);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  font-size: 1.5em;
   color: #333;
 }
 
 .deck-back h2 {
   transform: rotateY(180deg);
 }
-
 
 .icon {
   max-width: 50%; /* adjust as needed */
@@ -1067,11 +1066,14 @@ body {
 }
 
 .custom-charts-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 0;
+  display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
 .chart-container {
@@ -1079,13 +1081,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: var(--mb-0-5);
   min-width: 300px;
-  max-width: 400px;
+  max-width: 300px;
+  flex-basis: 100%;
 }
 
 .chart-title {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: var(--title-color);
   text-align: center;
   margin-bottom: 1rem;
@@ -1097,11 +1100,11 @@ body {
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  padding: 3rem;
+  padding: 1rem;
   width: 100%;
-  max-width: 350px;
-  height: auto; /* Changed to auto */
-  margin: 1rem;
+  max-width: 300px;
+  height: 400px;
+  margin: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1117,29 +1120,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative; /* Added */
 }
 
 .percentage-container {
-  font-size: 3.75rem;
+  font-size: 5.5rem;
+  letter-spacing: 1px;
   color: #4caf50;
-  font-weight: bold;
+  font-weight: var(--font-black);
   text-align: center;
   position: absolute;
-  top: 160px;
+  top: 150px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .improvement-label {
   color: #4caf50;
-  font-weight: bold;
-  font-size: 1.25rem;
-  letter-spacing: 1px;
+  font-weight: var(--font-medium);
+  margin: auto;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -1148,20 +1153,21 @@ body {
   position: absolute;
   bottom: 0;
   margin: auto;
-  width: 100%;
+  width: auto;
+  max-width: 250px;
   height: auto;
-  line-height: 1;
-  padding: 0.8rem 0.5rem 1.2rem;
-  font-size: 1.75rem;
-  font-weight: var(--font-bold);
+  line-height: 1.25;
+  padding: 0.12rem 1.25rem 0.55rem;
+  font-size: 1.5rem;
+  font-weight: var(--font-medium);
   letter-spacing: -1.5px;
   text-align: center;
-  color: var(--title-color);
-  background-color: var(--body-color);
-  border: 2px solid var(--first-color);
-  border-radius: 2rem;
+  color: var(--body-color);
+  background-color: var(--first-color);
+  border: 3px solid var(--body-color);
+  border-radius: 3rem;
   pointer-events: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1174,15 +1180,6 @@ body {
   .benefits {
     padding: 3rem 1rem;
   }
-
-  .custom-charts-container {
-    justify-content: space-between;
-  }
-
-  .chart-container {
-    flex-basis: 48%;
-    max-width: 48%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1192,11 +1189,6 @@ body {
 
   .custom-charts-container {
     justify-content: center;
-  }
-
-  .chart-container {
-    flex-basis: 100%;
-    max-width: 100%;
   }
 }
 
