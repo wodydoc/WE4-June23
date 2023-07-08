@@ -19,6 +19,13 @@
     hsl(210, 36%, 96%),
     hsl(210, 22%, 49%)
   );
+  --smoooth-gradient: linear-gradient(
+    180deg,
+    hsl(209, 23%, 60%),
+    hsl(210, 31%, 80%),
+    hsl(211, 27%, 70%),
+    hsl(210, 22%, 49%)
+  );
   --first-color-light: hsl(224.35deg 63.89% 85.88%);
   --first-color-lighten: hsl(209.45deg 21.91% 49.22%);
   --title-color: hsl(209, 61%, 16%);
@@ -182,6 +189,13 @@ body.dark-theme {
     180deg,
     hsl(208.24deg 62.96% 15.88%),
     hsl(208.8deg 32.05% 30.59%)
+  );
+  --smoooth-gradient: linear-gradient(
+    180deg,
+    hsl(209, 28%, 39%),
+    hsl(209, 23%, 60%),
+    hsl(210, 22%, 49%),
+    hsl(211, 27%, 70%)
   );
 
   --doing-third: hsl(209deg 31.31% 23.05%);
@@ -865,9 +879,9 @@ span.behavior {
   margin: 0 auto; /* Center the logo */
   display: block;
   object-fit: contain;
-  filter: grayscale(1) contrast(0.5);
+  filter: grayscale(1) contrast(0.5) opacity(0.5);
   width: 100%;
-  max-height: 75px;
+  max-height: 50px;
   height: 100%;
 }
 
@@ -1061,9 +1075,10 @@ body {
 
 .benefits__title {
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  letter-spacing: -1px;
+  margin-bottom: var(--mb-0-5);
 }
 
 .custom-charts-container {
@@ -1097,13 +1112,13 @@ body {
 
 .chart {
   position: relative;
-  background: var(--body-gradient);
+  background: var(--smoooth-gradient);
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   padding: 1rem;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   height: 400px;
   margin: 1rem 0;
   display: flex;
@@ -1158,18 +1173,18 @@ body {
   position: absolute;
   bottom: 0;
   margin: auto;
-  width: auto;
-  max-width: 250px;
+  width: 100%;
+  max-width: 275px;
   height: auto;
-  line-height: 1.25;
-  padding: 0.12rem 1.25rem 0.55rem;
-  font-size: 1.5rem;
-  font-weight: var(--font-semibold);
+  line-height: 1;
+  padding: 0.12rem 0.25rem 0.75rem;
+  font-size: 1.55rem;
+  font-weight: var(--font-bold);
   letter-spacing: -1px;
   text-align: center;
   color: var(--title-color);
   background-color: var(--container-color);
-  border: 3px solid var(--title-color);
+  /* border: 3px solid var(--title-color); */
   border-radius: 3rem;
   pointer-events: none;
   margin-bottom: 0.75rem;
@@ -1964,20 +1979,41 @@ section#products .swiper-slide {
 }
 .card__title {
   color: var(--title-color);
-  font-size: var(--h1-font-size);
+  font-size: var(--big-font-size);
   line-height: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: var(--mb-2);
   letter-spacing: -1px;
 }
 
 .card__title span.processors-subtitle {
   font-size: var(--h1-font-size);
+  text-transform: uppercase;
 }
 .card__description {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
-  margin: var(--mb-0-75) var(--mb-1-5);
+  margin: var(--mb-1) var(--mb-2);
   text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.rely__on {
+  margin: auto;
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+  line-height: 1;
+  padding: 0.12rem 0.25rem 0.5rem;
+  font-size: 1.55rem;
+  font-weight: var(--font-bold);
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--container-color);
+  background-color: var(--title-color);
+  border: 2px solid var(--text-color);
+  border-radius: 3rem;
+  pointer-events: none;
+  margin-bottom: 0.75rem;
 }
 .card__data {
   position: relative;

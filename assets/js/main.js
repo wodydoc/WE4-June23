@@ -14,9 +14,9 @@ const sr = ScrollReveal({
 });
 
 // Using ScrollReveal to reveal elements with customized options
-sr.reveal(`.home__title, .home__data`);
+sr.reveal(`.home__title, .home__title-container`);
 sr.reveal(`.home__social`, { delay: 600 });
-sr.reveal(`.benefits__title, .benefits__data, .contact__box`, {
+sr.reveal(`.benefits__title, .benefits__description, .contact__box`, {
   origin: "left",
 });
 sr.reveal(`.contact__form`, { origin: "right" });
