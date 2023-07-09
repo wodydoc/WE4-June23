@@ -647,6 +647,7 @@ tspan.cls-4 {
 }
 /*=============== ABOUT ===============*/
 .about__container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -655,7 +656,7 @@ tspan.cls-4 {
 
 .playful-deck-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2rem;
   gap: 2rem;
@@ -707,7 +708,7 @@ tspan.cls-4 {
 
 .deck-inner .deck-back {
   background-color: var(--first-color);
-  color: white;
+  color: var(--container-color);
   transform: rotateY(180deg);
 }
 
@@ -827,9 +828,34 @@ span.behavior {
 }
 
 /*  */
+
+/* Universal Access SVG */
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  position: relative;
+  /* min-height: 100vh; */
+  padding: 50px 0;
+  align-content: center;
+}
+
+#universal_man {
+  width: 100px;
+  height: 100px;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*  */
 .testimonials {
   margin-left: auto;
   margin-right: auto;
+  height: auto;
 }
 
 .profile-img {
@@ -871,12 +897,12 @@ span.behavior {
 }
 
 .quote {
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  padding: 0 1rem;
-  margin: 1rem 0;
+  padding: 0 0.5rem;
+  margin: 1rem auto;
   font-style: oblique;
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-black);
 }
 
 /*  */
@@ -1059,10 +1085,10 @@ body {
 
 .benefits__title {
   text-align: center;
-  font-size: var(--big-font-size);
+  font-size: var(--h1-font-size);
   font-weight: var(--font-bold);
   letter-spacing: -1px;
-  margin-bottom: var(--mb-0-5);
+  /* margin-bottom: var(--mb-0-5); */
 }
 
 .custom-charts-container {
@@ -1088,10 +1114,13 @@ body {
 }
 
 .chart-title {
-  font-size: 1.2rem;
-  color: var(--title-color);
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: var(--mb-1-5) 0;
+  font-size: var(--smaller-font-size);
 }
 
 .chart {
@@ -1137,6 +1166,7 @@ body {
 }
 
 .improvement-label {
+  /* rgb(32, 201, 151) */
   color: #4caf50;
   background-color: var(--title-color);
   border-radius: 1rem;
@@ -1809,6 +1839,10 @@ section#products .swiper-slide {
     font-size: var(--h1-font-size);
   }
 
+  .card__title {
+    font-size: 4rem;
+  }
+
   /* .about__title {
     font-size: var(--big-font-size);
   } */
@@ -1971,7 +2005,7 @@ section#products .swiper-slide {
 }
 
 .card__title span.processors-subtitle {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   font-weight: var(--font-light);
   letter-spacing: 2.5px;
   text-transform: uppercase;
