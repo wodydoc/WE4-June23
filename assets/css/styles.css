@@ -977,7 +977,9 @@ span.behavior {
   z-index: 10;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   margin: 0 0.05rem;
 }
 
@@ -1039,49 +1041,24 @@ span.behavior {
 }
 
 /*=============== PROCESSORS ===============*/
-.processors__bg {
+.processors__bg,
+.stances__bg {
   background-color: var(--first-color);
   padding: 1rem;
   border-radius: 1rem;
 }
 
-.processors__title {
-  color: var(--container-color);
-  font-weight: var(--font-bold);
-  font-family: var(--wide-font);
+.processors__title,
+.stances__title {
+  font-size: var(--big-font-size);
+  line-height: var(--big-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-regular);
   text-transform: uppercase;
-  letter-spacing: -1px;
-  line-height: 1.25;
-}
-
-.processors__card:hover .processors__card-number {
-  transform: translateY(-0.25rem);
+  letter-spacing: -2px;
 }
 
 /* BENEFITS  */
-/* :root {
-  --title-color: #333;
-  --container-color: #f9f9f9;
-  --first-color: #4caf50;
-  --font-bold: 700;
-  --font-semibold: 600;
-  --mb-0-5: 0.5rem;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-} */
-
-/* --title-color: #333;
-  --container-color: #f9f9f9;
-  --mb-0-5: 0.5rem;
-  --font-bold: 700;
-  --font-semibold: 600;
-  --first-color: #4caf50; */
 .benefits {
   display: flex;
   flex-wrap: wrap;
@@ -1233,70 +1210,6 @@ body {
   .custom-charts-container {
     justify-content: center;
   }
-}
-
-/*=============== stances ===============*/
-.stances__bg {
-  background-color: var(--first-color);
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
-.stances__container {
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.stances__title {
-  color: var(--container-color);
-  font-weight: var(--font-bold);
-  font-family: var(--wide-font);
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  line-height: 1.25;
-}
-
-.stances__card {
-  background-color: var(--container-color);
-  padding: 2.5rem 3rem 2rem 1.5rem;
-  border-radius: 1rem;
-}
-
-.stances__img {
-  height: calc(var(--header-height) * 1.25);
-  width: calc(var(--header-height) * 1.25);
-}
-
-.stances__card-number {
-  display: inline-block;
-  background-color: var(--first-color-lighten);
-  color: #fff;
-  padding: 0.5rem 0.75rem;
-  border-radius: 100%;
-  font-size: var(--h2-font-size);
-  margin-bottom: var(--mb-1-5);
-  transition: 0.3s;
-}
-
-.dark-theme .stances__card-number {
-  background-color: var(--first-color-dark);
-}
-
-.stances__card-title {
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-thin);
-  margin-bottom: var(--mb-0-5);
-}
-
-.stances__card-description {
-  /* font-family: var(--ibm-plex-mono); */
-  margin-bottom: var(--mb-2-5);
-  font-size: var(--h2-font-size);
-  padding-right: 5rem;
-}
-
-.stances__card:hover .stances__card-number {
-  transform: translateY(-0.25rem);
 }
 
 /*=============== meet-joey-schewee ===============*/
@@ -1763,14 +1676,6 @@ body {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-  .processors__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stances__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .product__description {
     padding: 0 4rem;
   }
@@ -1859,6 +1764,11 @@ body {
     font-size: var(--h1-font-size);
   }
 
+  .processors__title,
+  .stances__title {
+    font-size: 5rem;
+  }
+
   .card__title {
     font-size: 4rem;
   }
@@ -1892,24 +1802,9 @@ body {
     width: 300px;
   }
 
-  .processors__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .processors__bg {
-    padding: 3.5rem 9.5rem;
-  }
-  .processors__card-title {
-    font-size: var(--big-font-size);
-  }
-
-  .stances__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .processors__bg,
   .stances__bg {
     padding: 3.5rem 9.5rem;
-  }
-  .stances__card-title {
-    font-size: var(--big-font-size);
   }
 
   .product__description {
@@ -2013,7 +1908,8 @@ body {
 .card__img {
   width: 100%;
   max-width: 200px;
-  margin-bottom: var(--mb-0-75);
+  max-height: 200px;
+  margin: var(--mb-0-75) auto;
   animation: float-img 2.5s ease-in-out infinite;
 }
 .card__title {
