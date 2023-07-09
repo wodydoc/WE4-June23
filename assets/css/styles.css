@@ -1230,6 +1230,9 @@ span.behavior {
   margin-bottom: var(--mb-1);
   font-weight: var(--font-bold);
   font-size: var(--big-font-size);
+  line-height: var(--big-font-size);
+  font-family: var(--wide-font);
+  letter-spacing: -2.25px;
 }
 
 .meet-joey-schewee__description {
@@ -1245,8 +1248,9 @@ span.behavior {
 .meet-joey-schewee__details-description {
   display: inline-flex;
   column-gap: 0.25rem;
-  margin: auto; 
+  margin: auto;
   padding-right: 4rem;
+  font-weight: var(--font-medium);
 }
 
 .meet-joey-schewee__details-icon {
@@ -1713,7 +1717,7 @@ span.behavior {
 
   .meet-joey-schewee__container {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
+    column-gap: 0.5rem;
   }
 
   .home {
