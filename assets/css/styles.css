@@ -759,8 +759,7 @@ tspan.cls-4 {
 span.motivations,
 span.behavior {
   color: var(--body-color);
-  font-weight: var(--font-semibold);
-  letter-spacing: 0px;
+  font-weight: var(--font-thin); 
 }
 
 /*  */
@@ -1051,7 +1050,7 @@ span.behavior {
 
 .processors__title,
 .stances__title {
-  font-size: var(--big-font-size);
+  font-size: 2.2rem;
   line-height: var(--big-font-size);
   color: var(--title-color);
   font-weight: var(--font-regular);
