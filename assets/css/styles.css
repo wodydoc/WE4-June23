@@ -902,7 +902,7 @@ span.behavior {
   padding: 0 0.5rem;
   margin: 1rem auto;
   font-style: oblique;
-  font-weight: var(--font-black);
+  font-weight: var(--font-medium);
 }
 
 /*  */
