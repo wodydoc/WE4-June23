@@ -758,10 +758,9 @@ tspan.cls-4 {
 
 span.motivations,
 span.behavior {
-  color: var(--text-color);
-  letter-spacing: -1px;
-  font-family: var(--wide-font);
-  font-weight: var(--font-light);
+  color: var(--body-color);
+  font-weight: var(--font-semibold);
+  letter-spacing: 0px;
 }
 
 /*  */
@@ -890,15 +889,17 @@ span.behavior {
 }
 
 .testimonial-logo {
-  /* width: 200px; 
-  height: auto; */
+  filter: grayscale(1) contrast(1.15) opacity(0.75);
   margin: 0 auto; /* Center the logo */
   display: block;
   object-fit: contain;
-  filter: grayscale(1) contrast(0.5) opacity(0.5);
   width: 100%;
   max-height: 50px;
   height: 100%;
+}
+
+.dark-theme .testimonial-logo {
+  filter: grayscale(1) contrast(0.5) opacity(0.95);
 }
 
 .quote {
@@ -1056,10 +1057,14 @@ span.behavior {
   font-weight: var(--font-regular);
   text-transform: uppercase;
   letter-spacing: -2px;
+  text-align: center;
+  margin-bottom: var(--mb-2-5);
+  padding: 0 5px;
 }
 
 /* BENEFITS  */
 .benefits {
+  padding: 6rem 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1075,6 +1080,9 @@ span.behavior {
   font-weight: var(--font-bold);
   letter-spacing: -1px;
   /* margin-bottom: var(--mb-0-5); */
+}
+.benefits__description {
+  text-align: center;
 }
 
 .custom-charts-container {
@@ -1190,23 +1198,7 @@ span.behavior {
   margin-bottom: 0.75rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .benefits {
-    padding: 3rem 1.5rem;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .benefits {
-    padding: 3rem 1rem;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .benefits {
-    padding: 3rem 0.5rem;
-  }
-
   .custom-charts-container {
     justify-content: center;
   }
@@ -1228,14 +1220,16 @@ span.behavior {
 }
 
 .meet-joey-schewee__img {
-  width: 250px;
-  justify-self: center;
+  width: 100%;
+  max-width: 350px;
   border-radius: 1rem;
+  /* opacity: 10%; */
 }
 
 .meet-joey-schewee__title {
   margin-bottom: var(--mb-1);
   font-weight: var(--font-bold);
+  font-size: var(--big-font-size);
 }
 
 .meet-joey-schewee__description {
@@ -1251,9 +1245,8 @@ span.behavior {
 .meet-joey-schewee__details-description {
   display: inline-flex;
   column-gap: 0.25rem;
-  margin: auto;
-  /* font-family: var(--ibm-plex-mono); */
-  padding-right: 1rem;
+  margin: auto; 
+  padding-right: 4rem;
 }
 
 .meet-joey-schewee__details-icon {
@@ -1756,7 +1749,8 @@ span.behavior {
     margin-right: auto;
   }
 
-  .section {
+  .section,
+  .benefits {
     padding: 8rem 0 1rem;
   }
   .section__title,
@@ -1764,10 +1758,10 @@ span.behavior {
     font-size: var(--h1-font-size);
   }
 
-  .processors__title,
+  /* .processors__title,
   .stances__title {
-    font-size: 5rem;
-  }
+    font-size: var(--h1-font-size);
+  } */
 
   .card__title {
     font-size: 4rem;
@@ -1798,8 +1792,8 @@ span.behavior {
     height: 200px;
   }
 
-  .meet-joey-schewee__img {
-    width: 300px;
+  .meet-joey-schewee__details-description {
+    font-size: var(--h3-font-size);
   }
 
   .processors__bg,
