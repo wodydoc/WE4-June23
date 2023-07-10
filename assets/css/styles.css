@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -12,7 +13,7 @@ html, body {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --hue: 152;
-  --first-color: hsl(210, 22%, 49%);
+  --first-color: hsl(209, 28%, 39%);
   --first-color-alt: hsl(209, 23%, 60%);
   --shape-gradient: linear-gradient(
     90deg,
@@ -23,13 +24,20 @@ html, body {
   --body-gradient: linear-gradient(
     180deg,
     hsl(210, 36%, 96%),
-    hsl(210, 22%, 49%)
+    hsl(209, 28%, 39%) 
   );
-  --smoooth-gradient: linear-gradient(
+  /* --smoooth-gradient: linear-gradient(
     180deg,
     hsl(209, 23%, 60%),
     hsl(210, 31%, 80%),
     hsl(211, 27%, 70%),
+    hsl(210, 22%, 49%)
+  ); */
+  --smoooth-gradient: linear-gradient(
+    180deg,
+    hsl(210, 31%, 80%),
+    hsl(211, 27%, 70%),
+    hsl(209, 23%, 60%),
     hsl(210, 22%, 49%)
   );
   --first-color-light: hsl(224.35deg 63.89% 85.88%);
@@ -37,8 +45,8 @@ html, body {
   --title-color: hsl(209, 61%, 16%);
   --text-color: hsl(211, 39%, 23%);
   --text-color-light: #bdbdbd;
-  --body-color: hsl(210, 36%, 96%);
-  --container-color: #fff;
+  --body-color: hsl(212, 33%, 89%);
+  --container-color: hsl(210, 36%, 96%);
 
   /* --doing-third: hsl(210deg 15.76% 69.52%); */
   --doing-third: hsl(210, 36%, 96%);
@@ -125,7 +133,9 @@ html, body {
   margin: 0;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -204,12 +214,19 @@ body.dark-theme {
     hsl(208.24deg 62.96% 15.88%),
     hsl(208.8deg 32.05% 30.59%)
   );
-  --smoooth-gradient: linear-gradient(
+  /* --smoooth-gradient: linear-gradient(
     180deg,
     hsl(209, 28%, 39%),
     hsl(209, 23%, 60%),
     hsl(210, 22%, 49%),
     hsl(211, 27%, 70%)
+  ); */
+  --smoooth-gradient: linear-gradient(
+    180deg,
+    hsl(211, 13%, 65%),
+    hsl(211, 10%, 53%),
+    hsl(211, 12%, 43%),
+    hsl(209, 14%, 37%)
   );
 
   --doing-third: hsl(209deg 31.31% 23.05%);
@@ -1813,7 +1830,6 @@ span.behavior {
     font-size: var(--big-font-size);
   } */
 
-  
   .home__img {
     width: 350px;
   }
