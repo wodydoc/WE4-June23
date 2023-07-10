@@ -258,6 +258,7 @@ the website, in dark theme
 
 .section__title-center {
   text-align: center;
+  font-weight: var(--font-medium);
 }
 
 .container {
@@ -756,12 +757,6 @@ tspan.cls-4 {
   font-size: var(--smaller-font-size);
 }
 
-span.motivations,
-span.behavior {
-  color: var(--body-color);
-  font-weight: var(--font-thin); 
-}
-
 /*  */
 
 .random-word {
@@ -1053,12 +1048,18 @@ span.behavior {
   font-size: 2.2rem;
   line-height: var(--big-font-size);
   color: var(--title-color);
-  font-weight: var(--font-regular);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
   letter-spacing: -2px;
   text-align: center;
   margin-bottom: var(--mb-2-5);
   padding: 0 5px;
+}
+
+span.motivations,
+span.behavior {
+  color: var(--body-color);
+  font-weight: var(--font-medium);
 }
 
 /* BENEFITS  */
@@ -1219,14 +1220,13 @@ span.behavior {
 }
 
 .meet-joey-schewee__img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 1rem;
-  /* opacity: 10%; */
+  width: 250px;
+  max-width: 100%;
+  border-radius: 2rem;
 }
 
 .meet-joey-schewee__title {
-  margin-bottom: var(--mb-1);
+  margin: var(--mb-1) var(--mb-0-5);
   font-weight: var(--font-bold);
   font-size: var(--big-font-size);
   line-height: var(--big-font-size);
@@ -1240,15 +1240,17 @@ span.behavior {
 
 .meet-joey-schewee__details {
   display: grid;
-  row-gap: 1rem;
+  row-gap: 2rem;
   justify-content: space-evenly;
+  justify-items: center;
+  align-content: center;
 }
 
 .meet-joey-schewee__details-description {
   display: inline-flex;
   column-gap: 0.25rem;
   margin: auto;
-  padding-right: 4rem;
+  padding-right: 5rem;
   font-weight: var(--font-medium);
 }
 
@@ -1650,6 +1652,11 @@ span.behavior {
     font-size: var(--h1-font-size);
   }
 
+  .processors__title,
+  .stances__title {
+    font-size: 2rem;
+  }
+
   .processors__bg {
     padding: 2rem 0.1rem;
   }
@@ -1719,6 +1726,10 @@ span.behavior {
     column-gap: 0.5rem;
   }
 
+  .meet-joey-schewee__img {
+    width: 350px;
+  }
+
   .home {
     padding: 10rem 0 5rem;
   }
@@ -1761,10 +1772,15 @@ span.behavior {
     font-size: var(--h1-font-size);
   }
 
-  /* .processors__title,
+  .home__title {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+}
+
+  .processors__title,
   .stances__title {
-    font-size: var(--h1-font-size);
-  } */
+    font-size: var(--big-font-size);
+  }
 
   .card__title {
     font-size: 4rem;
