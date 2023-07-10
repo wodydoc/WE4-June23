@@ -118,6 +118,10 @@
   margin: 0;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
