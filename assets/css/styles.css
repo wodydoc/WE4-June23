@@ -94,6 +94,8 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+
+  --background-attachment: fixed;
 }
 
 /* Responsive typography */
@@ -141,6 +143,7 @@ input:valid {
 body {
   margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
+  background-attachment: var(--background-attachment);
   color: var(--text-color);
   transition: 0.4s; /*For animation dark mode*/
 }
@@ -1063,6 +1066,9 @@ span.behavior {
 }
 
 /* BENEFITS  */
+
+
+
 .benefits {
   padding: 6rem 0.5rem;
   display: flex;
