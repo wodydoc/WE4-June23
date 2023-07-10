@@ -93,25 +93,36 @@ setInterval(animateText, 4000);
 
 // Animate the home__title and random-word
 gsap.from(".home__title, .highlight-word", {
-  delay: 1, // Add delay here
-  duration: 1,
+  delay: 2, // Add delay here
+  duration: 2,
   scale: 0.5,
   ease: "back.out(1.7)",
 });
 
 // Animate the button
 gsap.from(".button", {
-  delay: 1.5, // Add delay here
+  delay: 3, // Add delay here
+  duration: 2,
+  opacity: 0,
+  y: 20, // Slide from bottom
+  ease: "power2.out",
+});
+
+
+// Animate the "Follow Us" text
+gsap.from(".home__social-follow", {
+  delay: 3.8, // Add delay here
   duration: 1,
   opacity: 0,
   y: 20, // Slide from bottom
   ease: "power2.out",
 });
 
+
 // Animate the social links
 gsap.from(".home__social-link", {
-  delay: 2, // Add delay here
-  duration: 1,
+  delay: 4, // Add delay here
+  duration: 2,
   opacity: 0,
   y: 20, // Slide from bottom
   stagger: 0.2, // Delay between each social link

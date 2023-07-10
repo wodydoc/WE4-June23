@@ -407,17 +407,16 @@ tspan.cls-4 {
 
 /* HOME STYLES */
 .home {
-  padding: 3.5rem 0 2rem;
+  padding: 9.5rem 0 2rem;
 }
 /* Home Container */
 .home__container {
   display: grid;
   grid-template-areas: "title social";
   grid-template-columns: 1fr auto;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   align-items: center;
   max-width: 95vw;
-  height: 100vh;
   margin: 0 auto;
 }
 
@@ -443,15 +442,12 @@ tspan.cls-4 {
 
 .highlight-word {
   display: inline-block;
-  width: 70vw;
+  width: 95vw;
   line-height: 1.2;
   overflow: hidden;
   white-space: nowrap;
   color: var(--first-color);
 }
-
-
-
 
 .about__title-container {
   text-align: center;
@@ -487,7 +483,7 @@ tspan.cls-4 {
   position: absolute;
   width: 1rem;
   height: 2px;
-  background-color: var(--first-color);
+  background-color: var(--text-color);
   right: -45%;
   top: 50%;
 }
@@ -501,7 +497,9 @@ tspan.cls-4 {
 .home__social-link {
   font-size: 1rem;
   color: var(--first-color);
-  transition: 0.3s;
+  transition: color 0.3s, transform 0.3s; /* added transform here */
+  padding: 5px;
+  display: inline-block;
 }
 
 .home__social-link:hover {
@@ -1068,8 +1066,6 @@ span.behavior {
 }
 
 /* BENEFITS  */
-
-
 
 .benefits {
   padding: 6rem 0.5rem;
@@ -1771,6 +1767,10 @@ span.behavior {
     margin-right: auto;
   }
 
+  .home {
+    padding: 13rem 0 5rem;
+  }
+
   .section,
   .benefits {
     padding: 8rem 0 1rem;
@@ -1783,7 +1783,7 @@ span.behavior {
   .home__title {
     font-size: 4.5rem;
     line-height: 4.5rem;
-}
+  }
 
   .processors__title,
   .stances__title {
@@ -1802,9 +1802,7 @@ span.behavior {
     font-size: var(--big-font-size);
   } */
 
-  .home {
-    padding: 13rem 0 5rem;
-  }
+  
   .home__img {
     width: 350px;
   }
