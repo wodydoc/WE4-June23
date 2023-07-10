@@ -111,7 +111,7 @@ gsap.from(".button", {
 
 // Animate the "Follow Us" text
 gsap.from(".home__social-follow", {
-  delay: 3.8, // Add delay here
+  delay: 5.8, // Add delay here
   duration: 1,
   opacity: 0,
   y: 20, // Slide from bottom
@@ -121,7 +121,7 @@ gsap.from(".home__social-follow", {
 
 // Animate the social links
 gsap.from(".home__social-link", {
-  delay: 4, // Add delay here
+  delay: 6, // Add delay here
   duration: 2,
   opacity: 0,
   y: 20, // Slide from bottom
