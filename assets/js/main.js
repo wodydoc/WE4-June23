@@ -14,8 +14,8 @@ const sr = ScrollReveal({
 });
 
 // Using ScrollReveal to reveal elements with customized options
-sr.reveal(`.home__title, .home__title-container`);
-sr.reveal(`.home__social`, { delay: 600 });
+// sr.reveal(`.home__title, .home__title-container`);
+// sr.reveal(`.home__social`, { delay: 600 });
 sr.reveal(`.benefits__title, .benefits__description, .contact__box`, {
   origin: "left",
 });
@@ -61,43 +61,62 @@ const phrases = [
   "development",
   "success",
 ];
-const phraseElement = document.querySelector(".random-word");
+const phraseElement = document.querySelector(".highlight-word");
 let currentIndex = 0;
 
 const animateText = () => {
-  // Fade out the current text
   gsap.to(phraseElement, {
     duration: 0.5,
     opacity: 0,
     onComplete: () => {
-      // Change the text when the animation is complete
       currentIndex = (currentIndex + 1) % phrases.length;
       phraseElement.textContent = phrases[currentIndex];
-
-      // Fade back in with the new text
-      gsap.to(phraseElement, {
-        duration: 0.5,
-        opacity: 1,
-      });
+      phraseElement.parentElement.setAttribute(
+        "aria-label",
+        `Understanding the core motivations that influence behavior can have an immediate &amp; lasting impact on the ${phrases[currentIndex]} of your business.`
+      );
+      gsap.fromTo(
+        phraseElement,
+        { scale: 0, y: 50, opacity: 0 },
+        { duration: 0.5, scale: 1, y: 0, opacity: 1 }
+      );
     },
   });
 };
 
-// Initial call and repeat the animation every 4 seconds
 animateText();
 setInterval(animateText, 4000);
 
+// gsap.from(".home__title", {duration: 1.5, scale: 0.8, y: 50, opacity: 0, ease: "power3.out"});
+// gsap.from(".button", {duration: 1.5, scale: 0.8, y: 50, opacity: 0, ease: "power3.out", delay: 0.5});
+// gsap.from(".home__social-link", {duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.out", delay: 0.5});
 
-// Your existing word shuffler code ...
-
-// Additionally, animate the home__title to fill the entire width
-gsap.from(".home__title", {
+// Animate the home__title and random-word
+gsap.from(".home__title, .highlight-word", {
+  delay: 1, // Add delay here
   duration: 1,
-  scale: 0.5, // Scale up from 50%
-  ease: "back.out(1.7)", // You can play around with different eases
+  scale: 0.5,
+  ease: "back.out(1.7)",
 });
 
+// Animate the button
+gsap.from(".button", {
+  delay: 1.5, // Add delay here
+  duration: 1,
+  opacity: 0,
+  y: 20, // Slide from bottom
+  ease: "power2.out",
+});
 
+// Animate the social links
+gsap.from(".home__social-link", {
+  delay: 2, // Add delay here
+  duration: 1,
+  opacity: 0,
+  y: 20, // Slide from bottom
+  stagger: 0.2, // Delay between each social link
+  ease: "power2.out",
+});
 
 // ------------------------------
 // Spin and Parallax Scroll Animations

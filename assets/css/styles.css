@@ -414,9 +414,10 @@ tspan.cls-4 {
   display: grid;
   grid-template-areas: "title social";
   grid-template-columns: 1fr auto;
-  grid-gap: 0rem;
+  grid-gap: 1rem;
   align-items: center;
-  max-width: calc(100vw - 50px);
+  max-width: 95vw;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -424,33 +425,33 @@ tspan.cls-4 {
 .home__title-container {
   grid-area: title;
   text-align: left;
-  max-width: calc(100vw - 100px);
+  max-width: 80vw;
 }
 
 .home__title {
   font-size: var(--big-font-size);
-  line-height: var(--big-font-size);
+  line-height: 1.2;
   color: var(--title-color);
   font-weight: var(--font-regular);
   letter-spacing: -2px;
   text-transform: uppercase;
   position: relative;
   margin-bottom: var(--mb-2-5);
+  transform: scale(1);
+  transform-origin: center center;
 }
 
-.home__description {
-  margin: var(--mb-0-75) 0;
-  font-size: var(--small-font-size);
-  font-weight: var(--font-regular);
-  text-align: center;
-  text-transform: uppercase;
+.highlight-word {
+  display: inline-block;
+  width: 70vw;
+  line-height: 1.2;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--first-color);
 }
 
-/* Description Container */
-.description-container {
-  grid-area: description;
-  max-width: calc(100vw - 60px); /* Added max-width */
-}
+
+
 
 .about__title-container {
   text-align: center;
@@ -504,6 +505,7 @@ tspan.cls-4 {
 }
 
 .home__social-link:hover {
+  color: var(--first-color-alt);
   transform: translateX(0.25rem);
 }
 
