@@ -6,9 +6,7 @@ body {
   padding: 0;
 }
 
-body {
-  padding: env(safe-area-inset-top) env(safe-area-inset-bottom);
-}
+
 
 /*=============== VARIABLES CSS ===============*/
 :root {
