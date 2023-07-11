@@ -1,4 +1,3 @@
-
 /*============== VARIABLES CSS ===============*/
 :root {
   /*========== Dimensions ==========*/
@@ -105,8 +104,10 @@
   --extended-font: "obviously-extended", sans-serif;
   --ibm-plex-mono: "ibm-plex-mono", sans-serif;
   --big-font-size: 2.5rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.05rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.8rem;
+  /* --h1-font-size: 1.5rem;
+  --h2-font-size: 1.05rem; */
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
   --small-font-size: 0.813rem;
@@ -185,7 +186,6 @@ body.dark-theme {
 }
 
 /*=============== BASE ===============*/
-
 html,
 body {
   height: 100%;
@@ -194,16 +194,7 @@ body {
   padding: 0;
 }
 
-
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-*,
-*::before,
-*::after {
   box-sizing: border-box;
 }
 
@@ -230,17 +221,24 @@ input:valid {
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
+  line-height: 1.6; 
+  margin-top: var(--header-height);
   background-color: var(--body-color);
-  background-attachment: var(--background-attachment);
   color: var(--text-color);
-  transition: 0.4s; /*For animation dark mode*/
+  transition: background-color 0.4s, color 0.4s; /* Smooth transition for dark mode */
 }
 
 button {
   cursor: pointer;
   border: none;
   outline: none;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  padding: 0.8rem 1.5rem;
+}
+
+button:hover {
+  background-color: var(--first-color-lighten);
+  color: var(--title-color);
 }
 
 h1,
@@ -252,6 +250,7 @@ h3 {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -266,14 +265,27 @@ img {
 /*========== Button Dark/Light ==========*/
 .change-theme {
   color: var(--title-color);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.change-theme:hover {
+  color: var(--first-color);
 }
 
 .nav__btns {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  column-gap: 1rem;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Adjust viewport for iPhone X and other notch devices */
+@media (max-width: 1000px) and (max-height: 500px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /*========== 
@@ -991,6 +1003,7 @@ tspan.cls-4 {
 }
 
 .quote {
+  color: var(--title-color);
   font-size: var(--h1-font-size);
   text-align: center;
   padding: 0 1.5rem;
