@@ -1,3 +1,4 @@
+
 /*=============== QUESTIONS ACCORDION ===============*/
 const accordionItems = document.querySelectorAll(".questions__item");
 

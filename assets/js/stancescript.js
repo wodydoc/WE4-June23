@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   decks.forEach((deck) => {
     deck.addEventListener("mouseenter", () => {
+      console.log("entered");
       gsap.to(deck.querySelector(".deck-inner"), {
         rotationY: 180,
         duration: 1,
@@ -13,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     deck.addEventListener("mouseleave", () => {
+      console.log("left");
       gsap.to(deck.querySelector(".deck-inner"), {
         rotationY: 0,
         duration: 1,

@@ -41,9 +41,13 @@ const setTheme = () => {
   const body = document.body;
   const userTheme = localStorage.getItem("selected-theme");
 
+  console.log(`userTheme: ${userTheme}`);
+
   if (userTheme === "dark") {
+    console.log(`userTheme is dark, adding dark theme`);
     body.classList.add(darkTheme);
   } else {
+    console.log(`userTheme is light, removing dark theme`);
     body.classList.remove(darkTheme);
   }
 };

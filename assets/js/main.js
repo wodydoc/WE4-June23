@@ -41,6 +41,7 @@ sr.reveal(".slides-inner, .testimonials, .about__title", {
   delay: 400,
 });
 
+
 // ------------------------------
 // GSAP Animations (General Example)
 // ------------------------------
@@ -65,10 +66,12 @@ const phraseElement = document.querySelector(".highlight-word");
 let currentIndex = 0;
 
 const animateText = () => {
+  console.log("animateText called");
   gsap.to(phraseElement, {
     duration: 0.5,
     opacity: 0,
     onComplete: () => {
+      console.log("onComplete called");
       currentIndex = (currentIndex + 1) % phrases.length;
       phraseElement.textContent = phrases[currentIndex];
       phraseElement.parentElement.setAttribute(
@@ -162,5 +165,5 @@ function rotateAnimation(id, rotation) {
 
 // Execute the animation with different elements and directions
 let rotateClockwise = rotateAnimation("#clockwise", 360 * 5);
-// let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
+let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
 let rotateScrub = rotateAnimation("#spin-n-scrub", 360 * 5);

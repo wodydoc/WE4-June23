@@ -42,8 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     timer.pause();
     animation.pause();
 
-    gsap.to(animation, slideDuration, {
+    gsap.to(animation, {
       progress: progress,
+      duration: slideDuration,
       overwrite: true,
       modifiers: {
         progress: (value) => {
@@ -62,30 +63,30 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.fromTo(
       animation,
       1,
-      { timeScale: 0 },
-      { timeScale: 1, ease: "power1.in" }
+      { timeScale: 1 },
+      { timeScale: 0, ease: "power1.in" }
     );
   }
 
-  // Function to resize slides and recalculate widths
-  function resize() {
-    const progress = animation.progress();
-    slideWidth = slides[0].offsetWidth;
-    wrapWidth = slideWidth * numSlides;
+ // Function to resize slides and recalculate widths
+function resize() {
+  const progress = animation.progress();
+  slideWidth = slides[0].offsetWidth;
+  wrapWidth = slideWidth * numSlides;
 
-    animation
-      .progress(0)
-      .clear()
-      .to(slides, 100, {
-        xPercent: "+=" + numSlides * 100,
-        ease: "none",
-        modifiers: {
-          xPercent: wrap,
-        },
-      })
-      .to(proxy, 100, { x: wrapWidth, ease: "none" }, 0)
-      .progress(progress);
-  }
+  animation
+    .progress(0)
+    .clear()
+    .to(slides, 100, {
+      xPercent: "+=" + numSlides * 100,
+      ease: "none",
+      modifiers: {
+        xPercent: wrap,
+      },
+    })
+    .to(proxy, 100, { x: wrapWidth, ease: "none" }, 0)
+    .progress(progress);
+}
 
   // Function to wrap values
   function wrapPartial(min, max) {

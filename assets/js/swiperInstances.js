@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       on: {
         init: function () {
+          console.log("Swiper initialized!");
           gsap.fromTo(
             ".processors .swiper-slide",
             { opacity: 0 },
@@ -54,11 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       on: {
         init: function () {
+          console.log('init');
           gsap.fromTo(
             ".stances .swiper-slide",
             { opacity: 0 },
             { opacity: 1, duration: 0.6, ease: "power2.inOut", stagger: 0.2 }
           );
+          console.log('after gsap');
         },
       },
     });
@@ -83,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       on: {
         init: function () {
+          console.log("Swiper init");
           gsap.fromTo(
             ".types .swiper-slide",
             { opacity: 0 },
@@ -105,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       on: {
         init: function () {
+          console.log("Testimonials slider initialized.");
           gsap.fromTo(
             ".testimonials .swiper-slide",
             { opacity: 0 },
@@ -112,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           );
         },
         slideChange: function () {
+          console.log("Testimonials slider changed.");
           const currentSlide = this.slides[this.activeIndex];
           const quote = currentSlide.querySelector(".quote");
           gsap.fromTo(
