@@ -1,8 +1,13 @@
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader() {
   const header = document.getElementById("header");
-  if (this.scrollY >= 80) header.classList.add("scroll-header");
-  else header.classList.remove("scroll-header");
+  if (this.scrollY >= 80) {
+    header.classList.add("scroll-header");
+    header.style.backgroundColor = "var(--container-color)"; // Change the color to what you need
+  } else {
+    header.classList.remove("scroll-header");
+    header.style.backgroundColor = "transparent"; // Reset to initial color
+  }
 }
 window.addEventListener("scroll", scrollHeader);
 
@@ -14,7 +19,7 @@ function scrollActive() {
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
+      sectionTop = current.offsetTop - 50, // Increased offset to match the header height
       sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -22,9 +27,10 @@ function scrollActive() {
         .querySelector(".nav__menu a[href*=" + sectionId + "]")
         .classList.add("active-link");
     } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
+      const activeLink = document.querySelector(
+        ".nav__menu a[href*=" + sectionId + "]"
+      );
+      if (activeLink) activeLink.classList.remove("active-link"); // Added null check
     }
   });
 }
@@ -33,7 +39,12 @@ window.addEventListener("scroll", scrollActive);
 /*=============== SHOW SCROLL UP ===============*/
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");
-  if (this.scrollY >= 400) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
+  if (this.scrollY >= 560) {
+    scrollUp.classList.add("show-scroll");
+    scrollUp.classList.add("scroll-header");
+  } else {
+    scrollUp.classList.remove("show-scroll");
+    scrollUp.classList.remove("scroll-header");
+  }
 }
 window.addEventListener("scroll", scrollUp);
