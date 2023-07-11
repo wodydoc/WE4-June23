@@ -311,7 +311,7 @@ the website, in dark theme
   width: 100%;
   background-color: var(--body-color);
   position: fixed;
-  top: 0;
+  top: -1px;
   left: 0;
   z-index: var(--z-fixed);
   transition: 0.4s; /*For animation dark mode*/
