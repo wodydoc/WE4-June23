@@ -6,6 +6,11 @@ body {
   padding: 0;
 }
 
+body {
+  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
+    env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+}
+
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.85rem;
@@ -24,7 +29,7 @@ body {
   --body-gradient: linear-gradient(
     180deg,
     hsl(210, 36%, 96%),
-    hsl(209, 28%, 39%) 
+    hsl(209, 28%, 39%)
   );
   /* --smoooth-gradient: linear-gradient(
     180deg,
