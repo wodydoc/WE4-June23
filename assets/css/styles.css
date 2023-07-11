@@ -4,6 +4,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--body-color);
 }
 
 body {
@@ -170,7 +171,7 @@ input:valid {
 
 body {
   margin: var(--header-height) 0 0 0;
-  background-color: var(--body-color) !important;
+  background-color: var(--body-color);
   background-attachment: var(--background-attachment);
   color: var(--text-color);
   transition: 0.4s; /*For animation dark mode*/
