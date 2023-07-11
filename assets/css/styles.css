@@ -1,69 +1,102 @@
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
 
-
-
-/*=============== VARIABLES CSS ===============*/
+/*============== VARIABLES CSS ===============*/
 :root {
+  /*========== Dimensions ==========*/
   --header-height: 3.85rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --hue: 152;
-  --first-color: hsl(209, 28%, 39%);
-  --first-color-alt: hsl(209, 23%, 60%);
-  --shape-gradient: linear-gradient(
+  --hue-light: 210;
+  --hue-dark: 208.8;
+
+  /* Light Theme */
+  --first-color-light: hsl(209, 28%, 39%);
+  --first-color-alt-light: hsl(209, 23%, 60%);
+  --shape-gradient-light: linear-gradient(
     90deg,
     hsl(210, 36%, 96%),
     hsl(224, 15%, 53%),
     hsl(210, 22%, 49%)
   );
-  --body-gradient: linear-gradient(
+  --body-gradient-light: linear-gradient(
     180deg,
     hsl(210, 36%, 96%),
     hsl(209, 28%, 39%)
   );
-  /* --smoooth-gradient: linear-gradient(
-    180deg,
-    hsl(209, 23%, 60%),
-    hsl(210, 31%, 80%),
-    hsl(211, 27%, 70%),
-    hsl(210, 22%, 49%)
-  ); */
-  --smoooth-gradient: linear-gradient(
+  --smoooth-gradient-light: linear-gradient(
     180deg,
     hsl(210, 31%, 80%),
     hsl(211, 27%, 70%),
     hsl(209, 23%, 60%),
     hsl(210, 22%, 49%)
   );
-  --first-color-light: hsl(224.35deg 63.89% 85.88%);
-  --first-color-lighten: hsl(209.45deg 21.91% 49.22%);
-  --title-color: hsl(209, 61%, 16%);
-  --text-color: hsl(211, 39%, 23%);
-  --text-color-light: #bdbdbd;
-  --body-color: hsl(212, 33%, 89%);
-  --container-color: hsl(210, 36%, 96%);
+  --first-color-lighten-light: hsl(209.45deg 21.91% 49.22%);
+  --title-color-light: hsl(209, 61%, 16%);
+  --text-color-light: hsl(211, 39%, 23%);
+  --text-color-light-light: hsl(211, 39%, 23%);
+  --body-color-light: hsl(212, 33%, 89%);
+  --container-color-light: hsl(210, 36%, 96%);
+  --doing-third-light: hsl(210, 36%, 96%);
+  --thinking-third-light: hsl(210, 22%, 49%);
+  --feeling-third-light: hsla(209, 23%, 60%, 0.976);
+  --cool-grey-light: hsl(211, 12%, 43%);
+  --blue-grey-light: hsl(210, 22%, 49%);
+  --warm-grey-light: hsl(41, 8%, 48%);
+  --deck-background-light: white;
+  --deck-color-light: black;
 
-  /* --doing-third: hsl(210deg 15.76% 69.52%); */
-  --doing-third: hsl(210, 36%, 96%);
-  --thinking-third: hsl(210, 22%, 49%);
-  --feeling-third: hsla(209, 23%, 60%, 0.976);
+  /* Dark Theme */
+  --first-color-dark: hsl(208.8deg, 32.05%, 30.59%);
+  --title-color-dark: hsl(210, 36%, 96%);
+  --text-color-dark: hsl(0deg, 0%, 93.33%);
+  --body-color-dark: hsl(209, 61%, 16%);
+  --container-color-dark: hsl(209deg, 31.31%, 23.05%);
+  --shape-gradient-dark: linear-gradient(
+    90deg,
+    hsl(208.24deg, 62.96%, 15.88%),
+    hsl(208.8deg, 32.05%, 30.59%),
+    hsl(210, 29%, 24%)
+  );
+  --body-gradient-dark: linear-gradient(
+    180deg,
+    hsl(208.24deg, 62.96%, 15.88%),
+    hsl(208.8deg, 32.05%, 30.59%)
+  );
+  --smoooth-gradient-dark: linear-gradient(
+    180deg,
+    hsl(211, 13%, 65%),
+    hsl(211, 10%, 53%),
+    hsl(211, 12%, 43%),
+    hsl(209, 14%, 37%)
+  );
+  --doing-third-dark: hsl(209deg, 31.31%, 23.05%);
+  --thinking-third-dark: hsl(209, 23%, 43%);
+  --feeling-third-dark: hsla(210, 16%, 49%, 0.976);
+  --cool-grey-dark: hsl(211, 13%, 65%);
+  --blue-grey-dark: hsl(211, 27%, 70%);
+  --warm-grey-dark: hsl(39, 11%, 69%);
+  --deck-background-dark: black;
+  --deck-color-dark: white;
 
-  /* DOERS */
-  --cool-grey: hsl(211, 12%, 43%);
-  /* THINKERS */
-  --blue-grey: hsl(210, 22%, 49%);
-  /* FEELERS  */
-  --warm-grey: hsl(41, 8%, 48%);
-
-  --deck-background: white;
-  --deck-color: black;
+  /* Default to Light Theme */
+  --first-color: var(--first-color-light);
+  --first-color-alt: var(--first-color-alt-light);
+  --shape-gradient: var(--shape-gradient-light);
+  --body-gradient: var(--body-gradient-light);
+  --smoooth-gradient: var(--smoooth-gradient-light);
+  --first-color-lighten: var(--first-color-lighten-light);
+  --title-color: var(--title-color-light);
+  --text-color: var(--text-color-light);
+  --text-color-light: var(--text-color-light-light);
+  --body-color: var(--body-color-light);
+  --container-color: var(--container-color-light);
+  --doing-third: var(--doing-third-light);
+  --thinking-third: var(--thinking-third-light);
+  --feeling-third: var(--feeling-third-light);
+  --cool-grey: var(--cool-grey-light);
+  --blue-grey: var(--blue-grey-light);
+  --warm-grey: var(--warm-grey-light);
+  --deck-background: var(--deck-background-light);
+  --deck-color: var(--deck-color-light);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -128,7 +161,40 @@ body {
   }
 }
 
+/* Dark theme */
+body.dark-theme {
+  --first-color: var(--first-color-dark);
+  --first-color-alt: var(--first-color-dark);
+  --shape-gradient: var(--shape-gradient-dark);
+  --body-gradient: var(--body-gradient-dark);
+  --smoooth-gradient: var(--smoooth-gradient-dark);
+  --first-color-lighten: var(--first-color-dark);
+  --title-color: var(--title-color-dark);
+  --text-color: var(--text-color-dark);
+  --text-color-light: var(--text-color-dark);
+  --body-color: var(--body-color-dark);
+  --container-color: var(--container-color-dark);
+  --doing-third: var(--doing-third-dark);
+  --thinking-third: var(--thinking-third-dark);
+  --feeling-third: var(--feeling-third-dark);
+  --cool-grey: var(--cool-grey-dark);
+  --blue-grey: var(--blue-grey-dark);
+  --warm-grey: var(--warm-grey-dark);
+  --deck-background: var(--deck-background-dark);
+  --deck-color: var(--deck-color-dark);
+}
+
 /*=============== BASE ===============*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -197,52 +263,6 @@ img {
   height: auto;
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color-dark: hsl(208.8deg 32.05% 30.59%);
-  --title-color: hsl(210, 36%, 96%);
-  --text-color: hsl(0deg 0% 93.33%);
-  --body-color: hsl(209, 61%, 16%);
-  --container-color: hsl(209deg 31.31% 23.05%);
-  --shape-gradient: linear-gradient(
-    90deg,
-    hsl(208.24deg 62.96% 15.88%),
-    hsl(208.8deg 32.05% 30.59%),
-    hsl(210, 29%, 24%)
-  );
-  --body-gradient: linear-gradient(
-    180deg,
-    hsl(208.24deg 62.96% 15.88%),
-    hsl(208.8deg 32.05% 30.59%)
-  );
-  /* --smoooth-gradient: linear-gradient(
-    180deg,
-    hsl(209, 28%, 39%),
-    hsl(209, 23%, 60%),
-    hsl(210, 22%, 49%),
-    hsl(211, 27%, 70%)
-  ); */
-  --smoooth-gradient: linear-gradient(
-    180deg,
-    hsl(211, 13%, 65%),
-    hsl(211, 10%, 53%),
-    hsl(211, 12%, 43%),
-    hsl(209, 14%, 37%)
-  );
-
-  --doing-third: hsl(209deg 31.31% 23.05%);
-  --thinking-third: hsl(209, 23%, 43%);
-  --feeling-third: hsla(210, 16%, 49%, 0.976);
-
-  --cool-grey: hsl(211, 13%, 65%);
-  --blue-grey: hsl(211, 27%, 70%);
-  --warm-grey: hsl(39, 11%, 69%);
-
-  --deck-background: black;
-  --deck-color: white;
-}
-
 /*========== Button Dark/Light ==========*/
 .change-theme {
   color: var(--title-color);
@@ -271,7 +291,6 @@ the website, in dark theme
 .dark-theme .footer__subscribe {
   background-color: var(--container-color);
 }
-
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
@@ -458,7 +477,6 @@ tspan.cls-4 {
 .dark-theme .scroll-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Active link */
 .active-link {

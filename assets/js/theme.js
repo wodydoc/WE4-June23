@@ -1,3 +1,5 @@
+// theme.js
+
 const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "ri-sun-line";
@@ -34,3 +36,17 @@ themeButton.addEventListener("click", () => {
   }, 100); // 100 milliseconds delay
 });
 
+// Set the theme on page load
+const setTheme = () => {
+  const body = document.body;
+  const userTheme = localStorage.getItem("selected-theme");
+
+  if (userTheme === "dark") {
+    body.classList.add(darkTheme);
+  } else {
+    body.classList.remove(darkTheme);
+  }
+};
+
+// Call setTheme on page load
+setTheme();
