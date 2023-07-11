@@ -7,8 +7,10 @@ body {
 }
 
 body {
-  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px)
-    env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /*=============== VARIABLES CSS ===============*/
@@ -168,7 +170,7 @@ input:valid {
 
 body {
   margin: var(--header-height) 0 0 0;
-  background-color: var(--body-color);
+  background-color: var(--body-color) !important;
   background-attachment: var(--background-attachment);
   color: var(--text-color);
   transition: 0.4s; /*For animation dark mode*/
@@ -320,6 +322,11 @@ the website, in dark theme
   left: 0;
   z-index: var(--z-fixed);
   transition: 0.4s; /*For animation dark mode*/
+}
+
+.header {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
 }
 
 /*=============== NAV ===============*/
