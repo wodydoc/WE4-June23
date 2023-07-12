@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const canvas = document.createElement("canvas");
       canvas.setAttribute("data-percent", item.percentage);
-      canvas.width = 300;
-      canvas.height = 300;
+      canvas.width = 225;
+      canvas.height = 225;
 
       const percentageContainer = document.createElement("div");
       percentageContainer.classList.add("percentage-container");
