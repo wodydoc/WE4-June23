@@ -855,12 +855,11 @@ tspan.cls-4 {
 .about__title {
   color: var(--text-color);
   font-weight: var(--font-medium);
-  font-size: 2em;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
   margin: var(--mb-1-5) 0;
-  font-size: var(--smaller-font-size);
+  font-size: var(--small-font-size);
 }
 
 /*  */
@@ -935,17 +934,19 @@ tspan.cls-4 {
   align-items: center;
   width: 100%;
   height: auto; 
+  max-height: 300px;
   overflow: hidden; 
   /* height: 125px; */
   position: relative;
   /* min-height: 100vh; */
   padding: 50px 0;
+  object-fit: contain;
 }
 
 #universal_man {
   transition: all 0.5s ease-in-out;
   width: 50%; /* Adjust as needed */
-  height: auto;
+  height: 200px;
   transform-origin: center; /* Ensures SVG scales and rotates around its center */
 }
 
