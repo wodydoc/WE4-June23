@@ -1,15 +1,12 @@
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 function scrollHeader() {
-  console.log("scrollHeader() called");
   const header = document.getElementById("header");
   if (this.scrollY >= 80) {
-    console.log("this.scrollY >= 80");
     header.classList.add("scroll-header");
-    header.style.backgroundColor = "var(--body-color)"; // Change the color to what you need
+    header.style.backgroundColor = "var(--container-color)"; 
   } else {
-    console.log("this.scrollY < 80");
     header.classList.remove("scroll-header");
-    header.style.backgroundColor = "transparent"; // Reset to initial color
+    header.style.backgroundColor = "var(--body-color)"; 
   }
 }
 window.addEventListener("scroll", scrollHeader);

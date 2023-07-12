@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  const customChartsContainer = document.querySelector(
-    ".custom-charts-container"
-  );
+  const customChartsContainer = document.querySelector(".custom-charts-container");
 
   categories.forEach((category) => {
     const chartContainer = document.createElement("div");
@@ -78,6 +76,21 @@ document.addEventListener("DOMContentLoaded", function () {
     customChartsContainer.appendChild(chartContainer);
   });
 
+  const animateChart = (ctx, percentage, canvas, percentageText) => {
+    let progress = 0;
+    const drawAndUpdate = () => {
+      if (progress >= percentage) {
+        cancelAnimationFrame(animation);
+      } else {
+        progress++;
+        drawChart(ctx, progress, canvas);
+        percentageText.innerText = `${progress}%`;
+        requestAnimationFrame(drawAndUpdate);
+      }
+    };
+    const animation = requestAnimationFrame(drawAndUpdate);
+  };
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -89,17 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
             ".percentage-container"
           );
           const percentageText = percentageContainer.querySelector("div");
-          let progress = 0;
 
-          const animation = setInterval(() => {
-            if (progress >= percent) {
-              clearInterval(animation);
-            } else {
-              progress++;
-              drawChart(ctx, progress, canvas);
-              percentageText.innerText = `${progress}%`;
-            }
-          }, 20);
+          animateChart(ctx, percent, canvas, percentageText);
         }
       });
     },
