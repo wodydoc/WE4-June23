@@ -933,21 +933,20 @@ tspan.cls-4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 125px;
+  width: 100%;
+  height: auto; 
+  overflow: hidden; 
+  /* height: 125px; */
   position: relative;
   /* min-height: 100vh; */
   padding: 50px 0;
-  align-content: center;
 }
 
 #universal_man {
-  width: 100px;
-  height: 100px;
   transition: all 0.5s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 50%; /* Adjust as needed */
+  height: auto;
+  transform-origin: center; /* Ensures SVG scales and rotates around its center */
 }
 
 /*  */
