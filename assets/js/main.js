@@ -40,6 +40,13 @@ sr.reveal(".slides-inner, .testimonials, .about__title", {
   duration: 1000,
   delay: 400,
 });
+sr.reveal(".universal-man", {
+  origin: "bottom",
+  distance: "100px",
+  duration: 1000,
+  delay: 400,
+});
+
 
 
 // ------------------------------
