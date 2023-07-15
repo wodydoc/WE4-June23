@@ -204,7 +204,6 @@ body {
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -631,10 +630,6 @@ tspan.cls-4 {
     font-size: 2rem;
     line-height: 2rem;
   }
-
-  .about__title {
-    font-size: 1.2rem;
-  }
 }
 
 /*=============== BUTTONS ===============*/
@@ -761,7 +756,6 @@ tspan.cls-4 {
   background: var(--shape-gradient);
 }
 
-
 /*=============== TESTIMONIALS SWIPER ===============*/
 .testimonials {
   margin-left: auto;
@@ -831,7 +825,11 @@ tspan.cls-4 {
   width: 100%;
   position: relative;
 }
-
+.about__container {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+}
 .about__title {
   color: var(--text-color);
   font-weight: var(--font-medium);
@@ -840,6 +838,7 @@ tspan.cls-4 {
   text-align: center;
   margin: var(--mb-2);
   font-size: 1.25rem;
+  opacity: 0.8;
 }
 
 .universal-man,
@@ -854,13 +853,14 @@ tspan.cls-4 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  overflow: hidden;
-  height: 125px;
+  /* height: 125px; */
 }
 
 #universal_man {
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
-  width: 100px;
+  max-width: 25vw;
+  width: 100%;
   height: auto;
   z-index: 20;
   transform-origin: center;
@@ -876,7 +876,7 @@ tspan.cls-4 {
   fill: var(--title-color);
 }
 
-/* containerAnimation and playful-deck-container */
+/* about__container and playful-deck-container */
 .about__container,
 .playful-deck-container {
   display: flex;
@@ -896,7 +896,7 @@ tspan.cls-4 {
 .about__container > .panel,
 .playful-deck-container > .panel {
   overflow-x: auto;
-  flex: 0 0 auto;
+  flex: 0 0 0 auto;
   scroll-snap-align: start;
   width: 100vw;
   height: 100vh;
@@ -904,17 +904,41 @@ tspan.cls-4 {
   display: flex;
 }
 
-/* Panel background colors */
+/* PANELS AND DECKS background colors */
 .panel#thinking-panel {
   background: var(--thinking-third);
+}
+
+div#thinking-deck .deck-inner .deck-front {
+  background-color: var(--thinking-third);
+}
+
+div#thinking-deck .deck-inner .deck-back {
+  background-color: var(--thinking-third);
 }
 
 .panel#feeling-panel {
   background: var(--feeling-third);
 }
 
+div#feeling-deck .deck-inner .deck-front {
+  background-color: var(--feeling-third);
+}
+
+div#feeling-deck .deck-inner .deck-back {
+  background-color: var(--feeling-third);
+}
+
 .panel#doing-panel {
   background: var(--doing-third);
+}
+
+div#doing-deck .deck-inner .deck-front {
+  background-color: var(--doing-third);
+}
+
+div#doing-deck .deck-inner .deck-back {
+  background-color: var(--doing-third);
 }
 
 /* Buffer class */
@@ -932,8 +956,10 @@ tspan.cls-4 {
   align-content: center;
   border-radius: 20px;
   perspective: 1000px;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  height: 100%;
   margin: auto;
   position: relative;
   transition: transform 0.3s ease-in-out;
@@ -957,8 +983,6 @@ tspan.cls-4 {
   transform: rotateY(180deg);
 }
 
-
-
 .deck-inner .deck-front,
 .deck-inner .deck-back {
   position: absolute;
@@ -974,21 +998,10 @@ tspan.cls-4 {
   font-size: 1.2em;
 }
 
-.deck-inner .deck-front {
-  background-color: var(--container-color);
-}
 
 .deck-inner .deck-back {
-  background-color: var(--first-color);
-  color: var(--container-color);
   transform: rotateY(180deg);
 }
-
-.icon {
-  width: 80%;
-  height: 80%;
-}
-
 
 
 
