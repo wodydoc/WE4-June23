@@ -911,6 +911,7 @@ tspan.cls-4 {
 
 div#thinking-deck .deck-inner .deck-front {
   background-color: var(--thinking-third);
+  border: var(--first-color) 1px solid;
 }
 
 div#thinking-deck .deck-inner .deck-back {
@@ -923,6 +924,7 @@ div#thinking-deck .deck-inner .deck-back {
 
 div#feeling-deck .deck-inner .deck-front {
   background-color: var(--feeling-third);
+  border: var(--first-color) 1px solid;
 }
 
 div#feeling-deck .deck-inner .deck-back {
@@ -935,6 +937,7 @@ div#feeling-deck .deck-inner .deck-back {
 
 div#doing-deck .deck-inner .deck-front {
   background-color: var(--doing-third);
+  border: var(--first-color) 1px solid;
 }
 
 div#doing-deck .deck-inner .deck-back {
