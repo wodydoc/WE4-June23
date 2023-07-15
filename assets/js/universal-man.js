@@ -21,7 +21,7 @@ window.onload = function () {
     y: -50,
     ease: "power1.out",
     scrollTrigger: {
-      trigger: ".universal-man",
+      trigger: ".about__title",
       start: "top 80%",
       end: "bottom 20%",
       toggleActions: "restart none none none",
@@ -60,16 +60,16 @@ window.onload = function () {
     });
 
     // 3D flip animation on hover
-    deck.addEventListener("mouseenter", () => {
-      gsap.to(deck.querySelector(".deck-inner"), {
+    deck.addEventListener("mouseenter", (event) => {
+      gsap.to(event.currentTarget.querySelector(".deck-inner"), {
         rotationY: 180,
         duration: 1,
         ease: "elastic.out(1, 0.3)",
       });
     });
 
-    deck.addEventListener("mouseleave", () => {
-      gsap.to(deck.querySelector(".deck-inner"), {
+    deck.addEventListener("mouseleave", (event) => {
+      gsap.to(event.currentTarget.querySelector(".deck-inner"), {
         rotationY: 0,
         duration: 1,
         ease: "elastic.out(1, 0.3)",
@@ -88,11 +88,14 @@ window.onload = function () {
       const direction = currentScroll > lastScroll ? 1 : -1;
       rotationSpeed = Math.max(1, Math.min(40, rotationSpeed + direction));
 
-      gsap.to(".universal-man", {
-        rotation: "+=" + 360 * direction,
-        duration: rotationSpeed,
+      let rotation = gsap.getProperty(".universal-man", "rotation");
+      gsap.set(".universal-man", {
+        rotation: rotation + rotationSpeed * direction,
         ease: "none",
       });
+
+      console.log("currentScroll:", currentScroll); // New line for debugging
+      console.log("rotation:", rotation); // New line for debugging
 
       lastScroll = currentScroll;
     },
