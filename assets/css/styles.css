@@ -998,12 +998,19 @@ div#doing-deck .deck-inner .deck-back {
   font-size: 1.2em;
 }
 
-
 .deck-inner .deck-back {
   transform: rotateY(180deg);
 }
 
-
+.icon {
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 
 /*=============== SWIPER ===============*/
 .swiper-container {
