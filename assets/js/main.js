@@ -47,8 +47,6 @@ sr.reveal(".universal-man", {
   delay: 400,
 });
 
-
-
 // ------------------------------
 // GSAP Animations (General Example)
 // ------------------------------
@@ -97,10 +95,7 @@ const animateText = () => {
 animateText();
 setInterval(animateText, 4000);
 
-// gsap.from(".home__title", {duration: 1.5, scale: 0.8, y: 50, opacity: 0, ease: "power3.out"});
-// gsap.from(".button", {duration: 1.5, scale: 0.8, y: 50, opacity: 0, ease: "power3.out", delay: 0.5});
-// gsap.from(".home__social-link", {duration: 1, y: 50, opacity: 0, stagger: 0.3, ease: "power3.out", delay: 0.5});
-
+// ------------------------------
 // Animate the home__title and random-word
 gsap.from(".home__title, .highlight-word", {
   delay: 2, // Add delay here
@@ -110,14 +105,13 @@ gsap.from(".home__title, .highlight-word", {
 });
 
 // Animate the button
-gsap.from(".button", {
-  delay: 3, // Add delay here
-  duration: 2,
+gsap.from(".home__button", {
+  delay: 4, // Add delay here
+  duration: 1,
   opacity: 0,
   y: 20, // Slide from bottom
   ease: "power2.out",
 });
-
 
 // Animate the "Follow Us" text
 gsap.from(".home__social-follow", {
@@ -128,7 +122,6 @@ gsap.from(".home__social-follow", {
   ease: "power2.out",
 });
 
-
 // Animate the social links
 gsap.from(".home__social-link", {
   delay: 6, // Add delay here
@@ -138,39 +131,3 @@ gsap.from(".home__social-link", {
   stagger: 0.2, // Delay between each social link
   ease: "power2.out",
 });
-
-// ------------------------------
-// Spin and Parallax Scroll Animations
-// ------------------------------
-function rotateAnimation(id, rotation) {
-  // Set the initial state
-  gsap.set(id, {
-    xPercent: 0,
-    transformOrigin: "center",
-  });
-
-  // Define the animation
-  return gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#wrap",
-        pin: true,
-        scrub: 2,
-        start: "top top",
-        end: "+=10000",
-      },
-    })
-    .to(id, {
-      rotation: rotation,
-      y: "-20%",
-      ease: "power1.inOut",
-      duration: (index, target, targets) => {
-        return gsap.utils.wrap([1, 3, 5], index);
-      },
-    });
-}
-
-// Execute the animation with different elements and directions
-let rotateClockwise = rotateAnimation("#clockwise", 360 * 5);
-let rotateCounterClockwise = rotateAnimation("#counter-clockwise", -360 * 5);
-let rotateScrub = rotateAnimation("#spin-n-scrub", 360 * 5);

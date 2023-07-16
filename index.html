@@ -61,10 +61,10 @@
     />
 
     <!-- Link to GSAP CSS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.css"
-    />
+    /> -->
 
     <!--  -->
 
@@ -170,10 +170,12 @@
                 <span class="text"> of your business.</span>
               </h1>
 
-              <a href="#benefits" class="button button--flex">
-                WE can help
-                <i class="ri-arrow-right-down-line button__icon"></i>
-              </a>
+              <div class="home__button">
+                <a href="#benefits" class="button button--flex">
+                  WE can help
+                  <i class="ri-arrow-right-down-line button__icon"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1842,40 +1844,37 @@
       <!--==================== ABOUT ====================-->
 
       <section class="about section" id="about">
-        <div class="universal-man svg-container">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="universal_man"
-            data-name="universal_man"
-            viewBox="0 0 512 512"
-          >
-            <defs>
-              <style>
-                .b {
-                  fill: #102a43;
-                }
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="universal-man"
+          data-name="universal-man"
+          viewBox="0 0 512 512"
+        >
+          <defs>
+            <style>
+              .b {
+                fill: var(--first-color);
+              }
 
-                .c {
-                  fill: #627d98;
-                  isolation: isolate;
-                  opacity: 0.4;
-                }
-              </style>
-            </defs>
-            <path
-              id="man"
-              class="b"
-              d="M256,160c22.09,0,40-17.91,40-40s-17.9-40-40-40-40,17.91-40,40,17.9,40,40,40Zm135.1,25.4c-3.656-12.75-16.97-20.25-29.67-16.47l-59.25,16.94c-30.17,8.623-62.15,8.623-92.31,0l-59.27-16.97c-12.7-3.7-26,3.8-29.7,16.5s3.734,26.03,16.48,29.66l59.25,16.97c3.77,1.07,7.57,1.57,11.37,2.37v62.29l-30.64,87.34c-4.391,12.5,2.188,26.19,14.69,30.59,2.65,.98,5.35,1.38,7.95,1.38,9.906,0,19.19-6.188,22.64-16.06l25.85-70.65c2.562-7.002,12.46-7.002,15.03,0l25.85,70.65c3.43,9.86,12.73,16.06,22.63,16.06,2.641,0,5.312-.438,7.953-1.344,12.5-4.406,19.08-18.09,14.69-30.59l-30.643-87.366v-62.3c3.8-.8,7.6-1.3,11.3-2.4l59.25-16.94c12.75-3.66,20.15-16.86,16.55-29.66Z"
-            />
-            <path
-              class="c"
-              d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256,256-114.6,256-256S397.4,0,256,0Zm0,80c22.09,0,40,17.91,40,40s-17.9,40-40,40-40-17.9-40-40,17.9-40,40-40Zm118.6,135.1l-59.3,16.9c-3.7,1.1-7.5,1.6-11.3,2.4v62.32l30.64,87.34c4.391,12.5-2.188,26.19-14.69,30.59-2.65,.95-5.35,1.35-7.95,1.35-9.906,0-19.19-6.188-22.64-16.06l-25.85-70.65c-2.562-7.002-12.46-7.002-15.03,0l-25.85,70.65c-3.43,9.86-12.73,16.06-22.63,16.06-2.641,0-5.312-.438-7.953-1.344-12.5-4.406-19.08-18.09-14.69-30.59l30.643-87.366v-62.3c-3.8-.8-7.6-1.3-11.3-2.4l-59.3-16.9c-12.7-3.7-20.1-16.9-16.5-29.7s17-20.2,29.7-16.5l59.25,16.94c30.17,8.623,62.15,8.623,92.31,0l59.25-16.94c12.7-3.781,26.02,3.719,29.67,16.47,3.62,12.83-3.78,26.03-16.48,29.73Z"
-            />
-          </svg>
-        </div>
+              .c {
+                fill: var(--first-color);
+                isolation: isolate;
+                opacity: 0.4;
+              }
+            </style>
+          </defs>
+          <path
+            id="man"
+            class="b"
+            d="M256,160c22.09,0,40-17.91,40-40s-17.9-40-40-40-40,17.91-40,40,17.9,40,40,40Zm135.1,25.4c-3.656-12.75-16.97-20.25-29.67-16.47l-59.25,16.94c-30.17,8.623-62.15,8.623-92.31,0l-59.27-16.97c-12.7-3.7-26,3.8-29.7,16.5s3.734,26.03,16.48,29.66l59.25,16.97c3.77,1.07,7.57,1.57,11.37,2.37v62.29l-30.64,87.34c-4.391,12.5,2.188,26.19,14.69,30.59,2.65,.98,5.35,1.38,7.95,1.38,9.906,0,19.19-6.188,22.64-16.06l25.85-70.65c2.562-7.002,12.46-7.002,15.03,0l25.85,70.65c3.43,9.86,12.73,16.06,22.63,16.06,2.641,0,5.312-.438,7.953-1.344,12.5-4.406,19.08-18.09,14.69-30.59l-30.643-87.366v-62.3c3.8-.8,7.6-1.3,11.3-2.4l59.25-16.94c12.75-3.66,20.15-16.86,16.55-29.66Z"
+          />
+          <path
+            class="c"
+            d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256,256-114.6,256-256S397.4,0,256,0Zm0,80c22.09,0,40,17.91,40,40s-17.9,40-40,40-40-17.9-40-40,17.9-40,40-40Zm118.6,135.1l-59.3,16.9c-3.7,1.1-7.5,1.6-11.3,2.4v62.32l30.64,87.34c4.391,12.5-2.188,26.19-14.69,30.59-2.65,.95-5.35,1.35-7.95,1.35-9.906,0-19.19-6.188-22.64-16.06l-25.85-70.65c-2.562-7.002-12.46-7.002-15.03,0l-25.85,70.65c-3.43,9.86-12.73,16.06-22.63,16.06-2.641,0-5.312-.438-7.953-1.344-12.5-4.406-19.08-18.09-14.69-30.59l30.643-87.366v-62.3c-3.8-.8-7.6-1.3-11.3-2.4l-59.3-16.9c-12.7-3.7-20.1-16.9-16.5-29.7s17-20.2,29.7-16.5l59.25,16.94c30.17,8.623,62.15,8.623,92.31,0l59.25-16.94c12.7-3.781,26.02,3.719,29.67,16.47,3.62,12.83-3.78,26.03-16.48,29.73Z"
+          />
+        </svg>
         <h1 class="about__title">WORKING ENNEAGRAM WITH JOEY SCHEWEE</h1>
-
-        <div class="playful-deck-container about__container">
+        <div class="about__container">
           <div class="panel" id="thinking-panel">
             <div class="playful-deck" id="thinking-deck">
               <div class="deck-inner">
@@ -1967,7 +1966,6 @@
             </div>
           </div>
         </div>
-        <div class="buffer"></div>
       </section>
 
       <!--==================== benefits ====================-->
@@ -2862,25 +2860,89 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- GSAP JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/EaselPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/DrawSVGPlugin.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"
+      integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"
+      integrity="sha512-8AjW5l765ApzGk1tv9UXvcf0+CPrvJlFtmf6pPLM3AWcPM8+9aOSTjw29Sq7bQ/HJdqGjnQ3s8ztg8+ceZqwPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"
+      integrity="sha512-S6SXKUZ11xkCoD/UuhdXG4B4iiCXng+xW2KCx0lgfQqmdqtjqGgm4WChdYIhO1F/CmH21vnkSUvPEgXNgDwkjg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"
+      integrity="sha512-p+H3UpwHRUxq0BpDTnXJfVRoZuga/R4rk7uGg8rUw5+UHZxCiqXg4mSVdmALyomuWEzkF1OHldjo7737ua6k4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EaselPlugin.min.js"
+      integrity="sha512-OC8RbwOHNGhdy0YzfHw9CZkBHE59eDOfGE7MJYvuhhvjot1qCVMQoCgrgnz6vOpGYTAZERZ8Ji6AgMdQMvx+FQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"
+      integrity="sha512-AWDq5V1aZW5392Wm63Y2qUKK5MuksXgQVx4YMx5LqLOk4Tnzu2aSNyd/Uqwil/kIm9pikPDk6B626B7H3vq1GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"
+      integrity="sha512-VigP+/SyhNQ7m+09j8ue26TB1U76B/AnbaEkzT6R0Y+nOYR4GpwGZuL4ZfSPCuuVvpBNkVDOhy+R+38qtDEkWw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"
+      integrity="sha512-7xTD1meeGGoAzwZKA0Z8YelV3qAvRltuwACWXpnxtneF7VAMztOTAi3t4laVSaE4Znq4LMPeGUIYWEvKEk5r3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+      integrity="sha512-v/m68W+vaGN/6igoyFpd4GlQzu0jx9/n5gr2PKq5vif+RObyGKHse384YHrOULaxZ810XhlHUrmB3U8UnPB19Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"
+      integrity="sha512-w6nUrq5KSOUaraagUn6bAw+v86pWJE7woIEXGDUVnFCcZtjUMsPs97jaDW9zt3OWoqZ4EhfJDR00rAUzJehEXQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- Your JavaScript files -->
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/companyMarquee.js" defer></script>
-    <script src="assets/js/textMarquee.js" defer></script>
-    <script src="assets/js/navigation.js" defer></script>
-    <script src="assets/js/scroll.js" defer></script>
-    <script src="assets/js/accordion.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
-    <script src="assets/js/universal-man.js" defer></script>
+    <script src="assets/js/scroll.js" defer></script>
+    <script src="assets/js/navigation.js" defer></script>
     <script src="assets/js/swiperInstances.js" defer></script>
+    <script src="assets/js/companyMarquee.js" defer></script>
+    <script src="assets/js/universal-man.js" defer></script>
     <script src="assets/js/chart-animation.js" defer></script>
+    <script src="assets/js/accordion.js" defer></script>
+    <script src="assets/js/textMarquee.js" defer></script>
   </body>
 </html>

@@ -819,54 +819,88 @@ tspan.cls-4 {
 }
 
 /*  */
-/*=============== ABOUT ===============*/
+/*==================== ABOUT ====================*/
 .section#about {
-  padding: 6rem 0 2rem;
   width: 100%;
+  height: 100%;
   position: relative;
-}
-.about__container {
-  position: relative;
-  width: 100%;
-  overflow-x: scroll;
-  display: flex;
-  /* To smoothly handle changes to the container dimensions or position */
-  /* transition: all 0.2s ease-in-out; */
-}
-.about__title {
-  color: var(--text-color);
-  font-weight: var(--font-medium);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: var(--mb-2);
-  font-size: 1.25rem;
-  opacity: 0.8;
+  overflow: hidden;
 }
 
-.universal-man,
-.about__title {
+
+
+/* about__container and panels */
+.about__container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  height: 100%;
+  width: 300vw;
   position: relative;
-  z-index: 1;
+  scroll-behavior: smooth;
+  scroll-snap-stop: always;
+  scroll-snap-align: center;
+  scroll-padding: 0 1rem;
+}
+
+.about__container::-webkit-scrollbar {
+  display: none;
+}
+
+.about__container > .panel {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PANELS background colors */
+.panel#thinking-panel {
+  background: var(--thinking-third);
+}
+
+.panel#feeling-panel {
+  background: var(--feeling-third);
+}
+
+.panel#doing-panel {
+  background: var(--doing-third);
+}
+
+/*=============== ABOUT ===============*/
+/* .about {
+  padding: 9.5rem 0 2rem;
+} */
+
+/* About Title */
+.about__title {
+  font-size: var(--h1-font-size);
+  line-height: 1.2;
+  color: var(--title-color);
+  font-weight: var(--font-regular);
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 1rem;
+  transform: scale(1);
+  transform-origin: center center;
 }
 
 /* Universal Access SVG */
-.svg-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  /* height: 125px; */
-}
 
-#universal_man {
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  max-width: 200px;
+#universal-man {
   width: 100%;
-  height: auto;
-  z-index: 20;
-  transform-origin: center center;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
 }
 
 .fa-primary {
@@ -880,32 +914,6 @@ tspan.cls-4 {
 }
 
 /* about__container and playful-deck-container */
-.about__container,
-.playful-deck-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  height: 100vh;
-  width: 300vw;
-}
-
-.about__container::-webkit-scrollbar,
-.playful-deck-container::-webkit-scrollbar {
-  display: none;
-}
-
-.about__container > .panel,
-.playful-deck-container > .panel {
-  overflow-x: auto;
-  flex: 0 0 0 auto;
-  scroll-snap-align: start;
-  width: 100vw;
-  height: 100vh;
-  padding: 1em;
-  display: flex;
-}
 
 /* PANELS AND DECKS background colors */
 .panel#thinking-panel {
@@ -945,13 +953,6 @@ div#doing-deck .deck-inner .deck-front {
 
 div#doing-deck .deck-inner .deck-back {
   background-color: var(--doing-third);
-}
-
-/* Buffer class */
-.buffer {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
 }
 
 /* Playful-deck related styles */

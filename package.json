@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gsap": "npm:@gsap/member@^3.12.2",
     "swiper": "^9.4.0"
   }
 }
