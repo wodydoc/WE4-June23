@@ -12,9 +12,9 @@
   --first-color-alt-light: hsl(209, 23%, 60%);
   --shape-gradient-light: linear-gradient(
     90deg,
-    hsl(210, 36%, 96%),
-    hsl(224, 15%, 53%),
-    hsl(210, 22%, 49%)
+    hsl(212, 33%, 89%),
+    hsl(211, 27%, 70%),
+    hsl(210, 36%, 96%)
   );
   --body-gradient-light: linear-gradient(
     180deg,
@@ -758,49 +758,26 @@ tspan.cls-4 {
 
 /*=============== TESTIMONIALS SWIPER ===============*/
 .testimonials {
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   height: 100%;
-  background: var(--container-color);
+  background: var(--body-color);
+  width: 100vw;
+}
+
+.swiper-container {
   width: 100%;
-  max-width: 100vw;
-  /* make the bottom two edges have a border radius */
-  border-radius: 0 0 20px 20px;
-}
-
-.profile-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  display: block;
-}
-
-.name,
-.company {
-  text-align: center;
-}
-
-.name {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  font-weight: var(--font-semibold);
-  letter-spacing: -1px;
-}
-
-.company {
-  font-size: 1rem;
-  margin-bottom: 0.8rem; /* Slight decrease in margin bottom */
-  color: var(--first-color-alt);
+  height: 100%;
 }
 
 .testimonial-logo {
   filter: grayscale(1) contrast(1.15) opacity(0.75);
-  margin: 0 auto; /* Center the logo */
-  display: block;
-  object-fit: contain;
+  height: var(--header-height);
   width: 100%;
-  max-height: 50px;
-  height: 100%;
+  margin: 0 auto;
+  display: block;
 }
 
 .dark-theme .testimonial-logo {
@@ -809,12 +786,13 @@ tspan.cls-4 {
 
 .quote {
   color: var(--title-color);
-  font-size: 1.65rem;
+  font-size: 1.675rem;
   text-align: center;
-  padding: 0 1.25rem; 
-  margin: 1rem 0; 
   font-style: oblique;
-  font-weight: var(--font-medium);
+  font-weight: var(--font-semibold);
+  max-width: 80%;
+  line-height: 1.5;
+  margin: 0.5rem auto;
 }
 
 /*  */
@@ -842,21 +820,17 @@ svg#universal-man path#man.b {
 }
 
 svg#universal-man path.c {
-  fill: var(--title-color);
+  fill: var(--container-color);
 }
 
 /* About Title */
 #about__title {
-  font-size: var(--h1-font-size);
-  line-height: 1.2;
+  font-size: 10vw;
   color: var(--title-color);
-  font-weight: var(--font-regular);
-  letter-spacing: 1px;
+  font-weight: var(--font-semibold);
   text-align: center;
   text-transform: uppercase;
   position: relative;
-  transform: scale(0.75);
-  transform-origin: center center;
 }
 
 /* ABOUT CONTAINER - HORIZONTAL SECTION  */
@@ -925,10 +899,16 @@ div.deck#doing-deck {
   background: var(--body-color);
 }
 
-div.panel#thinking-panel,
-div.panel#feeling-panel,
+div.panel#thinking-panel {
+  background: var(--thinking-third);
+}
+
+div.panel#feeling-panel {
+  background: var(--feeling-third);
+}
+
 div.panel#doing-panel {
-  background: var(--container-color);
+  background: var(--doing-third);
 }
 
 div#thinking-deck .deck-inner .deck-back {
