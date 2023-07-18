@@ -885,6 +885,15 @@ svg#universal-man path.c {
 }
 
 /* PANELS background colors */
+
+svg.icon {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.75);
+  transform-origin: center center;
+  object-fit: contain;
+  overflow: hidden;
+}
 svg.icon#thinking-icon .fa-primary {
   opacity: 1;
   fill: var(--thinking-third);
