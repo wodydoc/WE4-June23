@@ -635,7 +635,7 @@ tspan.cls-4 {
 .button {
   display: inline-block;
   background-color: var(--first-color);
-  color: #fff;
+  color: var(--title-color);
   padding: 1rem 1.75rem;
   border-radius: 0.5rem;
   font-weight: var(--font-regular);
@@ -656,6 +656,7 @@ tspan.cls-4 {
 
 .button--flex {
   display: inline-flex;
+  width: 100%;
   align-items: center;
   column-gap: 0.5rem;
 }
@@ -667,6 +668,17 @@ tspan.cls-4 {
 
 .button--link:hover .button__icon {
   transform: translateX(0.25rem);
+}
+
+/*=============== WE ICON STYLES ===============*/
+svg#WE_ONLY {
+  max-width: 70px;
+  height: auto;
+  object-fit: contain;
+  overflow: hidden;
+}
+svg#WE_ONLY .cls-1 {
+  fill: var(--title-color);
 }
 
 /* Text Marquee */
@@ -1129,6 +1141,12 @@ div#doing-deck .deck-inner .deck-back {
   margin-bottom: var(--mb-2-5);
   padding: 0 5px;
 }
+
+
+/* STANCES THIRDS START */
+
+/* STANCES THIRDS START */
+
 
 span.motivations,
 span.behavior {
